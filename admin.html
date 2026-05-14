@@ -108,7 +108,7 @@
                     <th>To'g'ri</th>
                     <th>Jami</th>
                     <th>Foiz</th>
-                    <th>Amal</th>
+                   
                 </tr>
             </thead>
 
@@ -162,7 +162,7 @@ async function natijalarniOqish(){
 
         let rang = data.foiz >= 60 ? "green" : "red";
 
-      tbody.innerHTML += `
+     tbody.innerHTML += `
     <tr>
         <td>${i}</td>
         <td>${data.ism}</td>
@@ -170,9 +170,6 @@ async function natijalarniOqish(){
         <td>${data.togri}</td>
         <td>${data.jami}</td>
         <td class="${rang}">${data.foiz}%</td>
-        <td>
-            <button onclick="ochirNatija('${doc.id}')">O‘chirish</button>
-        </td>
     </tr>
 `;
         i++;
@@ -208,29 +205,6 @@ link.click();
 
 }
 
-window.ochirNatija = async function(id){
-
-    let tasdiq = confirm("Natijani o‘chirmoqchimisiz?");
-
-    if(!tasdiq) return;
-
-    try{
-
-        await deleteDoc(doc(db, "natijalar", id));
-
-        alert("Natija o‘chirildi");
-
-        location.reload();
-
-    }catch(error){
-
-        console.error(error);
-
-        alert("O‘chirishda xatolik");
-
-    }
-
-}
 </script>
 
 </body>
