@@ -274,31 +274,9 @@ ball + "/" +
 savollar.length + "\n";
 txt += "Foiz: " +
 foiz + "%\n";
+txt += "Baho: " +
+baho + "\n\n";
 
-txt += "Baho: " + baho + "\n\n";
-
-if (typeof window.natijaniSaqlash === "function") {
-
-    window.natijaniSaqlash({
-
-        ism: talaba,
-        mavzu: CONFIG.testNomi,
-        togri: ball,
-        jami: savollar.length,
-        foiz: foiz,
-        baho: baho
-
-    });
-
-} else {
-
-    alert("Firebase ulanmagan");
-
-}
-
-
-
-    
 javoblar.forEach((j, i) => {
 txt += (i + 1) + ".) " + j.savol + "\n";
 txt += "Tanlangan javob: " +
@@ -316,18 +294,18 @@ let blob = new Blob(
 );
 
 
-alert("firebase ishladi");
+console.log("firebase ishladi");
 window.natijaniSaqlash({
 
     ism: talaba,
     mavzu: "1-maruza",
     togri: ball,
-    jami: SAVOLLAR.length,
-    foiz: Math.round((togriSoni / SAVOLLAR.length) * 100)
+    jami: savollar.length,
+    foiz: Math.round((togriSoni / savollar.length) * 100)
 
 });
 
-    document.body.removeChild(link);
+    
 }
 
 let vaqt = CONFIG.testVaqti;
