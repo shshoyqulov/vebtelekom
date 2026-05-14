@@ -1,0 +1,334 @@
+﻿<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Test tizimi</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    background:#f3f5f7;
+    padding:20px;
+}
+
+.container{
+    max-width:850px;
+    margin:auto;
+    background:white;
+    padding:25px;
+    border-radius:12px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+}
+
+h1{
+    text-align:center;
+    color:#1f4f82;
+}
+
+.top{
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:10px;
+    background:#eef4fb;
+    padding:12px;
+    border-radius:8px;
+    margin-bottom:20px;
+}
+
+.question{
+    font-size:22px;
+    font-weight:bold;
+    margin-bottom:15px;
+}
+
+.option{
+    display:block;
+    padding:12px;
+    margin:10px 0;
+    border:1px solid #ccc;
+    border-radius:8px;
+    background:#fafafa;
+    cursor:pointer;
+}
+
+.option:hover{
+    background:#e8f0ff;
+}
+
+button{
+    padding:10px 20px;
+    background:#1f5fa8;
+    color:white;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    margin-top:15px;
+    margin-right:10px;
+}
+
+button:hover{
+    background:#17497d;
+}
+
+.result{
+    margin-top:20px;
+    padding:15px;
+    background:#eefaf0;
+    border-left:5px solid green;
+    display:none;
+}
+
+input{
+    padding:8px;
+    border-radius:6px;
+    border:1px solid #ccc;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1 id="testTitle">Avtomatik test tizimi</h1>
+
+<div class="top">
+    <div><b>Talaba:</b> <span id="studentName">Kiritilmagan</span></div>
+    <div><b>Savol:</b> <span id="qnum">1</span>/<span id="total"></span></div>
+    <div><b>Ball:</b> <span id="score">0</span></div>
+    <div><b>Qolgan vaqt:</b> <span id="timer"></span></div>
+</div>
+
+<div style="margin-bottom:20px;">
+    <input type="text" id="fullname" placeholder="Ism familiya kiriting">
+    <button onclick="saveName()">Saqlash</button>
+</div>
+
+<div id="testBox">
+    <div class="question" id="question"></div>
+    <div id="options"></div>
+
+    <button onclick="nextQuestion()">Keyingi</button>
+    <button onclick="finishTest()">Testni tugatish</button>
+</div>
+
+<div class="result" id="result"></div>
+
+</div>
+
+<script src="config.js"></script>
+<script src="questions.js"></script>
+<script type="module" src="../firebase.js"></script>
+
+<script>
+let talaba = "Talaba";
+let testTugadi = false;
+let index = 0;
+let ball = 0;
+let tanlangan = null;
+let javoblar = [];
+let timerInterval;
+
+document.getElementById("testTitle").innerHTML = CONFIG.testNomi;
+
+function saveName(){
+    let ism = document.getElementById("fullname").value;
+
+    if(ism.trim() !== ""){
+        talaba = ism;
+        document.getElementById("studentName").innerHTML = ism;
+    }
+}
+
+function shuffle(array){
+    for(let i = array.length - 1; i > 0; i--){
+        let j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+}
+
+let savollar = [...SAVOLLAR];
+
+if(CONFIG.savollarRandom){
+    shuffle(savollar);
+}
+
+savollar = savollar.slice(0, CONFIG.testSavollarSoni);
+
+savollar.forEach(s => {
+    if(CONFIG.javoblarRandom){
+        shuffle(s.variantlar);
+    }
+
+    s.variantlar = s.variantlar.slice(0, CONFIG.javoblarSoni);
+});
+
+document.getElementById("total").innerHTML = savollar.length;
+
+function showQuestion(){
+    tanlangan = null;
+
+    let q = savollar[index];
+
+    document.getElementById("qnum").innerHTML = index + 1;
+    document.getElementById("question").innerHTML = (index + 1) + ".) " + q.savol;
+
+    let html = "";
+
+    q.variantlar.forEach((v, i) => {
+        html += `
+        <label class="option">
+            <input type="radio" name="variant" onclick="tanla('${v}')">
+            ${String.fromCharCode(65 + i)}. ${v}
+        </label>
+        `;
+    });
+
+    document.getElementById("options").innerHTML = html;
+}
+
+function tanla(v){
+    tanlangan = v;
+}
+
+function nextQuestion(){
+    if(tanlangan === null){
+        alert("Javobni tanlang!");
+        return;
+    }
+
+    let q = savollar[index];
+
+    let natija = tanlangan === q.togri;
+
+    if(natija){
+        ball++;
+    }
+
+    javoblar.push({
+        savol: q.savol,
+        tanlangan: tanlangan,
+        togri: q.togri,
+        natija: natija
+    });
+
+    document.getElementById("score").innerHTML = ball;
+
+    if(index < savollar.length - 1){
+        index++;
+        showQuestion();
+    }else{
+        finishTest();
+    }
+}
+
+function finishTest(){
+    if(testTugadi) return;
+
+    testTugadi = true;
+    clearInterval(timerInterval);
+
+    document.getElementById("testBox").style.display = "none";
+
+    let foiz = Math.round((ball / savollar.length) * 100);
+    let baho = "";
+
+    if(foiz >= CONFIG.aloFoiz){
+        baho = "A'lo";
+    }else if(foiz >= CONFIG.yaxshiFoiz){
+        baho = "Yaxshi";
+    }else if(foiz >= CONFIG.qoniqarliFoiz){
+        baho = "Qoniqarli";
+    }else{
+        baho = "Qoniqarsiz";
+    }
+
+    document.getElementById("result").innerHTML = `
+        <h2>Test yakunlandi</h2>
+
+        <p><b>Talaba:</b> ${talaba}</p>
+        <p><b>Ball:</b> ${ball}/${savollar.length}</p>
+        <p><b>Foiz:</b> ${foiz}%</p>
+        <p><b>Baho:</b> ${baho}</p>
+
+        <a href="${CONFIG.uySahifa}">
+            <button>Uy sahifasiga</button>
+        </a>
+    `;
+
+    document.getElementById("result").style.display = "block";
+
+    if(CONFIG.txtSaqlash){
+        saveTxt(foiz, baho);
+    }
+}
+
+function saveTxt(foiz, baho){
+    
+let txt = "TEST NATIJASI\n\n";
+txt += "Test nomi: " + CONFIG.testNomi + "\n";
+txt += "Talaba: " + talaba + "\n";
+txt += "Ball: " +
+ball + "/" +
+savollar.length + "\n";
+txt += "Foiz: " +
+foiz + "%\n";
+txt += "Baho: " +
+baho + "\n\n";
+
+javoblar.forEach((j, i) => {
+txt += (i + 1) + ".) " + j.savol + "\n";
+txt += "Tanlangan javob: " +
+j.tanlangan + "\n";
+txt += "To‘g‘ri javob: " +
+j.togri + "\n";
+txt += "Natija: " +
+(j.natija ? "To‘g‘ri" : "Noto‘g‘ri")
++ "\n\n";
+});
+
+let blob = new Blob(
+[txt],
+{type:"text/plain;charset=utf-8"}
+);
+natijaniSaqlash({
+
+    ism: talaba,
+    mavzu: "8-amaliy_veb",
+    togri: togriSoni,
+    jami: SAVOLLAR.length,
+    foiz: Math.round((togriSoni / SAVOLLAR.length) * 100)
+
+});
+    document.body.removeChild(link);
+}
+
+let vaqt = CONFIG.testVaqti;
+
+function updateTimer(){
+    let min = Math.floor(vaqt / 60);
+    let sec = vaqt % 60;
+
+    document.getElementById("timer").innerHTML =
+        String(min).padStart(2,"0") + ":" + String(sec).padStart(2,"0");
+}
+
+updateTimer();
+
+timerInterval = setInterval(() => {
+    if(vaqt <= 0){
+        finishTest();
+        return;
+    }
+
+    vaqt--;
+    updateTimer();
+}, 1000);
+
+showQuestion();
+</script>
+
+</body>
+</html>
