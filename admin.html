@@ -179,15 +179,13 @@ natijalarniOqish();
 
 window.csvYuklash = function(){
 
-    let csv = "Talaba,Mavzu,Togri,Jami,Foiz\n";
+    let csv = "Talaba;Mavzu;Togri;Jami;Foiz\n";
 
     csvData.forEach(item => {
-
-        csv += `${item.ism},${item.mavzu},${item.togri},${item.jami},${item.foiz}%\n`;
-
+        csv += `${item.ism};${item.mavzu};${item.togri};${item.jami};${item.foiz}%\n`;
     });
 
-    const blob = new Blob([csv], {type:"text/csv"});
+    const blob = new Blob([csv], {type:"text/csv;charset=utf-8"});
 
     const link = document.createElement("a");
 
@@ -199,6 +197,5 @@ window.csvYuklash = function(){
 
 }
 </script>
-
 </body>
 </html>
