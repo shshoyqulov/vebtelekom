@@ -289,21 +289,21 @@ txt += "Natija: " +
 + "\n\n";
 });
 
-let blob = new Blob(
-[txt],
-{type:"text/plain;charset=utf-8"}
-);
 console.log("firebase ishladi");
-window.natijaniSaqlash({
 
-    ism: talaba,
-    mavzu: "6-amaliy_veb",
+if (typeof window.natijaniSaqlash === "function") {
+    window.natijaniSaqlash({
+        ism: talaba,
+   mavzu: CONFIG.testNomi,
     togri: ball,
-    jami: savollar.length,
-    foiz: Math.round((togriSoni / savollar.length) * 100)
-
-});
-    
+        jami: savollar.length,
+        foiz: foiz,
+        baho: baho
+    });
+} else {
+    alert("natijaniSaqlash topilmadi");
+    console.log("natijaniSaqlash topilmadi");
+}
 }
 
 let vaqt = CONFIG.testVaqti;
