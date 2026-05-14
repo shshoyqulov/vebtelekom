@@ -274,9 +274,31 @@ ball + "/" +
 savollar.length + "\n";
 txt += "Foiz: " +
 foiz + "%\n";
-txt += "Baho: " +
-baho + "\n\n";
 
+txt += "Baho: " + baho + "\n\n";
+
+if (typeof window.natijaniSaqlash === "function") {
+
+    window.natijaniSaqlash({
+
+        ism: talaba,
+        mavzu: CONFIG.testNomi,
+        togri: ball,
+        jami: savollar.length,
+        foiz: foiz,
+        baho: baho
+
+    });
+
+} else {
+
+    alert("Firebase ulanmagan");
+
+}
+
+
+
+    
 javoblar.forEach((j, i) => {
 txt += (i + 1) + ".) " + j.savol + "\n";
 txt += "Tanlangan javob: " +
