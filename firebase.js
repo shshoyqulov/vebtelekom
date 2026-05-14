@@ -60,7 +60,7 @@ console.log("Oldin bormi:", oldingiNatija.exists());
         alert("Natija saqlandi!");
 
     } catch (error) {
-        console.error(error);
-        alert("Natijani saqlashda xatolik yuz berdi.");
+       console.error("Firebase xatosi:", error);
+    alert("Xatolik: " + error.message);
     }
 };
