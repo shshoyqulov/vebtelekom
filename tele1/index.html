@@ -295,15 +295,20 @@ let blob = new Blob(
 
 
 console.log("firebase ishladi");
-window.natijaniSaqlash({
 
-    ism: talaba,
-    mavzu: "1-maruza",
-    togri: ball,
-    jami: savollar.length,
-    foiz: Math.round((togriSoni / savollar.length) * 100)
-
-});
+if (typeof window.natijaniSaqlash === "function") {
+    window.natijaniSaqlash({
+        ism: talaba,
+        mavzu: "1-maruza",
+        togri: ball,
+        jami: savollar.length,
+        foiz: foiz,
+        baho: baho
+    });
+} else {
+    alert("natijaniSaqlash topilmadi");
+    console.log("natijaniSaqlash topilmadi");
+}
 
     
 }
