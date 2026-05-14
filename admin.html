@@ -162,7 +162,7 @@ async function natijalarniOqish(){
 
         let rang = data.foiz >= 60 ? "green" : "red";
 
-       tbody.innerHTML += `
+      tbody.innerHTML += `
     <tr>
         <td>${i}</td>
         <td>${data.ism}</td>
@@ -170,16 +170,11 @@ async function natijalarniOqish(){
         <td>${data.togri}</td>
         <td>${data.jami}</td>
         <td class="${rang}">${data.foiz}%</td>
-
         <td>
-            <button onclick="ochirNatija('${doc.id}')">
-                O‘chirish
-            </button>
+            <button onclick="ochirNatija('${doc.id}')">O‘chirish</button>
         </td>
-
     </tr>
 `;
-
         i++;
 
     });
