@@ -38,7 +38,10 @@ window.natijaniSaqlash = async function (data) {
 
         const natijaRef = doc(db, "natijalar", documentId);
         const oldingiNatija = await getDoc(natijaRef);
-
+console.log("Talaba:", data.ism);
+console.log("Mavzu:", data.mavzu);
+console.log("Document ID:", documentId);
+console.log("Oldin bormi:", oldingiNatija.exists());
         if (oldingiNatija.exists()) {
             alert("Siz bu testni avval topshirgansiz. Qayta topshirishga ruxsat berilmaydi.");
             return;
