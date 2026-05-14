@@ -108,13 +108,10 @@
                     <th>To'g'ri</th>
                     <th>Jami</th>
                     <th>Foiz</th>
-                   
+          
                 </tr>
             </thead>
-
-            <tbody id="natijalar">
-
-            </tbody>
+            <tbody id="natijalar">       </tbody>
 
         </table>
 
@@ -143,7 +140,7 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
-
+console.log("admin firebase ishladi");
 const tbody = document.getElementById("natijalar");
 
 let csvData = [];
