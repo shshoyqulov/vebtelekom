@@ -1,0 +1,122 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #e8f3ff, #f7fbff);
+    color: #1f2937;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 30px 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.main-img {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+h1 {
+    font-size: 34px;
+    color: #0f4c81;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    font-size: 17px;
+    color: #555;
+
+}
+
+.topics {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 18px;
+}
+
+.topic-card {
+    background: #ffffff;
+    padding: 22px;
+    border-radius: 14px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.10);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    min-height: 210px;
+
+    transition: 0.3s;
+}
+
+.topic-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.15);
+}
+
+.topic-card span {
+    font-size: 18px;
+    font-weight: bold;
+    color: #1f2937;
+    line-height: 1.4;
+}
+
+
+
+.topic-card a {
+    text-decoration: none;
+    background: #0f4c81;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-size: 15px;
+
+    margin-top: 20px;
+    align-self: flex-start;
+
+    transition: 0.3s;
+}
+
+.topic-card a:hover {
+    background: #08365e;
+}
+
+hr {
+    margin: 35px 0;
+    border: none;
+    height: 2px;
+    background: #b7d4f0;
+}
+
+.on-section h2 {
+    text-align: center;
+    color: #b45309;
+    margin-bottom: 20px;
+}
+
+.on-card {
+    max-width: 450px;
+    margin: 0 auto;
+    border-left: 6px solid #f59e0b;
+}
+
+footer {
+    margin-top: 40px;
+    text-align: center;
+    color: #666;
+    font-size: 14px;
+}
