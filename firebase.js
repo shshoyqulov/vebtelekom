@@ -2,10 +2,10 @@
 
 import {
     getFirestore,
-    doc,
-    getDoc,
-    setDoc,
-    serverTimestamp
+    collection,
+    getDocs,
+    deleteDoc,
+    doc
 } from "https://www.gstatic.com/firebasejs/12.13.0/firebase-firestore.js";
 
 const firebaseConfig = {
