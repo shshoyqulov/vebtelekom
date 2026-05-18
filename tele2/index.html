@@ -425,17 +425,29 @@ link.click();
 
 document.body.removeChild(link);
 console.log("firebase ishladi");
+
 if (typeof window.natijaniSaqlash === "function") {
+
+    let saqlandi =
     await window.natijaniSaqlash({
-    ism: talaba,
-    guruh: guruh,
-    mavzu: CONFIG.testNomi,
-    togri: ball,
-    jami: savollar.length,
-    foiz: foiz,
-    baho: baho
-});
+
+        ism: talaba,
+        guruh: guruh,
+        mavzu: CONFIG.testNomi,
+        togri: ball,
+        jami: savollar.length,
+        foiz: foiz,
+        baho: baho
+
+    });
+
+    if(!saqlandi){
+        location.reload();
+        return;
+    }
+
 } else {
+
     alert("natijaniSaqlash topilmadi");
     console.log("natijaniSaqlash topilmadi");
 }
