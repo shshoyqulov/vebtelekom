@@ -410,13 +410,30 @@ txt += "Natija: " +
 + "\n\n";
 });
 
+console.log("firebase ishladi");
+if (typeof window.natijaniSaqlash === "function") {let saqlandi =
+await window.natijaniSaqlash({
+    ism: talaba,
+    guruh: guruh,
+    mavzu: CONFIG.testNomi,
+    togri: ball,
+    jami: savollar.length,
+    foiz: foiz,
+    baho: baho
+});
+
+if(!saqlandi){
+    location.reload();
+    return;
+}
+
+// TXT DOWNLOAD FAQAT SHUNDAN KEYIN
 let blob = new Blob(
     [txt],
     {type:"text/plain;charset=utf-8"}
 );
 
 let link = document.createElement("a");
-
 link.href = URL.createObjectURL(blob);
 
 link.download =
@@ -424,32 +441,8 @@ talaba + "_" +
 CONFIG.testNomi + ".txt";
 
 document.body.appendChild(link);
-
 link.click();
-
 document.body.removeChild(link);
-console.log("firebase ishladi");
-
-
-if (typeof window.natijaniSaqlash === "function") {
-
-    let saqlandi =
-    await window.natijaniSaqlash({
-
-        ism: talaba,
-        guruh: guruh,
-        mavzu: CONFIG.testNomi,
-        togri: ball,
-        jami: savollar.length,
-        foiz: foiz,
-        baho: baho
-
-    });
-
-    if(!saqlandi){
-        location.reload();
-        return;
-    }
 
 } else {
 
