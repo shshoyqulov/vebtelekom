@@ -45,7 +45,7 @@ console.log("Document ID:", documentId);
 console.log("Oldin bormi:", oldingiNatija.exists());
         if (oldingiNatija.exists()) {
             alert("Siz bu testni avval topshirgansiz. Qayta topshirishga ruxsat berilmaydi.");
-            return;
+            return false;
         }
 
        await setDoc(natijaRef, {
@@ -60,6 +60,7 @@ console.log("Oldin bormi:", oldingiNatija.exists());
 });
 
         alert("Natija saqlandi!");
+	return true;
 
     } catch (error) {
         console.error(error);
