@@ -12,6 +12,7 @@ body{
     padding:20px;
 }
 
+
 .container{
     max-width:850px;
     margin:auto;
@@ -211,6 +212,8 @@ let ball = 0;
 let tanlangan = null;
 let javoblar = [];
 let timerInterval;
+let chiqishSoni = 0;
+let testBoshlangan = false;
 
 document.getElementById("testTitle").innerHTML = CONFIG.testNomi;
 
@@ -258,7 +261,10 @@ window.startTest = function(){
     document.getElementById("studentName").innerHTML =
         talaba + " (" + guruh + ")";
 
-    document.getElementById("startModal").style.display = "none";
+    
+document.getElementById("startModal").style.display = "none";
+
+
 };
 
 
@@ -299,19 +305,21 @@ function showQuestion(){
     let html = "";
 
     q.variantlar.forEach((v, i) => {
-        html += `
-        <label class="option">
-            <input type="radio" name="variant" onclick="tanla('${v}')">
-            ${String.fromCharCode(65 + i)}. ${v}
-        </label>
-        `;
-    });
+    html += `
+    <label class="option">
+        <input type="radio"
+               name="variant"
+               onclick="tanla(${i})">
+        ${String.fromCharCode(65 + i)}. ${v}
+    </label>
+    `;
+});
 
     document.getElementById("options").innerHTML = html;
 }
 
-function tanla(v){
-    tanlangan = v;
+function tanla(i){
+    tanlangan = savollar[index].variantlar[i];
 }
 
 function nextQuestion(){
@@ -409,13 +417,30 @@ txt += "Natija: " +
 + "\n\n";
 });
 
+console.log("firebase ishladi");
+if (typeof window.natijaniSaqlash === "function") {let saqlandi =
+await window.natijaniSaqlash({
+    ism: talaba,
+    guruh: guruh,
+    mavzu: CONFIG.testNomi,
+    togri: ball,
+    jami: savollar.length,
+    foiz: foiz,
+    baho: baho
+});
+
+if(!saqlandi){
+    location.reload();
+    return;
+}
+
+// TXT DOWNLOAD FAQAT SHUNDAN KEYIN
 let blob = new Blob(
     [txt],
     {type:"text/plain;charset=utf-8"}
 );
 
 let link = document.createElement("a");
-
 link.href = URL.createObjectURL(blob);
 
 link.download =
@@ -423,32 +448,8 @@ talaba + "_" +
 CONFIG.testNomi + ".txt";
 
 document.body.appendChild(link);
-
 link.click();
-
 document.body.removeChild(link);
-console.log("firebase ishladi");
-
-
-if (typeof window.natijaniSaqlash === "function") {
-
-    let saqlandi =
-    await window.natijaniSaqlash({
-
-        ism: talaba,
-        guruh: guruh,
-        mavzu: CONFIG.testNomi,
-        togri: ball,
-        jami: savollar.length,
-        foiz: foiz,
-        baho: baho
-
-    });
-
-    if(!saqlandi){
-        location.reload();
-        return;
-    }
 
 } else {
 
@@ -480,35 +481,131 @@ timerInterval = setInterval(() => {
 }, 1000);
 
 showQuestion();
-document.addEventListener("keydown", function(e){
+// ===============================
+// TEST OYNASIDAN CHIQISH NAZORATI
+// ===============================
 
-    if(e.ctrlKey && e.key.toLowerCase() === "u"){
-        e.preventDefault();
+let nazoratAktiv = true;
+let oxirgiOgohlantirishVaqti = 0;
+
+function warningShow(matn){
+    let box = document.getElementById("warningBox");
+
+    if(!box){
+        box = document.createElement("div");
+        box.id = "warningBox";
+        document.body.appendChild(box);
+    }
+
+    box.innerHTML = matn;
+    box.style.cssText = `
+        position:fixed;
+        top:20px;
+        left:50%;
+        transform:translateX(-50%);
+        background:#b91c1c;
+        color:white;
+        padding:18px 28px;
+        border-radius:12px;
+        font-size:18px;
+        font-weight:bold;
+        z-index:999999;
+        box-shadow:0 8px 25px rgba(0,0,0,0.35);
+        text-align:center;
+    `;
+
+    setTimeout(() => {
+        if(box) box.remove();
+    }, 3000);
+}
+
+function nazorat(sabab){
+    if(testTugadi) return;
+    if(!testBoshlangan) return;
+    if(!nazoratAktiv) return;
+
+    let hozir = Date.now();
+
+    // Bir hodisa ikki marta sanalib ketmasligi uchun
+    if(hozir - oxirgiOgohlantirishVaqti < 1200){
+        return;
+    }
+
+    oxirgiOgohlantirishVaqti = hozir;
+    chiqishSoni++;
+
+    if(chiqishSoni === 1){
+        warningShow(
+            "Diqqat! Test oynasidan chiqish taqiqlanadi. Yana takrorlansa test yakunlanadi."
+        );
+    }
+
+    if(chiqishSoni >= 2){
+        warningShow(
+            "Test oynasidan ikkinchi marta chiqildi. Test yakunlanadi."
+        );
+
+        setTimeout(() => {
+            finishTest();
+        }, 1200);
+    }
+}
+
+// Tab almashtirish, minimize qilish, boshqa oynaga o‘tish
+document.addEventListener("visibilitychange", function(){
+    if(document.hidden){
+        nazorat("Sahifa yashirildi");
+    }
+});
+
+// Alt+Tab, boshqa dasturga bosish, brauzerdan fokus ketishi
+window.addEventListener("blur", function(){
+    setTimeout(() => {
+        if(testBoshlangan && !testTugadi){
+            nazorat("Oyna fokusi yoqoldi");
         }
+    }, 300);
+});
+
+// Brauzer oynasidan chiqishga urinish
+window.addEventListener("beforeunload", function(e){
+    if(testBoshlangan && !testTugadi){
+        e.preventDefault();
+        e.returnValue = "";
+    }
+});
+
+
+
+// F12, Ctrl+U, Ctrl+Shift+I/J/C bloklash
+document.addEventListener("keydown", function(e){
 
     if(e.key === "F12"){
         e.preventDefault();
-       }
-
-    if(e.ctrlKey && e.shiftKey && e.key.toLowerCase() === "i"){
-        e.preventDefault();
-        alert("Bu amal bloklangan");
+        warningShow("Bu amal bloklangan");
+        return false;
     }
 
-    if(e.ctrlKey && e.shiftKey && e.key.toLowerCase() === "j"){
+    if(e.ctrlKey && e.key.toLowerCase() === "u"){
         e.preventDefault();
-     
+        warningShow("Sahifa kodini korish bloklangan");
+        return false;
     }
 
-    if(e.ctrlKey && e.shiftKey && e.key.toLowerCase() === "c"){
+    if(e.ctrlKey && e.shiftKey && 
+       ["i", "j", "c"].includes(e.key.toLowerCase())){
         e.preventDefault();
-       
+        warningShow("Developer tools bloklangan");
+        return false;
     }
 
+    
 });
 
+// O‘ng tugma bloklash
 document.addEventListener("contextmenu", function(e){
     e.preventDefault();
+    warningShow("Ong tugma bloklangan");
 });
 </script>
 
