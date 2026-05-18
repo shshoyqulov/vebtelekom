@@ -32,9 +32,10 @@ function tozalash(matn) {
 window.natijaniSaqlash = async function (data) {
     try {
         const talabaId = tozalash(data.ism);
-        const mavzuId = tozalash(data.mavzu);
+const guruhId = tozalash(data.guruh);
+const mavzuId = tozalash(data.mavzu);
 
-        const documentId = talabaId + "_" + mavzuId;
+const documentId = guruhId + "_" + talabaId + "_" + mavzuId;
 
         const natijaRef = doc(db, "natijalar", documentId);
         const oldingiNatija = await getDoc(natijaRef);
@@ -47,15 +48,16 @@ console.log("Oldin bormi:", oldingiNatija.exists());
             return;
         }
 
-        await setDoc(natijaRef, {
-            ism: data.ism,
-            mavzu: data.mavzu,
-            togri: data.togri,
-            jami: data.jami,
-            foiz: data.foiz,
-            baho: data.baho,
-            sana: serverTimestamp()
-        });
+       await setDoc(natijaRef, {
+    ism: data.ism,
+    guruh: data.guruh,
+    mavzu: data.mavzu,
+    togri: data.togri,
+    jami: data.jami,
+    foiz: data.foiz,
+    baho: data.baho,
+    sana: serverTimestamp()
+});
 
         alert("Natija saqlandi!");
 

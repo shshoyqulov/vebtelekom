@@ -85,6 +85,59 @@ input{
     border-radius:6px;
     border:1px solid #ccc;
 }
+
+#startModal{
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.65);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+#startCard{
+    background: white;
+    width: 360px;
+    padding: 30px;
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+#startCard h2{
+    margin-bottom: 20px;
+    color: #1f4f82;
+}
+
+#startCard select{
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 15px;
+}
+
+#startCard button{
+    width: 100%;
+    padding: 12px;
+    margin-top: 5px;
+}
+.btnBox{
+    display:flex;
+    align-items:center;
+    margin-top:20px;
+}
+
+.finishBtn{
+    margin-left:auto;
+    background:#c62828;
+}
+
+.finishBtn:hover{
+    background:#8e0000;
+}
 </style>
 </head>
 
@@ -101,17 +154,44 @@ input{
     <div><b>Qolgan vaqt:</b> <span id="timer"></span></div>
 </div>
 
-<div style="margin-bottom:20px;">
-    <input type="text" id="fullname" placeholder="Ism familiya kiriting">
-    <button onclick="saveName()">Saqlash</button>
+<div id="startModal">
+
+    <div id="startCard">
+
+        <h2>Testni boshlash</h2>
+
+        <select id="guruhSelect">
+            <option value="">Guruhni tanlang</option>
+        </select>
+
+        <select id="talabaSelect">
+            <option value="">Avval guruhni tanlang</option>
+        </select>
+
+        <button onclick="startTest()">
+            OK
+        </button>
+
+    </div>
+
 </div>
 
 <div id="testBox">
     <div class="question" id="question"></div>
     <div id="options"></div>
+<div class="btnBox">
 
-    <button onclick="nextQuestion()">Keyingi</button>
-    <button onclick="finishTest()">Testni tugatish</button>
+    <button onclick="nextQuestion()">
+        Keyingi
+    </button>
+
+    <button class="finishBtn"
+            onclick="finishTest()">
+        Testni tugatish
+    </button>
+
+</div>
+
 </div>
 
 <div class="result" id="result"></div>
@@ -120,7 +200,9 @@ input{
 
 <script src="config.js"></script>
 <script src="questions.js"></script>
+<script src="../students.js"></script>
 <script type="module" src="../firebase.js"></script>
+
 
 <script>
 let talaba = "Talaba";
@@ -133,14 +215,54 @@ let timerInterval;
 
 document.getElementById("testTitle").innerHTML = CONFIG.testNomi;
 
-function saveName(){
-    let ism = document.getElementById("fullname").value;
 
-    if(ism.trim() !== ""){
-        talaba = ism;
-        document.getElementById("studentName").innerHTML = ism;
+// SHU YERGA 
+
+let guruh = "";
+
+const guruhSelect = document.getElementById("guruhSelect");
+const talabaSelect = document.getElementById("talabaSelect");
+
+const guruhlar = [...new Set(STUDENTS.map(s => s.guruh))];
+
+guruhlar.forEach(g => {
+    guruhSelect.innerHTML += `<option value="${g}">${g}</option>`;
+});
+
+guruhSelect.addEventListener("change", function(){
+
+    talabaSelect.innerHTML = `<option value="">Talabani tanlang</option>`;
+
+    STUDENTS
+        .filter(s => s.guruh === guruhSelect.value)
+        .forEach(s => {
+            talabaSelect.innerHTML += `<option value="${s.ism}">${s.ism}</option>`;
+        });
+
+});
+
+window.startTest = function(){
+
+    if(guruhSelect.value === ""){
+        alert("Guruhni tanlang");
+        return;
     }
-}
+
+    if(talabaSelect.value === ""){
+        alert("Talabani tanlang");
+        return;
+    }
+
+    guruh = guruhSelect.value;
+    talaba = talabaSelect.value;
+
+    document.getElementById("studentName").innerHTML =
+        talaba + " (" + guruh + ")";
+
+    document.getElementById("startModal").style.display = "none";
+};
+
+
 
 function shuffle(array){
     for(let i = array.length - 1; i > 0; i--){
@@ -224,7 +346,7 @@ function nextQuestion(){
     }
 }
 
-function finishTest(){
+async function finishTest(){
     if(testTugadi) return;
 
     testTugadi = true;
@@ -257,15 +379,14 @@ function finishTest(){
             <button>Uy sahifasiga</button>
         </a>
     `;
-
-    document.getElementById("result").style.display = "block";
-
-    if(CONFIG.txtSaqlash){
-        saveTxt(foiz, baho);
-    }
+if(CONFIG.txtSaqlash){
+   await  saveTxt(foiz, baho);
 }
 
-function saveTxt(foiz, baho){
+document.getElementById("result").style.display = "block";
+}
+
+async function saveTxt(foiz, baho){
     
 let txt = "TEST NATIJASI\n\n";
 txt += "Test nomi: " + CONFIG.testNomi + "\n";
@@ -289,17 +410,36 @@ txt += "Natija: " +
 + "\n\n";
 });
 
+let blob = new Blob(
+    [txt],
+    {type:"text/plain;charset=utf-8"}
+);
+
+let link = document.createElement("a");
+
+link.href = URL.createObjectURL(blob);
+
+link.download =
+talaba + "_" +
+CONFIG.testNomi + ".txt";
+
+document.body.appendChild(link);
+
+link.click();
+
+document.body.removeChild(link);
 console.log("firebase ishladi");
 
 if (typeof window.natijaniSaqlash === "function") {
-    window.natijaniSaqlash({
-        ism: talaba,
-   mavzu: CONFIG.testNomi,
+    await window.natijaniSaqlash({
+    ism: talaba,
+    guruh: guruh,
+    mavzu: CONFIG.testNomi,
     togri: ball,
-        jami: savollar.length,
-        foiz: foiz,
-        baho: baho
-    });
+    jami: savollar.length,
+    foiz: foiz,
+    baho: baho
+});
 } else {
     alert("natijaniSaqlash topilmadi");
     console.log("natijaniSaqlash topilmadi");

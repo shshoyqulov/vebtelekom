@@ -120,3 +120,45 @@ footer {
     color: #666;
     font-size: 14px;
 }
+
+
+
+
+
+#startModal{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,0.7);
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    z-index:9999;
+}
+
+#startCard{
+    width:320px;
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    text-align:center;
+}
+
+#startCard input{
+    width:100%;
+    padding:12px;
+    margin:15px 0;
+    border:1px solid #ccc;
+    border-radius:8px;
+}
+
+#startCard button{
+    width:100%;
+    padding:12px;
+    border:none;
+    background:#2563eb;
+    color:white;
+    border-radius:8px;
+    cursor:pointer;
+}
