@@ -162,3 +162,19 @@ footer {
     border-radius:8px;
     cursor:pointer;
 }
+
+#warningBox{
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #b91c1c;
+    color: white;
+    padding: 18px 28px;
+    border-radius: 12px;
+    font-size: 18px;
+    font-weight: bold;
+    z-index: 10000;
+    display: none;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.35);
+}
