@@ -363,9 +363,25 @@ async function finishTest(){
     clearInterval(timerInterval);
 
     document.getElementById("testBox").style.display = "none";
+let foiz = Math.round((ball / savollar.length) * 100);
 
-    let foiz = Math.round((ball / savollar.length) * 100);
-    let baho = "";
+// Imtiyozli talabani tekshirish
+let imtiyozliTalaba = STUDENTS.find(s =>
+    s.ism === talaba &&
+    s.guruh === guruh &&
+    s.imtiyoz === true
+);
+
+// Agar imtiyozli bo‘lsa va 60% dan past olsa
+if(imtiyozliTalaba && foiz < 60){
+
+    foiz = 60;
+
+    ball = Math.ceil(savollar.length * 0.6);
+}
+
+let baho = "";
+
 
     if(foiz >= CONFIG.aloFoiz){
         baho = "A'lo";
