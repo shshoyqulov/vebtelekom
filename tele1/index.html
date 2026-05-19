@@ -373,12 +373,12 @@ let imtiyozliTalaba = STUDENTS.find(s =>
 );
 
 // Agar imtiyozli bo‘lsa va 60% dan past olsa
+
 if(imtiyozliTalaba && foiz < 60){
-
     foiz = 60;
-
-    ball = Math.ceil(savollar.length * 0.6);
+    ball = Math.round((savollar.length * 60) / 100);
 }
+
 
 let baho = "";
 
