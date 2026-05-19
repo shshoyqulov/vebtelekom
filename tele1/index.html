@@ -407,11 +407,28 @@ txt += "Ball: " + ball + "/" + savollar.length + "\n";
 txt += "Foiz: " + foiz + "%\n";
 txt += "Baho: " + baho + "\n\n";
 
-console.log("firebase ishladi");
+// 1. TXT faylni darhol yuklash
+let blob = new Blob(
+    [txt],
+    {type:"text/plain;charset=utf-8"}
+);
 
+let link = document.createElement("a");
+link.href = URL.createObjectURL(blob);
+
+link.download =
+    talaba + "_" +
+    CONFIG.testNomi + ".txt";
+
+document.body.appendChild(link);
+link.click();
+document.body.removeChild(link);
+
+
+// 2. Firebase’ga keyin saqlash
 if (typeof window.natijaniSaqlash === "function") {
 
-    let saqlandi = await window.natijaniSaqlash({
+    window.natijaniSaqlash({
         ism: talaba,
         guruh: guruh,
         mavzu: CONFIG.testNomi,
@@ -419,35 +436,18 @@ if (typeof window.natijaniSaqlash === "function") {
         jami: savollar.length,
         foiz: foiz,
         baho: baho
+    }).then(function(saqlandi){
+        if(!saqlandi){
+            console.log("Firebase saqlanmadi");
+        }
     });
 
-    if(!saqlandi){
-        location.reload();
-        return;
-    }
-
-    let blob = new Blob(
-        [txt],
-        {type:"text/plain;charset=utf-8"}
-    );
-
-    let link = document.createElement("a");
-    link.href = URL.createObjectURL(blob);
-
-    link.download =
-        talaba + "_" +
-        CONFIG.testNomi + ".txt";
-
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-
 } else {
-    alert("natijaniSaqlash topilmadi");
     console.log("natijaniSaqlash topilmadi");
 }
 
 }
+
 let vaqt = CONFIG.testVaqti;
 
 
