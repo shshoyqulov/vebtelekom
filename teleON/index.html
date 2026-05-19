@@ -360,9 +360,25 @@ async function finishTest(){
     clearInterval(timerInterval);
 
     document.getElementById("testBox").style.display = "none";
+let foiz = Math.round((ball / savollar.length) * 100);
 
-    let foiz = Math.round((ball / savollar.length) * 100);
-    let baho = "";
+// Imtiyozli talabani tekshirish
+let imtiyozliTalaba = STUDENTS.find(s =>
+    s.ism === talaba &&
+    s.guruh === guruh &&
+    s.imtiyoz === true
+);
+
+// Agar imtiyozli bo‘lsa va 60% dan past olsa
+
+if(imtiyozliTalaba && foiz < 60){
+    foiz = 60;
+    ball = Math.round((savollar.length * 60) / 100);
+}
+
+
+let baho = "";
+
 
     if(foiz >= CONFIG.aloFoiz){
         baho = "A'lo";
@@ -387,35 +403,30 @@ async function finishTest(){
         </a>
     `;
 if(CONFIG.txtSaqlash){
-   await  saveTxt(foiz, baho);
+   await saveTxt(foiz, baho);
 }
 
 document.getElementById("result").style.display = "block";
 }
 
 async function saveTxt(foiz, baho){
-    
+
 let txt = "TEST NATIJASI\n\n";
+
 txt += "Test nomi: " + CONFIG.testNomi + "\n";
 txt += "Talaba: " + talaba + "\n";
+
 txt += "Ball: " +
 ball + "/" +
 savollar.length + "\n";
+
 txt += "Foiz: " +
 foiz + "%\n";
+
 txt += "Baho: " +
 baho + "\n\n";
 
-javoblar.forEach((j, i) => {
-txt += (i + 1) + ".) " + j.savol + "\n";
-txt += "Tanlangan javob: " +
-j.tanlangan + "\n";
-txt += "To‘g‘ri javob: " +
-j.togri + "\n";
-txt += "Natija: " +
-(j.natija ? "To‘g‘ri" : "Noto‘g‘ri")
-+ "\n\n";
-});
+
 
 console.log("firebase ishladi");
 if (typeof window.natijaniSaqlash === "function") {let saqlandi =
@@ -456,9 +467,10 @@ document.body.removeChild(link);
     alert("natijaniSaqlash topilmadi");
     console.log("natijaniSaqlash topilmadi");
 }
-}
-
 let vaqt = CONFIG.testVaqti;
+let vaqt = CONFIG.testVaqti;
+
+
 
 function updateTimer(){
     let min = Math.floor(vaqt / 60);
