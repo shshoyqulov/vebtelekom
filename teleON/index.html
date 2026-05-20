@@ -151,7 +151,7 @@ input{
 <div class="top">
     <div><b>Talaba:</b> <span id="studentName">Kiritilmagan</span></div>
     <div><b>Savol:</b> <span id="qnum">1</span>/<span id="total"></span></div>
-    <div><b>Ball:</b> <span id="score">0</span></div>
+    
     <div><b>Qolgan vaqt:</b> <span id="timer"></span></div>
 </div>
 
@@ -262,13 +262,10 @@ window.startTest = function(){
         talaba + " (" + guruh + ")";
 
     
-
 document.getElementById("startModal").style.display = "none";
-
 testBoshlangan = true;
 
 };
-
 
 
 
@@ -345,10 +342,7 @@ function nextQuestion(){
         togri: q.togri,
         natija: natija
     });
-
-    document.getElementById("score").innerHTML = ball;
-
-    if(index < savollar.length - 1){
+if(index < savollar.length - 1){
         index++;
         showQuestion();
     }else{
@@ -554,7 +548,9 @@ function nazorat(sabab){
         );
     }
 
-    if(chiqishSoni >= 2){
+    
+if(chiqishSoni >= 3){
+
         warningShow(
             "Test oynasidan ikkinchi marta chiqildi. Test yakunlanadi."
         );

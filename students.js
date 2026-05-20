@@ -1,4 +1,5 @@
 const STUDENTS = [
+   { ism: "Tester", guruh: "tester01" },
 
     // 022-45
    { 
