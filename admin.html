@@ -108,8 +108,7 @@
                     <th>To'g'ri</th>
                     <th>Jami</th>
                     <th>Foiz</th>
-		    <th>Sana</th>
-          
+        	    <th>Sana</th>
                 </tr>
             </thead>
             <tbody id="natijalar">       </tbody>
@@ -169,18 +168,16 @@ vaqt.getFullYear() + " " +
 String(vaqt.getHours()).padStart(2,"0") + ":" +
 String(vaqt.getMinutes()).padStart(2,"0") + ":" +
 String(vaqt.getSeconds()).padStart(2,"0");
-
-
      tbody.innerHTML += `
-<tr>
-    <td>${i}</td>
+    <tr>
+        <td>${i}</td>
     <td>${data.ism}</td>
     <td>${data.mavzu}</td>
     <td>${data.togri}</td>
     <td>${data.jami}</td>
     <td class="${rang}">${data.foiz}%</td>
     <td>${sana}</td>
-</tr>
+    </tr>
 `;
         i++;
 
