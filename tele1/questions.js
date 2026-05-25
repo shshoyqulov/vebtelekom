@@ -1,133 +1,133 @@
 ﻿const SAVOLLAR = [
 
 {
-    savol: "Telekommunikatsiya fani asosan nimani o‘rgatadi?",
+    savol: "Telekommunikatsiya fanining asosiy vazifasi nimadan iborat?",
 
     variantlar: [
-        "Ma’lumotlarni masofadan uzatish, qayta ishlash, saqlash va yetkazib berish usullarini",
-        "Ma’lumotlarni masofadan uzatish, qayta ishlash, kompyuter dasturlarini yaratish, saqlash va yetkazib berish usullarini",
-        "Ma’lumotlarni ishlab chiqarish va uni taqsimlash, masofadan uzatish, qayta ishlash, saqlash va yetkazib berish usullarini",
-        "Ma’lumotlarni masofadan uzatish, qayta ishlash, dizayn xususiyatlarini, saqlash va yetkazib berish usullarini"
+        "Ma’lumotlarni masofadan uzatish va qayta ishlash usullarini o‘rganish",
+        "Ma’lumotlarni yaratish, saqlash, masofadan uzatish va qayta ishlash usullarini o‘rganish",
+        "Yangilik va xabarlarni saqlash, masofadan uzatish va qayta ishlash usullarini o‘rganish",
+        "Ma’lumotlarni kompyuter dasturlari va mobil qurilmalar yordamida masofadan uzatish usullarini o‘rganish"
     ],
 
-    togri: "Ma’lumotlarni masofadan uzatish, qayta ishlash, saqlash va yetkazib berish usullarini"
+    togri: "Ma’lumotlarni masofadan uzatish va qayta ishlash usullarini o‘rganish"
 },
 
 {
-    savol: "Telekommunikatsiyaning tarixiy zarurati nimadan kelib chiqqan?",
+    savol: "Dastlabki telekommunikatsiya vositalarining paydo bo‘lishiga asosiy sabab nima bo‘lgan?",
 
     variantlar: [
-        "Uzoq masofalarga axborotni tezkor yetkazish ehtiyojidan",
-        "Uzoq masofalarga axborotni tezkor qayta ishlash va kodlash ehtiyojidan",
-        "Uzoq masofalarga axborotni tezkor saqlash va nusxalash ehtiyojidan",
-        "Uzoq masofalarga axborotni tezkor uzatish va elektr energiyasini taqsimlash ehtiyojidan"
+        "Uzoq masofalarga xabarlarni tez yetkazish ehtiyoji",
+        "Ma’lumotlarni yozma shaklda saqlash zarurati",
+        "Savdo ma’lumotlarini markaziy tizimga yig‘ish ehtiyoji",
+        "Harbiy xaritalarni yaratish va tarqatish zarurati"
     ],
 
-    togri: "Uzoq masofalarga axborotni tezkor yetkazish ehtiyojidan"
+    togri: "Uzoq masofalarga xabarlarni tez yetkazish ehtiyoji"
 },
 
 {
-    savol: "Qadimgi aloqa vositalaridan biri sifatida qaysi usul qo‘llanilgan?",
+    savol: "Qadimgi davrlarda vizual aloqa vositasi sifatida nima ishlatilgan?",
 
     variantlar: [
-        "Signal olovlari va tutunli belgilar",
-        "Signal olovlari va kodlangan elektr belgilar",
-        "Signal olovlari va raqamli yorug‘lik impulslari",
-        "Signal olovlari va avtomatlashtirilgan optik uzatmalar"
+        "Olov va tutun yordamida signal berish",
+        "Kabutar orqali yozma xabar yuborish",
+        "Otliqlar orqali maxsus xatlar jo‘natish",
+        "Baraban tovushlari orqali xabar uzatish"
     ],
 
-    togri: "Signal olovlari va tutunli belgilar"
+    togri: "Olov va tutun yordamida signal berish"
 },
 
 {
-    savol: "Afrikaning ayrim hududlarida axborot uzatishda nima ishlatilgan?",
+    savol: "Afrika hududlarida tamtam barabanlari qanday maqsadda ishlatilgan?",
 
     variantlar: [
-        "Tamtam deb ataluvchi maxsus barabanlar",
-        "Tamtam deb ataluvchi maxsus elektr qurilmalar",
-        "Tamtam deb ataluvchi maxsus optik signal tizimlari",
-        "Tamtam deb ataluvchi maxsus radio uzatkichlar"
+        "Ovoz orqali kodlangan xabarlarni uzatish uchun",
+        "Harbiy qo‘shinlarni boshqarish uchun",
+        "Savdo karvonlarini chaqirish uchun",
+        "Marosim vaqtlarini belgilash uchun"
     ],
 
-    togri: "Tamtam deb ataluvchi maxsus barabanlar"
+    togri: "Ovoz orqali kodlangan xabarlarni uzatish uchun"
 },
 
 {
-    savol: "Qadimgi Eron imperiyasidagi davlat pochta tizimi qanday atalgan?",
+    savol: "Qadimgi Eron imperiyasidagi “Chaparchi xizmati” nimaga xizmat qilgan?",
 
     variantlar: [
-        "Chaparchi xizmati",
-        "Chaparchi uzatish tizimi",
-        "Chaparchi aloqa markazi",
-        "Chaparchi axborot tarmog‘i"
+        "Davlat xabarlarini stansiyalar orqali yetkazishga",
+        "Harbiy buyruqlarni radio orqali uzatishga",
+        "Savdo ma’lumotlarini yozib borishga",
+        "Signal olovlarini boshqarishga"
     ],
 
-    togri: "Chaparchi xizmati"
+    togri: "Davlat xabarlarini stansiyalar orqali yetkazishga"
 },
 
 {
-    savol: "Telekommunikatsiya tarixidagi eng muhim burilish qachon yuz berdi?",
+    savol: "Morse telegrafida axborot qanday shaklda uzatilgan?",
 
     variantlar: [
-        "19-asr o‘rtalarida elektr asosidagi aloqa paydo bo‘lganda",
-        "19-asr o‘rtalarida optik asosidagi aloqa paydo bo‘lganda",
-        "19-asr o‘rtalarida raqamli asosidagi aloqa paydo bo‘lganda",
-        "19-asr o‘rtalarida mexanik asosidagi aloqa paydo bo‘lganda"
+        "Nuqta va chiziqlardan iborat kod orqali",
+        "Raqamli impulslar va signal to‘lqinlari orqali",
+        "Ovozli signallar va yorug‘lik belgilar orqali",
+        "Matnli belgilar va grafik kodlar orqali"
     ],
 
-    togri: "19-asr o‘rtalarida elektr asosidagi aloqa paydo bo‘lganda"
-},
-
-{
-    savol: "Samuel Morse yaratgan telegraf qanday kod asosida ishlagan?",
-
-    variantlar: [
-        "Nuqta va chiziqlardan iborat Morse alifbosi asosida",
-        "Nuqta va raqamlardan iborat Morse alifbosi asosida",
-        "Nuqta va grafik belgilardan iborat Morse alifbosi asosida",
-        "Nuqta va elektromagnit impulslardan iborat Morse alifbosi asosida"
-    ],
-
-    togri: "Nuqta va chiziqlardan iborat Morse alifbosi asosida"
+    togri: "Nuqta va chiziqlardan iborat kod orqali"
 },
 
 {
     savol: "Telefon ixtirosining asosiy afzalligi nimada edi?",
 
     variantlar: [
-        "Ovozli aloqani masofadan amalga oshirish imkonini bergan",
-        "Ovozli aloqani raqamli kod orqali uzatish imkonini bergan",
-        "Ovozli aloqani faqat mahalliy tarmoqlarda amalga oshirish imkonini bergan",
-        "Ovozli aloqani optik signallar orqali amalga oshirish imkonini bergan"
+        "Ovozli aloqani masofadan amalga oshirish imkoniyatida",
+        "Yozma xabarlarni tezkor uzatish imkoniyatida",
+        "Raqamli ma’lumotlarni saqlash imkoniyatida",
+        "Kodlangan signallarni avtomatik qayta ishlash imkoniyatida"
     ],
 
-    togri: "Ovozli aloqani masofadan amalga oshirish imkonini bergan"
+    togri: "Ovozli aloqani masofadan amalga oshirish imkoniyatida"
 },
 
 {
-    savol: "Raqamli aloqa texnologiyalarining asosiy ustunligi nimada?",
+    savol: "Guglielmo Markoni telekommunikatsiya tarixida qanday yutuqqa erishgan?",
 
     variantlar: [
-        "Axborotni siqish, shifrlash va tezkor uzatish imkoniyatida",
-        "Axborotni siqish, dasturlash va tezkor uzatish imkoniyatida",
-        "Axborotni siqish, modellashtirish va tezkor uzatish imkoniyatida",
-        "Axborotni siqish, elektr energiyasiga aylantirish va tezkor uzatish imkoniyatida"
+        "Atlantika okeani orqali simsiz signal uzatishga",
+        "Birinchi telefon stansiyasini yaratishga",
+        "Raqamli signalni kodlash tizimini ishlab chiqishga",
+        "Optik aloqa orqali video uzatishga"
     ],
 
-    togri: "Axborotni siqish, shifrlash va tezkor uzatish imkoniyatida"
+    togri: "Atlantika okeani orqali simsiz signal uzatishga"
 },
 
 {
-    savol: "5G texnologiyasining muhim xususiyati qaysi?",
+    savol: "Raqamli texnologiyalar rivojlanishi natijasida qanday imkoniyat paydo bo‘ldi?",
 
     variantlar: [
-        "Yuqori tarmoqli kenglik va past kechikish imkoniyati",
-        "Yuqori tarmoqli kenglik va optik kodlash imkoniyati",
-        "Yuqori tarmoqli kenglik va analog uzatish imkoniyati",
-        "Yuqori tarmoqli kenglik va mexanik boshqaruv imkoniyati"
+        "Matn, rasm va videolarni raqamli uzatish imkoniyati",
+        "Faqat ovozli ma’lumotlarni yuqori sifatda uzatish imkoniyati",
+        "Signal olovlari orqali xabar uzatishni avtomatlashtirish imkoniyati",
+        "Yozma maktublarni sun’iy yo‘ldosh orqali yuborish imkoniyati"
     ],
 
-    togri: "Yuqori tarmoqli kenglik va past kechikish imkoniyati"
+    togri: "Matn, rasm va videolarni raqamli uzatish imkoniyati"
+},
+
+{
+    savol: "5G texnologiyasining muhim xususiyatlaridan biri qaysi?",
+
+    variantlar: [
+        "Past kechikish va yuqori tezlikda ma’lumot uzatish",
+        "Kodlangan ovozli signallarni analog shaklda uzatish",
+        "Mahalliy aloqa tizimlarini markazlashgan boshqarish",
+        "Matnli ma’lumotlarni optik disklar orqali uzatish"
+    ],
+
+    togri: "Past kechikish va yuqori tezlikda ma’lumot uzatish"
 }
 
 ];

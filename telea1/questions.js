@@ -1,78 +1,133 @@
 ﻿const SAVOLLAR = [
-    {
-        savol: "1-amaliy mashg‘ulotning asosiy vazifasi nima?",
-        variantlar: [
-            "Telekommunikatsiya haqida taqdimot tayyorlash",
-            "Kompyuter tarmog‘ini amaliy sozlash",
-            "Optik tolali kabelni ulash",
-            "Router konfiguratsiyasini bajarish"
-        ],
-        togri: "Telekommunikatsiya haqida taqdimot tayyorlash"
-    },
 
-    {
-        savol: "Taqdimot tayyorlashda birinchi navbatda nimaga e’tibor beriladi?",
-        variantlar: [
-            "Mavzuga mos ma’lumotlarni tanlashga",
-            "Faqat slayd ranglarini tanlashga",
-            "Kompyuter xotirasini tozalashga",
-            "Internet tezligini o‘lchashga"
-        ],
-        togri: "Mavzuga mos ma’lumotlarni tanlashga"
-    },
+{
+    savol: "Taqdimot tayyorlash vositalarining asosiy vazifasi nimadan iborat?",
 
-    {
-        savol: "Taqdimot tayyorlash vositalari nima uchun kerak?",
-        variantlar: [
-            "Ma’lumotni tartibli ko‘rsatish uchun",
-            "Signalni kuchaytirib uzatish uchun",
-            "Tarmoq kabelini tekshirish uchun",
-            "Serverni masofadan boshqarish uchun"
-        ],
-        togri: "Ma’lumotni tartibli ko‘rsatish uchun"
-    },
+    variantlar: [
+        "Ma’lumotlarni vizual va tushunarli shaklda namoyish etishdan",
+        "Ma’lumotlarni matematik formulalar yordamida vizual va tushunarli shaklda namoyish etishdan",
+        "Ma’lumotlarni matnli, rasmli va audio shaklda namoyish etishdan",
+        "Ma’lumotlarni faqat matn va rasm ko‘rinishida saqlashdan"
+    ],
 
-    {
-        savol: "Telekommunikatsiya haqidagi taqdimotda nimalar yoritilishi kerak?",
-        variantlar: [
-            "Mavzuga oid asosiy tushunchalar",
-            "Faqat dasturlash kodlari",
-            "Faqat matematik formulalar",
-            "Kompyuter narxlari ro‘yxati"
-        ],
-        togri: "Mavzuga oid asosiy tushunchalar"
-    },
+    togri: "Ma’lumotlarni vizual va tushunarli shaklda namoyish etishdan"
+},
 
-    {
-        savol: "Taqdimot mazmuni qanday bo‘lishi maqsadga muvofiq?",
-        variantlar: [
-            "Tushunarli va izchil tuzilgan",
-            "Juda uzun va tartibsiz yozilgan",
-            "Faqat rasmlardan iborat bo‘lgan",
-            "Mavzudan tashqari ma’lumotli"
-        ],
-        togri: "Tushunarli va izchil tuzilgan"
-    },
+{
+    savol: "Quyidagilardan qaysi biri taqdimot tayyorlash dasturiga misol bo‘la oladi?",
 
-    {
-        savol: "Taqdimotni taqdim etish jarayonida nima muhim?",
-        variantlar: [
-            "Fikrni aniq va ravon bayon qilish",
-            "Matnni juda tez o‘qib tugatish",
-            "Slaydlarni izohsiz ko‘rsatish",
-            "Faqat dizaynga e’tibor berish"
-        ],
-        togri: "Fikrni aniq va ravon bayon qilish"
-    },
+    variantlar: [
+        "Microsoft PowerPoint, Prezi",
+        "Visual Studio Code, Canva",
+        "Cisco Packet Tracer, Canva",
+        "Cisco Packet Tracer, Microsoft PowerPoint, Canva"
+    ],
 
-    {
-        savol: "Amaliy mashg‘ulot yakunida talaba qanday ko‘nikmaga ega bo‘lishi kerak?",
-        variantlar: [
-            "Mavzu bo‘yicha taqdimot tayyorlashga",
-            "Server operatsion tizimini o‘rnatishga",
-            "Optik kabelni payvandlashga",
-            "Mobil ilova yaratishga"
-        ],
-        togri: "Mavzu bo‘yicha taqdimot tayyorlashga"
-    }
+    togri: "Microsoft PowerPoint, Prezi"
+},
+
+{
+    savol: "Taqdimot slaydlarida matnning asosiy xususiyati qanday bo‘lishi kerak?",
+
+    variantlar: [
+        "Qisqa, aniq va tushunarli bo‘lishi",
+        "Qisqa va uzun jumlalardan iborat bo‘lishi",
+        "Qisqa va faqat texnik formulalar asosida yozilishi",
+        "Barcha ma’lumotlarni to‘liq paragraf shaklida berishi"
+    ],
+
+    togri: "Qisqa, aniq va tushunarli bo‘lishi"
+},
+
+{
+    savol: "Taqdimotda rasm va diagrammalardan foydalanishning asosiy maqsadi nimadan iborat?",
+
+    variantlar: [
+        "Ma’lumotni vizual tushunarli qilishdan",
+        "Slayd hajmini kattalashtirishdan",
+        "Matn miqdorini ko‘paytirishdan",
+        "Ma’lumotni estetik, e'tiborni o'ziga tortuvchi, jozibador qilishdan"
+    ],
+
+    togri: "Ma’lumotni vizual tushunarli qilishdan"
+},
+
+{
+    savol: "Telekommunikatsiya haqida taqdimotda qaysi ma’lumotlar yoritilishi maqsadga muvofiq?",
+
+    variantlar: [
+        "Texnologiyalar, aloqa vositalari va tarmoq tizimlari",
+        "Qurilmalar narxi va ishlab chiqaruvchilari",
+        "Texnologiyalar, aloqa vositalari, elektr jihozlarining ichki sxemalari",
+        "Qurilmalar narxi va ishlab chiqaruvchilari, kompyuter o‘yinlari va multimedia dasturlari"
+    ],
+
+    togri: "Texnologiyalar, aloqa vositalari va tarmoq tizimlari"
+},
+
+{
+    savol: "Taqdimotning kirish qismida asosan nima beriladi?",
+
+    variantlar: [
+        "Mavzu nomi va asosiy maqsad",
+        "Mavzuga doir kalit so'zlar",
+        "Mavzu annotatsiyasi",
+        "Mavzu rejasi"
+    ],
+
+    togri: "Mavzu nomi va asosiy maqsad"
+},
+
+{
+    savol: "Taqdimotda animatsiyalardan foydalanishning asosiy maqsadi nimadan iborat?",
+
+    variantlar: [
+        "Ma’lumotni bosqichma-bosqich tushuntirishdan",
+        "Ma’lumotni animatsiyon tushuntirishdan",
+        "Ma’lumotni rasmli va ovozli  tushuntirishdan",
+        "Matnlarni chiroyli taqdim etishdan"
+    ],
+
+    togri: "Ma’lumotni bosqichma-bosqich tushuntirishdan"
+},
+
+{
+    savol: "Taqdimotni taqdim etishda nutq qanday bo‘lishi kerak?",
+
+    variantlar: [
+        "Ravon, aniq va mavzuga mos bo‘lishi",
+        "Ravon, aniq, juda tez, uzluksiz bo‘lishi va mavzuga mos bo‘lishi",
+        "Faqat slayddagi matnni o‘qishdan iborat bo‘lishi",
+        "Texnik terminlarni izohsiz ishlatishdan iborat bo‘lishi"
+    ],
+
+    togri: "Ravon, aniq va mavzuga mos bo‘lishi"
+},
+
+{
+    savol: "Taqdimotni samarali namoyish qilish uchun qaysi vosita qo‘llaniladi?",
+
+    variantlar: [
+        "Proyektor yoki monitor",
+        "Proyektor yoki projektor, ekran",
+        "Kompyuter, proyektor yoki projektor, ekran",
+        "Kompyuter, mobil qurilma, proyektor yoki projektor, ekran"
+    ],
+
+    togri: "Proyektor yoki monitor"
+},
+
+{
+    savol: "Taqdimotning xulosa qismida odatda nima beriladi?",
+
+    variantlar: [
+        "Asosiy natijalar va yakuniy fikrlar",
+        "Mavzuning ilova qismi",
+        "Muallif haqida ma'lumotlar",
+        "Mavzuning ilova qismi va yakuniy fikrlar"
+    ],
+
+    togri: "Asosiy natijalar va yakuniy fikrlar"
+}
+
 ];

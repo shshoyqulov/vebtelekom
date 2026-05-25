@@ -1,78 +1,133 @@
 ﻿const SAVOLLAR = [
-    {
-        savol: "VPN texnologiyasining asosiy vazifasi nima?",
-        variantlar: [
-            "Internet orqali xavfsiz aloqa yaratish",
-            "Faqat signal kuchini oshirish",
-            "Kompyuter xotirasini kengaytirish",
-            "Printerlarni tarmoqqa ulash"
-        ],
-        togri: "Internet orqali xavfsiz aloqa yaratish"
-    },
 
-    {
-        savol: "VPN foydalanuvchi ma’lumotlarini qanday himoya qiladi?",
-        variantlar: [
-            "Ma’lumotlarni shifrlash orqali",
-            "Signalni analoglashtirish orqali",
-            "Kabelni qisqartirish orqali",
-            "Monitor yorqinligini oshirish orqali"
-        ],
-        togri: "Ma’lumotlarni shifrlash orqali"
-    },
+{
+    savol: "VPN texnologiyasining asosiy vazifasi nimadan iborat?",
 
-    {
-        savol: "AES algoritmi qanday shifrlash turiga kiradi?",
-        variantlar: [
-            "Simmetrik shifrlash turiga",
-            "Asimmetrik shifrlash turiga",
-            "Grafik kodlash turiga",
-            "Signal modulyatsiyasi turiga"
-        ],
-        togri: "Simmetrik shifrlash turiga"
-    },
+    variantlar: [
+        "Ochiq tarmoq orqali xavfsiz aloqa kanalini yaratishdan",
+        "Yopiq tarmoq orqali xavfsiz aloqa kanalini yaratishdan",
+        "Ma’lumotlarni analog shaklda uzatishdan",
+        "IP manzillarni fizik qurilmaga bog‘lashdan"
+    ],
 
-    {
-        savol: "RSA algoritmining asosiy xususiyati nima?",
-        variantlar: [
-            "Ochiq va yopiq kalit bilan ishlashi",
-            "Faqat bitta kalit ishlatishi",
-            "Signal amplitudasini oshirishi",
-            "Internet tezligini nazorat qilishi"
-        ],
-        togri: "Ochiq va yopiq kalit bilan ishlashi"
-    },
+    togri: "Ochiq tarmoq orqali xavfsiz aloqa kanalini yaratishdan"
+},
 
-    {
-        savol: "AES algoritmining afzalligi nimada?",
-        variantlar: [
-            "Tez va samarali ishlashida",
-            "Faqat analog signal uzatishida",
-            "Kabelsiz ishlashida",
-            "Printerlarni boshqarishida"
-        ],
-        togri: "Tez va samarali ishlashida"
-    },
+{
+    savol: "VPN texnologiyasida ma’lumotlar qanday himoyalanadi?",
 
-    {
-        savol: "VPN yoqilganda IP manzil bilan nima sodir bo‘ladi?",
-        variantlar: [
-            "Haqiqiy IP yashiriladi",
-            "IP manzil o‘chirib yuboriladi",
-            "IP analog signalga aylanadi",
-            "IP manzil o‘zgarmasdan qoladi"
-        ],
-        togri: "Haqiqiy IP yashiriladi"
-    },
+    variantlar: [
+        "Shifrlash algoritmlari yordamida",
+        "Shifrlash-deshifrlash algoritmlari, paketlarni analog shaklga aylantirish yordamida",
+        "Paketlarni analog shaklga aylantirish orqali",
+        "IP manzilni o‘chirib tashlash orqali"
+    ],
 
-    {
-        savol: "Masofadan ishlovchi kompaniya xodimlari uchun qaysi yechim muhim?",
-        variantlar: [
-            "VPN va shifrlangan aloqa",
-            "Faqat lokal printer tarmog‘i",
-            "Signal kuchaytirgich qurilmasi",
-            "Faqat Wi-Fi paroli"
-        ],
-        togri: "VPN va shifrlangan aloqa"
-    }
+    togri: "Shifrlash algoritmlari yordamida"
+},
+
+{
+    savol: "AES algoritmining asosiy xususiyati nimadan iborat?",
+
+    variantlar: [
+        "Simmetrik kalitli va tezkor ishlashidan",
+        "Ochiq kalit asosida ishlashidan",
+        "Asimmetrik kalitli va tezkor ishlashidan",
+        "IP manzillarni shifrlashidan"
+    ],
+
+    togri: "Simmetrik kalitli va tezkor ishlashidan"
+},
+
+{
+    savol: "RSA algoritmining asosiy xususiyati qaysi?",
+
+    variantlar: [
+        "Ochiq va yopiq kalitlar bilan ishlashida",
+        "Bir xil kalit bilan ma’lumotni ochishida",
+        "Ochiq kalitlar bilan ishlashida",
+        "Har xil kalit bilan ma’lumotni ochishida"
+    ],
+
+    togri: "Ochiq va yopiq kalitlar bilan ishlashida"
+},
+
+{
+    savol: "AES va RSA algoritmlarining asosiy farqlaridan biri nimada?",
+
+    variantlar: [
+        "AES simmetrik, RSA esa asimmetrik algoritm bo‘lishida",
+        "AES faqat IP manzillarni shifrlashida",
+        "RSA simmetrik, AES  esa asimmetrik algoritm bo‘lishida",
+        "AES paketlarni analog shaklda uzatishida"
+    ],
+
+    togri: "AES simmetrik, RSA esa asimmetrik algoritm bo‘lishida"
+},
+
+{
+    savol: "VPN yoqilganda IP manzil qanday holatga keladi?",
+
+    variantlar: [
+        "VPN server IP manzili orqali yashiriladi",
+        "IP manzil avtomatik o‘chiriladi",
+        "VPN server IP manzilsiz yashiriladi",
+        "Faqat lokal tarmoqda ishlaydi"
+    ],
+
+    togri: "VPN server IP manzili orqali yashiriladi"
+},
+
+{
+    savol: "HTTPS saytlarida AES va RSA qanday qo‘llaniladi?",
+
+    variantlar: [
+        "RSA ulanishni himoyalashda, AES esa ma’lumot uzatishda",
+        "AES IP manzilni yashirishda, RSA signalni kuchaytirishda",
+        "RSA paketlarni analog shaklda yuborishda",
+        "AES va RSA faqat lokal tarmoqlarda ishlashda"
+    ],
+
+    togri: "RSA ulanishni himoyalashda, AES esa ma’lumot uzatishda"
+},
+
+{
+    savol: "End-to-end shifrlashning asosiy maqsadi nimadan iborat?",
+
+    variantlar: [
+        "Ma’lumotni faqat yuboruvchi va qabul qiluvchi o‘qiy olishini ta’minlashdan",
+        "Ma’lumotni faqat qabul qiluvchi o‘qiy olishini ta’minlashdan",
+        "Paketlarni tezroq uzatishdan",
+        "IP manzillarni avtomatik almashtirishdan"
+    ],
+
+    togri: "Ma’lumotni faqat yuboruvchi va qabul qiluvchi o‘qiy olishini ta’minlashdan"
+},
+
+{
+    savol: "Kompaniya xodimlari masofadan ishlaganda VPN nima uchun kerak bo‘ladi?",
+
+    variantlar: [
+        "Korporativ ma’lumotlarni xavfsiz uzatish uchun",
+        "Shaxsiy ma’lumotlarni xavfli uzatish uchun",
+        "Shaxsiy ma’lumotlarni xavfsiz uzatish uchun",
+        "Paketlarni analog shaklda yuborish uchun"
+    ],
+
+    togri: "Korporativ ma’lumotlarni xavfsiz uzatish uchun"
+},
+
+{
+    savol: "Onlayn banking tizimlarida AES va RSA algoritmlarining qo‘llanilishidan asosiy maqsad nima?",
+
+    variantlar: [
+        "Moliyaviy ma’lumotlarni himoyalash va autentifikatsiyani ta’minlash",
+        "Moliyaviy ma’lumotlarni himoyalash va avtorizatsiyani ta’minlash",
+        "IP manzillarni analog shaklda uzatish",
+        "Moliyaviy ma’lumotlarni himoyalash va identifikatsiyani ta’minlash"
+    ],
+
+    togri: "Moliyaviy ma’lumotlarni himoyalash va autentifikatsiyani ta’minlash"
+}
+
 ];

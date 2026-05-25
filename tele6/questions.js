@@ -1,221 +1,133 @@
 ﻿const SAVOLLAR = [
-    {
-        savol: "Kompyuter tarmoqlarida ma’lumot uzatishda asosan qaysi texnologiyalar ishlatiladi?",
-        variantlar: [
-            "Kanallar va paketlar kommutatsiyasi",
-            "Faqat optik va analog uzatish",
-            "Signal va amplituda boshqaruvi",
-            "Router va modem konfiguratsiyasi"
-        ],
-        togri: "Kanallar va paketlar kommutatsiyasi"
-    },
 
-    {
-        savol: "Kanallar kommutatsiyasi qanday prinsip asosida ishlaydi?",
-        variantlar: [
-            "Oldindan doimiy aloqa kanali o‘rnatiladi",
-            "Ma’lumotlar paketlarga bo‘lib yuboriladi",
-            "Signal routerlarda qayta ishlanadi",
-            "Barcha qurilmalar umumiy kanal ishlatadi"
-        ],
-        togri: "Oldindan doimiy aloqa kanali o‘rnatiladi"
-    },
+{
+    savol: "Kommutatsiya texnologiyalarining asosiy vazifasi nimadan iborat?",
 
-    {
-        savol: "Circuit Switching texnologiyasining asosiy xususiyati nima?",
-        variantlar: [
-            "Aloqa davomida kanal band bo‘lib turadi",
-            "Paketlar turli yo‘llardan uzatiladi",
-            "Har bir paket mustaqil yo‘naltiriladi",
-            "Ma’lumotlar faqat qisqa bloklarda uzatiladi"
-        ],
-        togri: "Aloqa davomida kanal band bo‘lib turadi"
-    },
+    variantlar: [
+        "Tarmoqda ma’lumot uzatishni tashkil qilishdan",
+        "Kompyuter qurilmalarini markaziy boshqarishdan",
+        "Ma’lumotlarni qattiq diskda saqlashdan",
+        "Signal amplitudasini avtomatik boshqarishdan"
+    ],
 
-    {
-        savol: "Kanallar kommutatsiyasining eng mashhur misoli qaysi?",
-        variantlar: [
-            "An’anaviy telefon tarmoqlari",
-            "Elektron pochta tizimlari",
-            "Bulutli saqlash xizmatlari",
-            "Ijtimoiy tarmoq platformalari"
-        ],
-        togri: "An’anaviy telefon tarmoqlari"
-    },
+    togri: "Tarmoqda ma’lumot uzatishni tashkil qilishdan"
+},
 
-    {
-        savol: "Kanallar kommutatsiyasida birinchi bosqich nima hisoblanadi?",
-        variantlar: [
-            "Ulanishni o‘rnatish jarayoni",
-            "Paketlarni qayta yig‘ish",
-            "Signalni siqish jarayoni",
-            "Paketlarni marshrutlash bosqichi"
-        ],
-        togri: "Ulanishni o‘rnatish jarayoni"
-    },
+{
+    savol: "Kanallar kommutatsiyasining (Circuit Switching) asosiy xususiyati nimada?",
 
-    {
-        savol: "Kanallar kommutatsiyasida kanal bo‘sh bo‘lmasa nima yuz beradi?",
-        variantlar: [
-            "Band signali yuboriladi",
-            "Paketlar avtomatik bo‘linadi",
-            "Router qayta ishga tushadi",
-            "Signal kuchaytirib yuboriladi"
-        ],
-        togri: "Band signali yuboriladi"
-    },
+    variantlar: [
+        "Aloqa uchun doimiy va eksklyuziv kanal ajratilishida",
+        "Ma’lumotlarning paketlarga bo‘linib uzatilishida",
+        "Paketlarning turli yo‘llar orqali yuborilishida",
+        "Tarmoq resurslarining umumiy foydalanilishida"
+    ],
 
-    {
-        savol: "Kanallar kommutatsiyasining afzalliklaridan biri qaysi?",
-        variantlar: [
-            "Barqaror va sifatli aloqa ta’minlaydi",
-            "Paketlarni turli yo‘llarga yuboradi",
-            "Resurslarni doimiy tejab ishlaydi",
-            "Kanalni barcha foydalanuvchi bo‘lishadi"
-        ],
-        togri: "Barqaror va sifatli aloqa ta’minlaydi"
-    },
+    togri: "Aloqa uchun doimiy va eksklyuziv kanal ajratilishida"
+},
 
-    {
-        savol: "Kanallar kommutatsiyasining asosiy kamchiligi nima?",
-        variantlar: [
-            "Resurslarning samarasiz ishlatilishi",
-            "Paketlarni qayta yig‘ish qiyinligi",
-            "Signalni manzillashning murakkabligi",
-            "Paketlarning tartibsiz yetib kelishi"
-        ],
-        togri: "Resurslarning samarasiz ishlatilishi"
-    },
+{
+    savol: "Kanallar kommutatsiyasining eng mashhur misoli qaysi?",
 
-    {
-        savol: "FDM texnologiyasi nimaga asoslanadi?",
-        variantlar: [
-            "Chastota diapazonini bo‘lishga",
-            "Vaqt oralig‘ini bo‘lib uzatishga",
-            "Paketlarni segmentlarga ajratishga",
-            "Signalni qayta kodlash jarayoniga"
-        ],
-        togri: "Chastota diapazonini bo‘lishga"
-    },
+    variantlar: [
+        "An’anaviy analog telefon tarmoqlari",
+        "Internet orqali fayl almashish tizimlari",
+        "Elektron pochta xizmatlari",
+        "Bulutli ma’lumot saqlash tizimlari"
+    ],
 
-    {
-        savol: "TDM texnologiyasi qanday ishlaydi?",
-        variantlar: [
-            "Har foydalanuvchiga vaqt oralig‘i ajratiladi",
-            "Har signal alohida kabel orqali uzatiladi",
-            "Paketlar turli routerlarga yuboriladi",
-            "Signal chastotasi avtomatik o‘zgaradi"
-        ],
-        togri: "Har foydalanuvchiga vaqt oralig‘i ajratiladi"
-    },
+    togri: "An’anaviy analog telefon tarmoqlari"
+},
 
-    {
-        savol: "Packet Switching texnologiyasida ma’lumotlar qanday uzatiladi?",
-        variantlar: [
-            "Kichik paketlarga bo‘linib uzatiladi",
-            "Doimiy kanal orqali uzatiladi",
-            "Faqat analog signal ko‘rinishida uzatiladi",
-            "Bitta katta blok sifatida yuboriladi"
-        ],
-        togri: "Kichik paketlarga bo‘linib uzatiladi"
-    },
+{
+    savol: "Kanallar kommutatsiyasida ulanish o‘rnatish bosqichida qanday jarayon bajariladi?",
 
-    {
-        savol: "Paketlar kommutatsiyasining asosiy qo‘llanilish sohasi qaysi?",
-        variantlar: [
-            "Internet tarmoqlari",
-            "Analog telefon liniyalari",
-            "Elektr uzatish tizimlari",
-            "Radioeshittirish qurilmalari"
-        ],
-        togri: "Internet tarmoqlari"
-    },
+    variantlar: [
+        "Qurilmalar orasidagi aloqa yo‘li tayyorlanadi",
+        "Ma’lumotlar paketlarga bo‘linadi",
+        "Paketlar routerlar orqali yo‘naltiriladi",
+        "Ma’lumotlar qayta yig‘iladi"
+    ],
 
-    {
-        savol: "Packet Switching texnologiyasida doimiy fizik ulanish talab qilinadimi?",
-        variantlar: [
-            "Doimiy ulanish talab qilinmaydi",
-            "Har doim maxsus kanal kerak bo‘ladi",
-            "Faqat optik tarmoqlarda talab qilinadi",
-            "Barcha routerlar bir xil yo‘l ishlatadi"
-        ],
-        togri: "Doimiy ulanish talab qilinmaydi"
-    },
+    togri: "Qurilmalar orasidagi aloqa yo‘li tayyorlanadi"
+},
 
-    {
-        savol: "Paket tarkibidagi Header qismi nimani saqlaydi?",
-        variantlar: [
-            "Manzil va xizmat ma’lumotlarini",
-            "Faqat foydali yuk qismini",
-            "Signal kuchlanish qiymatini",
-            "Tasvir va audio fayllarni"
-        ],
-        togri: "Manzil va xizmat ma’lumotlarini"
-    },
+{
+    savol: "FDM texnologiyasining asosiy mohiyati nimadan iborat?",
 
-    {
-        savol: "Payload qismi nimani o‘z ichiga oladi?",
-        variantlar: [
-            "Asosiy uzatilayotgan ma’lumotni",
-            "Paketning tugash belgisini",
-            "Marshrutlash jadvalini",
-            "Signal chastota qiymatini"
-        ],
-        togri: "Asosiy uzatilayotgan ma’lumotni"
-    },
+    variantlar: [
+        "Chastota diapazonini kichik bo‘laklarga ajratishdan",
+        "Ma’lumotlarni vaqt oralig‘ida uzatishdan",
+        "Paketlarni tartib raqamiga ko‘ra yig‘ishdan",
+        "Bir nechta paketlarni bitta segmentga birlashtirishdan"
+    ],
 
-    {
-        savol: "Store and Forward prinsipi nimani anglatadi?",
-        variantlar: [
-            "Paketlarni saqlab keyin uzatishni",
-            "Signalni to‘g‘ridan-to‘g‘ri kuchaytirishni",
-            "Kanalni oldindan band qilishni",
-            "Paketlarni analog signalga aylantirishni"
-        ],
-        togri: "Paketlarni saqlab keyin uzatishni"
-    },
+    togri: "Chastota diapazonini kichik bo‘laklarga ajratishdan"
+},
 
-    {
-        savol: "Segmentatsiya jarayonida nima amalga oshiriladi?",
-        variantlar: [
-            "Katta fayl paketlarga bo‘linadi",
-            "Signal chastotasi kamaytiriladi",
-            "Kanal tezligi o‘zgartiriladi",
-            "Paketlar qayta yig‘iladi"
-        ],
-        togri: "Katta fayl paketlarga bo‘linadi"
-    },
+{
+    savol: "TDM texnologiyasida ma’lumot uzatish qanday amalga oshiriladi?",
 
-    {
-        savol: "Paketlar kommutatsiyasining asosiy afzalligi nima?",
-        variantlar: [
-            "Tarmoq resurslari samarali ishlatiladi",
-            "Har foydalanuvchi alohida kanal oladi",
-            "Signal hech qachon kechikmaydi",
-            "Kanal doim bo‘sh holatda qoladi"
-        ],
-        togri: "Tarmoq resurslari samarali ishlatiladi"
-    },
+    variantlar: [
+        "Har bir foydalanuvchiga qisqa vaqt oralig‘i ajratish orqali",
+        "Har bir paket uchun alohida kabel ajratish orqali",
+        "Signal amplitudasini o‘zgartirish orqali",
+        "Paketlarni turli routerlarga yuborish orqali"
+    ],
 
-    {
-        savol: "Packet Switching texnologiyasining kamchiligi qaysi?",
-        variantlar: [
-            "Kechikish yuzaga kelishi mumkin",
-            "Kanal doimiy band bo‘lib qoladi",
-            "Aloqa faqat analog ishlaydi",
-            "Paketlar bo‘linmay uzatiladi"
-        ],
-        togri: "Kechikish yuzaga kelishi mumkin"
-    },
+    togri: "Har bir foydalanuvchiga qisqa vaqt oralig‘i ajratish orqali"
+},
 
-    {
-        savol: "Datagram tarmoqlarida paketlar qanday uzatiladi?",
-        variantlar: [
-            "Har biri mustaqil yo‘naltiriladi",
-            "Faqat bitta yo‘ldan uzatiladi",
-            "Doimiy kanal orqali yuboriladi",
-            "Signal bilan birga saqlanadi"
-        ],
-        togri: "Har biri mustaqil yo‘naltiriladi"
-    }
+{
+    savol: "Paketlar kommutatsiyasining (Packet Switching) asosiy xususiyati nimada?",
+
+    variantlar: [
+        "Ma’lumotlarni paketlarga bo‘lib uzatishda",
+        "Aloqa uchun doimiy kanal ajratilishida",
+        "Signalni uzluksiz uzatishda",
+        "Tarmoq resurslarini bitta foydalanuvchiga biriktirishda"
+    ],
+
+    togri: "Ma’lumotlarni paketlarga bo‘lib uzatishda"
+},
+
+{
+    savol: "Paketlar kommutatsiyasida Header qismida qanday ma’lumotlar bo‘ladi?",
+
+    variantlar: [
+        "IP manzil va paket tartib raqami",
+        "Faylning grafik ko‘rinishi",
+        "Signal amplitudasi va chastotasi",
+        "Ma’lumotning siqilgan nusxasi"
+    ],
+
+    togri: "IP manzil va paket tartib raqami"
+},
+
+{
+    savol: "Paketlar kommutatsiyasidagi “Store and Forward” prinsipi nimani anglatadi?",
+
+    variantlar: [
+        "Paketlarni saqlab, keyin kerakli yo‘nalishga uzatishni",
+        "Signalni doimiy kanal orqali uzatishni",
+        "Barcha paketlarni bir vaqtda yuborishni",
+        "Paketlarni siqilgan holda saqlashni"
+    ],
+
+    togri: "Paketlarni saqlab, keyin kerakli yo‘nalishga uzatishni"
+},
+
+{
+    savol: "Datagram tarmoqlarining asosiy xususiyati nimada?",
+
+    variantlar: [
+        "Har bir paketning mustaqil uzatilishida",
+        "Barcha paketlarning bitta yo‘ldan uzatilishida",
+        "Aloqa uchun fizik kanal ajratilishida",
+        "Paketlarning oldindan tartiblanishida"
+    ],
+
+    togri: "Har bir paketning mustaqil uzatilishida"
+}
+
 ];

@@ -1,78 +1,133 @@
 ﻿const SAVOLLAR = [
-    {
-        savol: "Optik tolali aloqa tizimida axborot qanday uzatiladi?",
-        variantlar: [
-            "Yorug‘lik impulslari orqali",
-            "Elektr toki orqali",
-            "Magnit maydon orqali",
-            "Radio signallari orqali"
-        ],
-        togri: "Yorug‘lik impulslari orqali"
-    },
 
-    {
-        savol: "Optik signal uzatishda qaysi qurilmalar muhim hisoblanadi?",
-        variantlar: [
-            "Lazer va optik modulyatorlar",
-            "Faqat printer va monitorlar",
-            "Faqat modem va klaviaturalar",
-            "Elektr generatorlari va transformatorlar"
-        ],
-        togri: "Lazer va optik modulyatorlar"
-    },
+{
+    savol: "Optik tolali aloqa texnologiyasining asosiy mohiyati nimadan iborat?",
 
-    {
-        savol: "Grafik tahlil orqali nimani aniqlash mumkin?",
-        variantlar: [
-            "Signal yo‘qotishlari va buzilishlarini",
-            "Kompyuter xotira hajmini",
-            "Monitor ekran o‘lchamini",
-            "Internet narxini"
-        ],
-        togri: "Signal yo‘qotishlari va buzilishlarini"
-    },
+    variantlar: [
+        "Axborotni yorug‘lik impulslari orqali uzatishdan",
+        "Signalni elektr toki va yorug'lik orqali uzatishdan",
+        "Ma’lumotlarni yorug'lik magnit impulslar yordamida uzatishdan",
+        "Analog signallarni raqamli to‘lqinlar orqali uzatishdan"
+    ],
 
-    {
-        savol: "Optik signalning amplitudasi nimani bildiradi?",
-        variantlar: [
-            "Signal intensivligini",
-            "Kabel uzunligini",
-            "Tarmoq foydalanuvchilari sonini",
-            "Router portlari miqdorini"
-        ],
-        togri: "Signal intensivligini"
-    },
+    togri: "Axborotni yorug‘lik impulslari orqali uzatishdan"
+},
 
-    {
-        savol: "Dispersiya hodisasi qanday muammoga olib keladi?",
-        variantlar: [
-            "Signal buzilishiga va kengayishiga",
-            "Signalning butunlay yo‘qolishiga",
-            "Kabelning qizib ketishiga",
-            "Elektr kuchlanishining ortishiga"
-        ],
-        togri: "Signal buzilishiga va kengayishiga"
-    },
+{
+    savol: "Optik signal uzatishda qaysi qurilma yorug‘lik manbai sifatida ishlatiladi?",
 
-    {
-        savol: "Optik signalni modellashtirish uchun qaysi dasturlar ishlatiladi?",
-        variantlar: [
-            "MATLAB va Python",
-            "Paint va Word",
-            "Excel va PowerPoint",
-            "Chrome va Telegram"
-        ],
-        togri: "MATLAB va Python"
-    },
+    variantlar: [
+        "Lazer va optik modulyator",
+        "Router va switch",
+        "optik modulyator va Router",
+        "Lazer va repeater"
+    ],
 
-    {
-        savol: "Optik aloqa tizimlarining asosiy afzalligi nima?",
-        variantlar: [
-            "Yuqori tezlikda axborot uzatishi",
-            "Faqat qisqa masofada ishlashi",
-            "Faqat analog signal uzatishi",
-            "Internetga ulanmasdan ishlashi"
-        ],
-        togri: "Yuqori tezlikda axborot uzatishi"
-    }
+    togri: "Lazer va optik modulyator"
+},
+
+{
+    savol: "Optik signal tahlilida muhim parametrlar qaysilar?",
+
+    variantlar: [
+        "Intensivlik, chastota va faza",
+        " amplituda va chastota",
+        "signal quvvati va chastotasi",
+        "Kabel uzunligi va yorug'lik kuchi"
+    ],
+
+    togri: "Intensivlik, chastota va faza"
+},
+
+{
+    savol: "Grafik tahlil yordamida qanday holatlar aniqlanadi?",
+
+    variantlar: [
+        "Signal yo‘qotishlari va dispersiya holatlari",
+        "Signal quvvati va dispersiya holatlari",
+        "Signal quvvati va dispersiya va sinish holatlari",
+        "Signal yo‘qotishlari va intensivlik"
+    ],
+
+    togri: "Signal yo‘qotishlari va dispersiya holatlari"
+},
+
+{
+    savol: "Dispersiya hodisasi nimaga olib keladi?",
+
+    variantlar: [
+        "Signal impulslarining yoyilishiga",
+        "Signal amplitudasining doimiy bo‘lishiga",
+        "Signalning analog shaklga o‘tishiga",
+        "Signalning quvvati yoyilishi va oshishiga"
+    ],
+
+    togri: "Signal impulslarining yoyilishiga"
+},
+
+{
+    savol: "Optik signal uzatishda yutilish hodisasi nimani anglatadi?",
+
+    variantlar: [
+        "Signal quvvatining uzatish davomida kamayishini",
+        "Signal chastotasining kamyishini",
+        "Signal amplitudasining doimiy saqlanishini",
+        "Signalning amplitudasining kamayishini"
+    ],
+
+    togri: "Signal quvvatining uzatish davomida kamayishini"
+},
+
+{
+    savol: "MATLAB yoki Python dasturlaridan foydalanishning asosiy maqsadi nimadan iborat?",
+
+    variantlar: [
+        "Optik signal tarqalishini modellashtirishdan",
+        "Elektr signali  tarqalishini modellashtirishdan",
+        "Optik signal chastotasini  modellashtirishdan",
+        "Optik signal amplitudasini modellashtirishdan"
+    ],
+
+    togri: "Optik signal tarqalishini modellashtirishdan"
+},
+
+{
+    savol: "Ideal va real signalni taqqoslashning asosiy maqsadi nimada?",
+
+    variantlar: [
+        "Shovqin va kuchaytirgich ta’sirini aniqlashda",
+        "Signal amplitudasini kattaligini aniqlashda",
+        "Signal kuchiga qarab kabel uzunligini aniqlashda ",
+        "Signal amplitudasi va chastotasini kattaligini aniqlashda"
+    ],
+
+    togri: "Shovqin va kuchaytirgich ta’sirini aniqlashda"
+},
+
+{
+    savol: "Optik signalning sinusoidal shaklida amplituda qanday ma’noni anglatadi?",
+
+    variantlar: [
+        "Signalning maksimal qiymatini",
+        "Signalning uzatish tezligini",
+        "Signalning paket sonini",
+        "Signalning IP manzilini"
+    ],
+
+    togri: "Signalning maksimal qiymatini"
+},
+
+{
+    savol: "Grafik tahlilda shovqin ta’siri qanday namoyon bo‘ladi?",
+
+    variantlar: [
+        "Signal shaklining buzilishi orqali",
+        "Signal amplitudasining doimiy qolishi orqali",
+        "Signalning analog shaklga o‘tishi orqali",
+        "Signalning chastotasiz uzatilishi orqali"
+    ],
+
+    togri: "Signal shaklining buzilishi orqali"
+}
+
 ];

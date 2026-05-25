@@ -1,78 +1,133 @@
 ﻿const SAVOLLAR = [
-    {
-        savol: "5G texnologiyasining asosiy afzalligi nima?",
-        variantlar: [
-            "Yuqori tezlik va past kechikish",
-            "Faqat analog signal bilan ishlashi",
-            "Internetni cheklangan holda uzatishi",
-            "Faqat telefon qo‘ng‘iroqlariga xizmat qilishi"
-        ],
-        togri: "Yuqori tezlik va past kechikish"
-    },
 
-    {
-        savol: "5G arxitekturasida UE nimani anglatadi?",
-        variantlar: [
-            "Foydalanuvchi qurilmasini",
-            "Markaziy server tizimini",
-            "Optik kabel turini",
-            "Signal kuchaytirgichni"
-        ],
-        togri: "Foydalanuvchi qurilmasini"
-    },
+{
+    savol: "5G texnologiyasining asosiy afzalliklaridan biri qaysi?",
 
-    {
-        savol: "RAN qisqartmasi nimani bildiradi?",
-        variantlar: [
-            "Radio kirish tarmog‘ini",
-            "Raqamli aloqa nazoratini",
-            "Routerlarni avtomatik nazoratini",
-            "Regional axborot markazini"
-        ],
-        togri: "Radio kirish tarmog‘ini"
-    },
+    variantlar: [
+        "Yuqori tezlik va past kechikishni ta’minlashi",
+        "Signalni raqamli va analog shaklda uzatishi",
+        "Telefon liniyalari orqali ishlashi",
+        "Ma’lumotlarni lokal xotirada saqlashi"
+    ],
 
-    {
-        savol: "5G tarmoqlarida Edge Computing nima uchun kerak?",
-        variantlar: [
-            "Ma’lumotni foydalanuvchiga yaqin qayta ishlash uchun",
-            "Faqat signal amplitudasini oshirish uchun",
-            "Kabel uzunligini qisqartirish uchun",
-            "Telefon xotirasini kengaytirish uchun"
-        ],
-        togri: "Ma’lumotni foydalanuvchiga yaqin qayta ishlash uchun"
-    },
+    togri: "Yuqori tezlik va past kechikishni ta’minlashi"
+},
 
-    {
-        savol: "Network slicing texnologiyasi nimani ta’minlaydi?",
-        variantlar: [
-            "Tarmoqni alohida virtual qismlarga ajratishni",
-            "Signalni analog shaklga o‘tkazishni",
-            "Faqat Wi-Fi signalini kuchaytirishni",
-            "Router portlarini avtomatik yopishni"
-        ],
-        togri: "Tarmoqni alohida virtual qismlarga ajratishni"
-    },
+{
+    savol: "5G arxitekturasidagi UE qisqartmasi nimani anglatadi?",
 
-    {
-        savol: "5G tarmoqlarida SDN texnologiyasi qanday vazifani bajaradi?",
-        variantlar: [
-            "Tarmoqni dasturiy boshqarishni",
-            "Faqat elektr signalini uzatishni",
-            "Monitor tasvirini boshqarishni",
-            "Printerlarni tarmoqqa ulashni"
-        ],
-        togri: "Tarmoqni dasturiy boshqarishni"
-    },
+    variantlar: [
+        "Foydalanuvchi qurilmasini",
+        "Asosiy tarmoq qurilmasini",
+        "Marshrutlash protokolini",
+        "Signal kuchaytirgich tizimini"
+    ],
 
-    {
-        savol: "5G texnologiyasi qaysi sohalarda keng qo‘llaniladi?",
-        variantlar: [
-            "IoT va aqlli tizimlarda",
-            "Faqat analog telefoniyada",
-            "Faqat radioeshittirishda",
-            "Faqat lokal printer tarmoqlarida"
-        ],
-        togri: "IoT va aqlli tizimlarda"
-    }
+    togri: "Foydalanuvchi qurilmasini"
+},
+
+{
+    savol: "RAN (Radio Access Network) ning asosiy vazifasi nimadan iborat?",
+
+    variantlar: [
+        "Qurilmalarni radio aloqa orqali tarmoqqa ulashdan",
+        "Ma’lumotlarni lokal diskka saqlashdan",
+        "Signal amplitudasini nazorat qilishdan",
+        "Radio signal tarmog'ini  nazorat qilishdan"
+    ],
+
+    togri: "Qurilmalarni radio aloqa orqali tarmoqqa ulashdan"
+},
+
+{
+    savol: "5G Core Network qanday vazifani bajaradi?",
+
+    variantlar: [
+        "Tarmoq boshqaruvi va xizmatlarni tashkil qilishni",
+        "Signalni tarmoq uchun analog shaklda uzatishni",
+        "Qurilmalarni tarmoqda fizik kabel bilan bog‘lashni",
+        "Grafik tarmoq interfeyslarni yaratishni"
+    ],
+
+    togri: "Tarmoq boshqaruvi va xizmatlarni tashkil qilishni"
+},
+
+{
+    savol: "Edge Computing texnologiyasining asosiy mohiyati nimada?",
+
+    variantlar: [
+        "Hisoblash jarayonlarini foydalanuvchiga yaqin joyda bajarishida",
+        "Ma’lumotlarni faqat markaziy serverda qayta ishlashida",
+        "Ma’lumotlarni faqat markaziy serverda hisob-kitob qilishda",
+        "Hisoblash jarayonlarini foydalanuvchiga uzoq joyda bajarishida"
+    ],
+
+    togri: "Hisoblash jarayonlarini foydalanuvchiga yaqin joyda bajarishida"
+},
+
+{
+    savol: "Network Slicing texnologiyasining asosiy vazifasi nimadan iborat?",
+
+    variantlar: [
+        "Bitta fizik tarmoqni bir nechta virtual tarmoqlarga ajratishdan",
+        "Tarmoq resursini teng taqsimlashdan",
+        "Bir nechta fizik tarmoqni bitta virtual tarmoqlarga ajratishdan",
+        "Tarmoq resursini ehtiyojga qarab taqsimlashdan"
+    ],
+
+    togri: "Bitta fizik tarmoqni bir nechta virtual tarmoqlarga ajratishdan"
+},
+
+{
+    savol: "5G texnologiyasida SDN texnologiyasining asosiy vazifasi nimadan iborat?",
+
+    variantlar: [
+        "Tarmoqni dasturiy boshqarishdan",
+        "Tarmoqni qurilmalarini  boshqarishdan",
+        "Tarmoqni dasturiy va qurilmalarini  boshqarishdan",
+        "Tarmoqni algoritmik, dasturiy va qurilmalarini  boshqarishdan"
+    ],
+
+    togri: "Tarmoqni dasturiy boshqarishdan"
+},
+
+{
+    savol: "5G texnologiyasining amaliy qo‘llanilish sohalaridan biri qaysi?",
+
+    variantlar: [
+        "Aqlli shahar va IoT tizimlari",
+        "IoT tizimlari, optik tarmoqlar, Wi-Fi",
+        "IoT tizimlari, mobil tarmoqlar",
+        "IoT tizimlari, mobil tarmoqlar, Wi-Fi"
+    ],
+
+    togri: "Aqlli shahar va IoT tizimlari"
+},
+
+{
+    savol: "4G va 5G texnologiyalari o‘rtasidagi asosiy farqlardan biri nimada?",
+
+    variantlar: [
+        "5G texnologiyasining kechikishi ancha past bo‘lishida",
+        "4G texnologiyasining analog signal asosida ishlashida",
+        "5G texnologiyasining telefon liniyasiga bog‘liq ishlashida",
+        "4G texnologiyasining optik signal ishlatishida"
+    ],
+
+    togri: "5G texnologiyasining kechikishi ancha past bo‘lishida"
+},
+
+{
+    savol: "5G texnologiyasining asosiy muammolaridan biri qaysi?",
+
+    variantlar: [
+        "Infratuzilma xarajatlarining yuqoriligi",
+        "Signalning mobil tarmoqda analog shaklda ishlashi",
+        "Mobil qurilmalarda IP manzillarning mavjud emasligi",
+        "Kompyuterlarni tarmoqqa ulab bo‘lmasligi"
+    ],
+
+    togri: "Infratuzilma xarajatlarining yuqoriligi"
+}
+
 ];

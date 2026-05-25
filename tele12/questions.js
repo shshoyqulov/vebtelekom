@@ -1,166 +1,133 @@
 ﻿const SAVOLLAR = [
-    {
-        savol: "VoIP texnologiyasi nimani anglatadi?",
-        variantlar: [
-            "Ovozli aloqani IP orqali uzatishni",
-            "Faqat radio signalni kuchaytirishni",
-            "Telefon liniyasini optikaga almashtirishni",
-            "Internet sahifalarini saqlashni"
-        ],
-        togri: "Ovozli aloqani IP orqali uzatishni"
-    },
 
-    {
-        savol: "VoIP tizimida ovoz avval qanday shaklga o‘tkaziladi?",
-        variantlar: [
-            "Raqamli signal shakliga",
-            "Optik nur shakliga",
-            "Magnit maydon shakliga",
-            "Radioeshittirish shakliga"
-        ],
-        togri: "Raqamli signal shakliga"
-    },
+{
+    savol: "VoIP texnologiyasining asosiy vazifasi nimadan iborat?",
 
-    {
-        savol: "VoIP texnologiyasida ovoz qanday birliklarga bo‘linadi?",
-        variantlar: [
-            "IP-paketlarga",
-            "Optik tolalarga",
-            "Telefon raqamlariga",
-            "Radio kanallarga"
-        ],
-        togri: "IP-paketlarga"
-    },
+    variantlar: [
+        "Ovozli aloqani IP tarmoq orqali uzatishdan",
+        "Telefon signallarini analog shaklda saqlashdan",
+        "Ma’lumotlarni optik disk orqali uzatishdan",
+        "Signalni radiochastotaga aylantirishdan"
+    ],
 
-    {
-        savol: "SIP protokoli qanday vazifani bajaradi?",
-        variantlar: [
-            "Aloqa seansini boshqaradi",
-            "Signalni optik tolada uzatadi",
-            "Elektr quvvatini taqsimlaydi",
-            "Kompyuter xotirasini kengaytiradi"
-        ],
-        togri: "Aloqa seansini boshqaradi"
-    },
+    togri: "Ovozli aloqani IP tarmoq orqali uzatishdan"
+},
 
-    {
-        savol: "H.323 protokoli kim tomonidan ishlab chiqilgan?",
-        variantlar: [
-            "ITU-T tashkiloti tomonidan",
-            "IETF tashkiloti tomonidan",
-            "IEEE tashkiloti tomonidan",
-            "ISO tashkiloti tomonidan"
-        ],
-        togri: "ITU-T tashkiloti tomonidan"
-    },
+{
+    savol: "VoIP tizimida ovoz qanday shaklda uzatiladi?",
 
-    {
-        savol: "SIP protokolining asosiy xususiyati qaysi?",
-        variantlar: [
-            "Yengil va ochiq tuzilishga ega",
-            "Faqat analog telefoniya uchun",
-            "Murakkab kabel tizimini talab qiladi",
-            "Faqat elektr signal bilan ishlaydi"
-        ],
-        togri: "Yengil va ochiq tuzilishga ega"
-    },
+    variantlar: [
+        "IP paketlarga bo‘lingan raqamli signal shaklida",
+        "Uzluksiz analog to‘lqin shaklida",
+        "Magnit impulslar shaklida",
+        "Koaksial signal shaklida"
+    ],
 
-    {
-        savol: "IP-telefonlar tarmoqqa qanday ulanadi?",
-        variantlar: [
-            "Kabel yoki Wi-Fi orqali",
-            "Faqat telefon simi orqali",
-            "Faqat sun’iy yo‘ldosh orqali",
-            "Faqat USB xotira orqali"
-        ],
-        togri: "Kabel yoki Wi-Fi orqali"
-    },
+    togri: "IP paketlarga bo‘lingan raqamli signal shaklida"
+},
 
-    {
-        savol: "ATA qurilmasi nima vazifani bajaradi?",
-        variantlar: [
-            "Analog telefonni IP tarmoqqa moslaydi",
-            "Optik signalni radio signalga aylantiradi",
-            "Kompyuter xotirasini avtomatik tozalaydi",
-            "Internet tezligini doimiy oshiradi"
-        ],
-        togri: "Analog telefonni IP tarmoqqa moslaydi"
-    },
+{
+    savol: "IP telefoniya texnologiyasining asosiy afzalliklaridan biri qaysi?",
 
-    {
-        savol: "Gateway qurilmasi qaysi tarmoqlarni bog‘laydi?",
-        variantlar: [
-            "IP tarmoq va PSTN tarmog‘ini",
-            "Wi-Fi va Bluetooth qurilmalarini",
-            "Optik tola va elektr tarmog‘ini",
-            "Monitor va klaviatura tizimini"
-        ],
-        togri: "IP tarmoq va PSTN tarmog‘ini"
-    },
+    variantlar: [
+        "Arzon va moslashuvchan aloqa imkoniyati",
+        "Telefon liniyalariga to‘liq bog‘liq ishlashi",
+        "Faqat lokal tarmoqlarda ishlashi",
+        "Signalni analog shaklda uzatishi"
+    ],
 
-    {
-        savol: "Softfon nima hisoblanadi?",
-        variantlar: [
-            "VoIP qo‘ng‘iroq uchun dastur",
-            "Telefon kabelining maxsus turi",
-            "Router ichidagi apparat qismi",
-            "Sun’iy yo‘ldosh antennasi"
-        ],
-        togri: "VoIP qo‘ng‘iroq uchun dastur"
-    },
+    togri: "Arzon va moslashuvchan aloqa imkoniyati"
+},
 
-    {
-        savol: "VoIP sifatiga eng ko‘p ta’sir qiluvchi omil qaysi?",
-        variantlar: [
-            "Tarmoq barqarorligi va tezligi",
-            "Telefon apparatining rangi",
-            "Kompyuter ekranining o‘lchami",
-            "Kontaktlar ro‘yxati uzunligi"
-        ],
-        togri: "Tarmoq barqarorligi va tezligi"
-    },
+{
+    savol: "VoIP tizimida analog signal bilan qanday jarayon amalga oshiriladi?",
 
-    {
-        savol: "VoIP tizimida delay nimani bildiradi?",
-        variantlar: [
-            "Signal kechikish vaqtini",
-            "Signal kuchayish darajasini",
-            "Paket hajmining kamayishini",
-            "Telefon raqamining uzunligini"
-        ],
-        togri: "Signal kechikish vaqtini"
-    },
+    variantlar: [
+        "Raqamli shaklga aylantiriladi",
+        "Optik signalga aylantiriladi",
+        "Magnit signalga aylantiriladi",
+        "Chastotasi kamaytiriladi"
+    ],
 
-    {
-        savol: "Jitter qanday muammo hisoblanadi?",
-        variantlar: [
-            "Paket kelish vaqtidagi beqarorlik",
-            "Signalning butunlay yo‘qolishi",
-            "IP manzilning o‘zgarishi",
-            "Telefon raqamining bloklanishi"
-        ],
-        togri: "Paket kelish vaqtidagi beqarorlik"
-    },
+    togri: "Raqamli shaklga aylantiriladi"
+},
 
-    {
-        savol: "Jitter buffer nima uchun ishlatiladi?",
-        variantlar: [
-            "Paketlarni vaqtincha tartiblash uchun",
-            "Signalni optik nurga aylantirish uchun",
-            "Telefonni elektrdan himoyalash uchun",
-            "Router portlarini yopish uchun"
-        ],
-        togri: "Paketlarni vaqtincha tartiblash uchun"
-    },
+{
+    savol: "SIP protokolining asosiy vazifasi nimadan iborat?",
 
-    {
-        savol: "Packet loss nimani anglatadi?",
-        variantlar: [
-            "Paketlarning manzilga yetib bormasligini",
-            "Ovozning raqamli shaklga o‘tishini",
-            "Telefon raqamining o‘chirilishini",
-            "Signalning kuchaytirib yuborilishini"
-        ],
-        togri: "Paketlarning manzilga yetib bormasligini"
-    }
+    variantlar: [
+        "Aloqa seanslarini boshlash va boshqarishdan",
+        "Signal amplitudasini kuchaytirishdan",
+        "Ovoz paketlarini siqishdan",
+        "IP manzillarni avtomatik taqsimlashdan"
+    ],
+
+    togri: "Aloqa seanslarini boshlash va boshqarishdan"
+},
+
+{
+    savol: "H.323 protokoli qaysi tashkilot tomonidan ishlab chiqilgan?",
+
+    variantlar: [
+        "ITU-T tomonidan",
+        "IEEE tomonidan",
+        "ISO tomonidan",
+        "ICANN tomonidan"
+    ],
+
+    togri: "ITU-T tomonidan"
+},
+
+{
+    savol: "SIP protokolining muhim xususiyatlaridan biri qaysi?",
+
+    variantlar: [
+        "Oddiy va kengaytiriladigan tuzilishga egaligi",
+        "Faqat analog telefoniyada ishlatilishi",
+        "Signalni fizik kabel orqali boshqarishi",
+        "Koaksial tarmoqlarga bog‘liq ishlashi"
+    ],
+
+    togri: "Oddiy va kengaytiriladigan tuzilishga egaligi"
+},
+
+{
+    savol: "ATA qurilmasining asosiy vazifasi nimadan iborat?",
+
+    variantlar: [
+        "Analog telefon signalini IP signaliga aylantirishdan",
+        "Signalni optik tolaga uzatishdan",
+        "Paketlarni marshrutlashdan",
+        "Wi-Fi signalini kuchaytirishdan"
+    ],
+
+    togri: "Analog telefon signalini IP signaliga aylantirishdan"
+},
+
+{
+    savol: "Gateway qurilmasi qanday vazifani bajaradi?",
+
+    variantlar: [
+        "IP tarmog‘i bilan an’anaviy telefon tarmog‘ini bog‘lashni",
+        "Ovoz signalini qog‘oz shaklida saqlashni",
+        "Wi-Fi tarmoqlarini boshqarishni",
+        "Signal amplitudasini filtrlashni"
+    ],
+
+    togri: "IP tarmog‘i bilan an’anaviy telefon tarmog‘ini bog‘lashni"
+},
+
+{
+    savol: "Jitter muammosi nimani anglatadi?",
+
+    variantlar: [
+        "Paketlarning yetib kelish vaqtida beqarorlik yuzaga kelishini",
+        "Signal amplitudasining keskin ortib ketishini",
+        "Telefon liniyasining uzilib qolishini",
+        "IP manzilning noto‘g‘ri aniqlanishini"
+    ],
+
+    togri: "Paketlarning yetib kelish vaqtida beqarorlik yuzaga kelishini"
+}
+
 ];

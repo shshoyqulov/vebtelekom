@@ -1,78 +1,133 @@
 ﻿const SAVOLLAR = [
-    {
-        savol: "Tarmoq simulyatorlarining asosiy vazifasi nima?",
-        variantlar: [
-            "Tarmoqlarni virtual muhitda modellashtirish",
-            "Faqat printerlarni boshqarish",
-            "Kompyuter xotirasini kengaytirish",
-            "Telefon signalini kuchaytirish"
-        ],
-        togri: "Tarmoqlarni virtual muhitda modellashtirish"
-    },
 
-    {
-        savol: "Cisco Packet Tracer qanday dastur hisoblanadi?",
-        variantlar: [
-            "Tarmoq simulyatsiya dasturi",
-            "Matn muharriri dasturi",
-            "Grafik dizayn dasturi",
-            "Video montaj dasturi"
-        ],
-        togri: "Tarmoq simulyatsiya dasturi"
-    },
+{
+    savol: "Tarmoq simulyatorlarining asosiy vazifasi nimadan iborat?",
 
-    {
-        savol: "Cisco Packet Tracer yordamida nimalarni sinovdan o‘tkazish mumkin?",
-        variantlar: [
-            "Tarmoq qurilmalari va protokollarini",
-            "Faqat telefon kameralarini",
-            "Printer va skanerlarni",
-            "Faqat audio qurilmalarni"
-        ],
-        togri: "Tarmoq qurilmalari va protokollarini"
-    },
+    variantlar: [
+        "Tarmoq ishlashini virtual muhitda modellashtirishdan",
+        "Tarmoq ishlashini real muhitda modellashtirishdan",
+        "Tarmoq ishlashini real muhitda simulyatsiyalash",
+        "Tarmoq ishlashini real muhitda identifikatsiyalash"
+    ],
 
-    {
-        savol: "LAN topologiyasi nimani bildiradi?",
-        variantlar: [
-            "Mahalliy tarmoq tuzilishini",
-            "Sun’iy yo‘ldosh aloqa tizimini",
-            "Mobil operator bazasini",
-            "Optik signal turini"
-        ],
-        togri: "Mahalliy tarmoq tuzilishini"
-    },
+    togri: "Tarmoq ishlashini virtual muhitda modellashtirishdan"
+},
 
-    {
-        savol: "Packet Tracerda topologiya yaratishda qaysi qurilmalar ishlatiladi?",
-        variantlar: [
-            "Router, switch va kompyuterlar",
-            "Faqat monitor va printerlar",
-            "Faqat modem va televizorlar",
-            "Klaviatura va sichqonchalar"
-        ],
-        togri: "Router, switch va kompyuterlar"
-    },
+{
+    savol: "Cisco Packet Tracer qanday maqsadda qo‘llaniladi?",
 
-    {
-        savol: "Tarmoq konfiguratsiyasida IP manzil nima uchun kerak?",
-        variantlar: [
-            "Qurilmalarni aniqlash va bog‘lash uchun",
-            "Signal amplitudasini oshirish uchun",
-            "Kabel uzunligini kamaytirish uchun",
-            "Monitor tasvirini yaxshilash uchun"
-        ],
-        togri: "Qurilmalarni aniqlash va bog‘lash uchun"
-    },
+    variantlar: [
+        "Tarmoq qurilmalari va protokollarini o‘rganish",
+        "Ma’lumotlarni statistik tahlil qilish uchun",
+        "Tarmoq ishlashini virtual muhitda modellashtirishdan",
+        "Tarmoq ishlashini real muhitda modellashtirishdan"
+    ],
 
-    {
-        savol: "Cisco Packet Tracerning afzalliklaridan biri qaysi?",
-        variantlar: [
-            "Tarmoqni real qurilmasiz sinash imkoniyati",
-            "Faqat analog signal bilan ishlashi",
-            "Internetni avtomatik tezlashtirishi",
-            "Kompyuterni sovutib turishi"
-        ],
-        togri: "Tarmoqni real qurilmasiz sinash imkoniyati"
-    }
+    togri: "Tarmoq qurilmalari va protokollarini o‘rganish uchun"
+},
+
+{
+    savol: "Cisco Packet Tracer dasturining muhim afzalliklaridan biri qaysi?",
+
+    variantlar: [
+        "Cisco qurilmalarini virtual emulyatsiya qilishi",
+       "Ma’lumotlarni statistik tahlil qilishi ",
+       "Tarmoq ishlashini virtual muhitda modellashtirishi",
+        "Cisco qurilmalarini real emulyatsiya qilishi"
+    ],
+
+    togri: "Cisco qurilmalarini virtual emulyatsiya qilishi"
+},
+
+{
+    savol: "Tarmoq topologiyasini yaratish jarayonida qanday ish bajariladi?",
+
+    variantlar: [
+        "Qurilmalarni joylashtirish va ulanishlarni o‘rnatish",
+        "Signal chastotasini filtrlash, qurilmalarni joylashtirish va ulanishlarni o‘rnatish",
+        "Signal amplituda va chastotasini filtrlash, qurilmalarni joylashtirish va ulanishlarni o‘rnatish",
+        "Ma’lumotlarni shifrlash va chastotasini filtrlash"
+    ],
+
+    togri: "Qurilmalarni joylashtirish va ulanishlarni o‘rnatish"
+},
+
+{
+    savol: "Konfiguratsiya sozlash jarayonida asosan nima amalga oshiriladi?",
+
+    variantlar: [
+        "IP manzillar va protokollarni sozlash",
+         "Signal amplitudasini o‘lchash",
+        "Qurilmalarni elektr tarmog‘iga ulash",
+       "Qurilmalarni joylashtirish va ulanishlarni o‘rnatish"
+    ],
+
+    togri: "IP manzillar va protokollarni sozlash"
+},
+
+{
+    savol: "Tarmoq simulyatorlari yordamida qanday ko‘rsatkichlarni tahlil qilish mumkin?",
+
+    variantlar: [
+        "Kechikish va o‘tkazuvchanlik ko‘rsatkichlarini",
+         "IP manzillar va protokollarni sozlash",
+         "Signal amplitudasini o‘lchash",
+         "Qurilmalarni joylashtirish va ulanishlarni o‘rnatish"
+    ],
+
+    togri: "Kechikish va o‘tkazuvchanlik ko‘rsatkichlarini"
+},
+
+{
+    savol: "Cisco Packet Tracerda switch va kompyuterni ulash uchun qaysi kabel ishlatiladi?",
+
+    variantlar: [
+        "Copper Straight-Through kabeli",
+        "Konsol kabeli",
+        "Optik tolali kabel",
+        "Koaksial  kabel"
+    ],
+
+    togri: "Copper Straight-Through kabeli"
+},
+
+{
+    savol: "VLAN texnologiyasining asosiy vazifasi nimadan iborat?",
+
+    variantlar: [
+        "Tarmoqni mantiqiy segmentlarga ajratish",
+        "Signal amplitudasini kuchaytirish",
+        "Tarmoqda signal amplitudasi va chastotasini kuchaytirish",
+        "Qurilmalarni virtual tarmoqqa ulash"
+    ],
+
+    togri: "Tarmoqni mantiqiy segmentlarga ajratishdan"
+},
+
+{
+    savol: "Hub va switch qurilmalari o‘rtasidagi asosiy farq nimada?",
+
+    variantlar: [
+        "Switch ma’lumotni kerakli portga yo‘naltirishida",
+        "Hub IP manzilni avtomatik taqsimlashida va paketlarni shifrlab yuborishida",
+        "Switch P manzilni avtomatik taqsimlashida va paketlarni shifrlab yuborishida",
+        "Hub ma’lumotni kerakli portga yo‘naltirishida"
+    ],
+
+    togri: "Switch ma’lumotni kerakli portga yo‘naltirishida"
+},
+
+{
+    savol: "Konsol kabeli yordamida qanday ulanish amalga oshiriladi?",
+
+    variantlar: [
+        "Kompyuter va switchning boshqaruv portlari o‘rtasida",
+        "Ikki router o‘rtasida Internet orqali",
+        "Optik tolali liniyalar o‘rtasida",
+        "Server va Hub o‘rtasida"
+    ],
+
+    togri: "Kompyuter va switchning boshqaruv portlari o‘rtasida"
+}
+
 ];

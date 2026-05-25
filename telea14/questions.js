@@ -1,78 +1,133 @@
 ﻿const SAVOLLAR = [
-    {
-        savol: "Bulut texnologiyalarining asosiy vazifasi nima?",
-        variantlar: [
-            "Xizmatlarni internet orqali taqdim etish",
-            "Faqat lokal kompyuterlarni boshqarish",
-            "Telefon signalini kuchaytirish",
-            "Printerlarni avtomatik sozlash"
-        ],
-        togri: "Xizmatlarni internet orqali taqdim etish"
-    },
 
-    {
-        savol: "AWS platformasidagi EC2 xizmati nima uchun ishlatiladi?",
-        variantlar: [
-            "Virtual server yaratish uchun",
-            "Faqat fayl saqlash uchun",
-            "Signal amplitudasini oshirish uchun",
-            "Telefon qo‘ng‘iroqlarini boshqarish uchun"
-        ],
-        togri: "Virtual server yaratish uchun"
-    },
+{
+    savol: "Bulut texnologiyalarining asosiy mohiyati nimadan iborat?",
 
-    {
-        savol: "Google Cloud platformasidagi Cloud Storage qanday xizmat hisoblanadi?",
-        variantlar: [
-            "Bulutli fayl saqlash xizmati",
-            "Grafik dizayn dasturi",
-            "Internet brauzeri",
-            "Signal monitoring tizimi"
-        ],
-        togri: "Bulutli fayl saqlash xizmati"
-    },
+    variantlar: [
+        "Xizmatlarni Internet orqali taqdim etishdan",
+        "Xizmatlarni lokal tarmoq orqali taqdim etishdan",
+        "Ma’lumotlarni faqat lokal diskda saqlashdan",
+        "Ma’lumotlarni ajratilgan  diskda saqlashdan"
+    ],
 
-    {
-        savol: "Microsoft Azure platformasidagi SQL Database nima uchun kerak?",
-        variantlar: [
-            "Ma’lumotlar bazasini boshqarish uchun",
-            "Kabel uzunligini o‘lchash uchun",
-            "Signalni analoglashtirish uchun",
-            "Printerlarni tarmoqqa ulash uchun"
-        ],
-        togri: "Ma’lumotlar bazasini boshqarish uchun"
-    },
+    togri: "Xizmatlarni Internet orqali taqdim etishdan"
+},
 
-    {
-        savol: "Cloud platformalarda Virtual Private Cloud qanday vazifani bajaradi?",
-        variantlar: [
-            "Xavfsiz virtual tarmoq yaratishni",
-            "Kompyuter protsessorini boshqarishni",
-            "Telefon ekranini sozlashni",
-            "Elektr quvvatini taqsimlashni"
-        ],
-        togri: "Xavfsiz virtual tarmoq yaratishni"
-    },
+{
+    savol: "Quyidagilardan qaysi biri bulutli platformaga misol bo‘la oladi?",
 
-    {
-        savol: "Video platforma uchun cloud storage nima sababdan muhim?",
-        variantlar: [
-            "Katta hajmdagi videolarni saqlash uchun",
-            "Faqat grafik chizish uchun",
-            "Kompyuterni sovutish uchun",
-            "Monitor yorqinligini oshirish uchun"
-        ],
-        togri: "Katta hajmdagi videolarni saqlash uchun"
-    },
+    variantlar: [
+        "AWS, Azure va Google Cloud",
+        "Cisco Packet Tracer va Wireshark",
+        "Python, JavaScript va Google Cloud",
+        "HUB, AWS, Azure va Google Cloud"
+    ],
 
-    {
-        savol: "Cloud platformalarni solishtirishda qaysi mezonlar muhim?",
-        variantlar: [
-            "Narx, tezlik va xavfsizlik",
-            "Faqat monitor o‘lchami",
-            "Faqat kabel uzunligi",
-            "Printer qog‘oz hajmi"
-        ],
-        togri: "Narx, tezlik va xavfsizlik"
-    }
+    togri: "AWS, Azure va Google Cloud"
+},
+
+{
+    savol: "AWS platformasida virtual server xizmati qanday nomlanadi?",
+
+    variantlar: [
+        "EC2",
+        "S3",
+        "RDS",
+        "Lambda"
+    ],
+
+    togri: "EC2"
+},
+
+{
+    savol: "Google Cloud platformasida ma’lumot saqlash xizmati qanday nomlanadi?",
+
+    variantlar: [
+        "Cloud Storage",
+        "Google Storage",
+        "Cloud BigQuery",
+        "BigQuery Cloud"
+    ],
+
+    togri: "Cloud Storage"
+},
+
+{
+    savol: "Azure platformasidagi database xizmati qaysi?",
+
+    variantlar: [
+        "SQL Database",
+        "Blob Storage",
+        "Virtual Machines Database",
+        "Functions Database"
+    ],
+
+    togri: "SQL Database"
+},
+
+{
+    savol: "Virtual Private Cloud (VPC) texnologiyasining asosiy vazifasi nimadan iborat?",
+
+    variantlar: [
+        "Bulut ichida izolyatsiyalangan tarmoq yaratishdan",
+        "Bulut ichida izolyatsiyalanmagan tarmoq yaratishdan",
+        "Ma’lumotlarni analog shaklda uzatishdan",
+        "Bulut tashqarisida izolyatsiyalanmagan tarmoq yaratishdan"
+    ],
+
+    togri: "Bulut ichida izolyatsiyalangan tarmoq yaratishdan"
+},
+
+{
+    savol: "Bulut platformalarida load balancing texnologiyasi qanday vazifani bajaradi?",
+
+    variantlar: [
+        "Yuklamani bir nechta serverlarga taqsimlashni",
+        "Yuklamani faqat bitta serverlarga taqsimlashni",
+        "IP manzillarni avtomatik yashirishni",
+        "Ma’lumotlarni lokal serverda saqlashni"
+    ],
+
+    togri: "Yuklamani bir nechta serverlarga taqsimlashni"
+},
+
+{
+    savol: "1000+ foydalanuvchili video platforma uchun storage xizmatining asosiy vazifasi nimadan iborat?",
+
+    variantlar: [
+        "Video fayllarni saqlash va ularga tezkor murojaat qilish",
+        "Video fayllarni saqlash, qayta ishlash va ularga tezkor murojaat qilish",
+        "IP manzillarni avtomatik yaratish",
+        "Video fayllarni saqlash va qayta ishlash"
+    ],
+
+    togri: "Video fayllarni saqlash va ularga tezkor murojaat qilish"
+},
+
+{
+    savol: "Cloud arxitekturasidagi Database qatlami qanday vazifani bajaradi?",
+
+    variantlar: [
+        "Foydalanuvchi ma’lumotlarini saqlash va boshqarish",
+        "Foydalanuvchi ma’lumotlarini saqlash va qayta ishlash",
+        "Foydalanuvchi ma’lumotlarini boshqarish",
+        "Foydalanuvchi ma’lumotlarini saqlash"
+    ],
+
+    togri: "Foydalanuvchi ma’lumotlarini saqlash va boshqarish"
+},
+
+{
+    savol: "Cloud platformalarni solishtirishda xavfsizlik mezoni nimani anglatadi?",
+
+    variantlar: [
+        "Ma’lumotlarni himoyalash va kirishni nazorat qilish darajasini",
+        "Ma’lumotlarni saqlash, himoyalash va kirishni nazorat qilish darajasini",
+        "Ma’lumotlarga kirishni nazorat qilish darajasini",
+        "Ma’lumotlarni himoyalashni nazorat qilish darajasini"
+    ],
+
+    togri: "Ma’lumotlarni himoyalash va kirishni nazorat qilish darajasini"
+}
+
 ];

@@ -1,78 +1,133 @@
 ﻿const SAVOLLAR = [
-    {
-        savol: "Kommutatsiya jarayoni nimani ta’minlaydi?",
-        variantlar: [
-            "Ma’lumotlarni manzildan manzilga uzatishni",
-            "Faqat signalni kuchaytirishni",
-            "Kompyuter xotirasini kengaytirishni",
-            "Monitor tasvirini boshqarishni"
-        ],
-        togri: "Ma’lumotlarni manzildan manzilga uzatishni"
-    },
 
-    {
-        savol: "Kanal bo‘yicha kommutatsiyaning asosiy xususiyati nima?",
-        variantlar: [
-            "Aloqa uchun doimiy kanal ajratilishi",
-            "Ma’lumotlarni paketlarga bo‘lishi",
-            "Signalni faqat Wi-Fi orqali uzatishi",
-            "Faqat lokal tarmoqda ishlashi"
-        ],
-        togri: "Aloqa uchun doimiy kanal ajratilishi"
-    },
+{
+    savol: "Kommutatsiya jarayonining asosiy vazifasi nimadan iborat?",
 
-    {
-        savol: "Paketli kommutatsiyada ma’lumot qanday uzatiladi?",
-        variantlar: [
-            "Kichik paketlarga bo‘linib uzatiladi",
-            "Faqat bitta signal sifatida uzatiladi",
-            "Faqat analog shaklda yuboriladi",
-            "Doimiy kanal orqali uzatiladi"
-        ],
-        togri: "Kichik paketlarga bo‘linib uzatiladi"
-    },
+    variantlar: [
+        "Ma’lumotlarni manzildan manzilga uzatishni boshqarishdan",
+        "Signal amplitudasini doimiy nazorat qilishdan",
+        "Optik signal quvvatini tarmoq bo‘ylab taqsimlashdan",
+          "5G signal quvvatini tarmoq bo‘ylab taqsimlashdan"
+    ],
 
-    {
-        savol: "Cisco Packet Tracerda tarmoq simulyatsiyasi nima uchun ishlatiladi?",
-        variantlar: [
-            "Tarmoq ishini modellashtirish uchun",
-            "Faqat grafik chizish uchun",
-            "Kompyuter o‘yinlarini yaratish uchun",
-            "Video montaj qilish uchun"
-        ],
-        togri: "Tarmoq ishini modellashtirish uchun"
-    },
+    togri: "Ma’lumotlarni manzildan manzilga uzatishni boshqarishdan"
+},
 
-    {
-        savol: "Kommutatsiyalashgan tarmoqda IP manzil nima vazifani bajaradi?",
-        variantlar: [
-            "Qurilmalarni aniqlash va bog‘lashni",
-            "Signal amplitudasini oshirishni",
-            "Kabel uzunligini o‘lchashni",
-            "Monitor yorqinligini sozlashni"
-        ],
-        togri: "Qurilmalarni aniqlash va bog‘lashni"
-    },
+{
+    savol: "Paketli kommutatsiyaning asosiy xususiyati nimada?",
 
-    {
-        savol: "Ping buyrug‘i asosan nima uchun ishlatiladi?",
-        variantlar: [
-            "Qurilmalar orasidagi aloqa holatini tekshirish uchun",
-            "Fayllarni avtomatik yuklash uchun",
-            "Switchni elektrdan uzish uchun",
-            "Signalni analog ko‘rinishga o‘tkazish uchun"
-        ],
-        togri: "Qurilmalar orasidagi aloqa holatini tekshirish uchun"
-    },
+    variantlar: [
+        "Ma’lumotlarni kichik paketlarga bo‘lib uzatishida",
+        "Har bir aloqa uchun alohida kanal ajratilishida",
+        "Optik signal quvvatini tarmoq bo‘ylab taqsimlashdan",
+        "5G signal quvvatini tarmoq bo‘ylab taqsimlashdan"
+    ],
 
-    {
-        savol: "Simulyatsiya jarayonida qaysi ko‘rsatkichlarni tahlil qilish mumkin?",
-        variantlar: [
-            "Kechikish va uzatish tezligini",
-            "Faqat monitor o‘lchamini",
-            "Kompyuter korpusi rangini",
-            "Printer qog‘oz hajmini"
-        ],
-        togri: "Kechikish va uzatish tezligini"
-    }
+    togri: "Ma’lumotlarni kichik paketlarga bo‘lib uzatishida"
+},
+
+{
+    savol: "Kanal bo‘yicha kommutatsiyada qanday jarayon amalga oshiriladi?",
+
+    variantlar: [
+       "Aloqa uchun statik kanal ajratiladi",
+      "Ma’lumotlarni kichik paketlarga bo‘lib uzatiladi",
+       "Har bir aloqa uchun alohida kanal ajratiladi",
+       "5G signal quvvatini tarmoq bo‘ylab taqsimlanadi"
+    ],
+
+    togri: "Aloqa uchun statik kanal ajratiladi"
+},
+
+{
+    savol: "Cisco Packet Tracerda tarmoqni test qilish uchun qaysi buyruq ishlatiladi?",
+
+    variantlar: [
+        "Ping buyrug‘i",
+        "IPconfig buyrug‘i",
+        "testIP buyrug‘i",
+        "testingNetwork buyrug‘i"
+    ],
+
+    togri: "Ping buyrug‘i"
+},
+
+{
+    savol: "VLAN texnologiyasining asosiy vazifasi nimadan iborat?",
+
+    variantlar: [
+        "Tarmoqni mantiqiy segmentlarga ajratishdan",
+        "Tarmoqni  segmentlarga ajratishdan",
+        "Tarmoqni tarmoqli segmentlarga ajratishdan",
+        "Qurilmalarni analog tarmoqqa ulashdan"
+    ],
+
+    togri: "Tarmoqni mantiqiy segmentlarga ajratishdan"
+},
+
+{
+    savol: "DHCP serverining asosiy vazifasi nimadan iborat?",
+
+    variantlar: [
+        "IP manzillarni avtomatik taqsimlashdan",
+        "IP manzillarni qo'lda taqsimlashdan",
+        "Paketlarni shifrlab uzatishdan",
+        "Paketlarni shifrlamasdan uzatishdan"
+    ],
+
+    togri: "IP manzillarni avtomatik taqsimlashdan"
+},
+
+{
+    savol: "SSH protokoli qanday maqsadda ishlatiladi?",
+
+    variantlar: [
+        "Qurilmalarni xavfsiz masofadan boshqarish uchun",
+       "IP manzillarni avtomatik taqsimlash uchun",
+        "IP manzillarni qo'lda taqsimlash uchun",
+        "Paketlarni xavfsiz shifrlab uzatish uchun"
+    ],
+
+    togri: "Qurilmalarni xavfsiz masofadan boshqarish uchun"
+},
+
+{
+    savol: "STP (Spanning Tree Protocol) protokolining asosiy vazifasi nimadan iborat?",
+
+    variantlar: [
+        "Tarmoqdagi loop holatlarini oldini olishdan",
+        "IP manzillarni avtomatik taqsimlashdan",
+        "IP manzillarni qo'lda taqsimlashdan",
+        "Paketlarni shifrlab uzatishdan"
+     ],
+
+    togri: "Tarmoqdagi loop holatlarini oldini olishdan"
+},
+
+{
+    savol: "ACL (Access Control List) texnologiyasi qanday vazifani bajaradi?",
+
+    variantlar: [
+        "Tarmoqdagi kirish huquqlarini cheklashni",
+        "Tarmoqdagi loop holatlarini oldini olishni",
+        "IP manzillarni avtomatik taqsimlashni",
+        "IP manzillarni qo'lda taqsimlashni"
+    ],
+
+    togri: "Tarmoqdagi kirish huquqlarini cheklashni"
+},
+
+{
+    savol: "OSPF protokolining asosiy vazifasi nimadan iborat?",
+
+    variantlar: [
+        "Tarmoqdagi eng tezkor marshrutni aniqlash",
+        "Tarmoqdagi  marshrutni aniqlash",
+ 	"Tarmoqdagi kirish huquqlarini cheklash",
+        "Tarmoqdagi loop holatlarini oldini olish",
+    ],
+
+    togri: "Tarmoqdagi eng tezkor marshrutni aniqlashdan"
+}
+
 ];

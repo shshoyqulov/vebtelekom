@@ -1,166 +1,133 @@
 ﻿const SAVOLLAR = [
-    {
-        savol: "IoT texnologiyasi nimani anglatadi?",
-        variantlar: [
-            "Internetga ulangan obyektlar tizimini",
-            "Faqat mobil telefonlar tarmog‘ini",
-            "Kompyuter xotirasini boshqarishni",
-            "Elektr signalini kuchaytirishni"
-        ],
-        togri: "Internetga ulangan obyektlar tizimini"
-    },
 
-    {
-        savol: "IoT qurilmalari asosan nima qiladi?",
-        variantlar: [
-            "Ma’lumot yig‘adi va uzatadi",
-            "Faqat fayllarni saqlaydi",
-            "Telefon raqamlarini yaratadi",
-            "Kabel uzunligini o‘lchaydi"
-        ],
-        togri: "Ma’lumot yig‘adi va uzatadi"
-    },
+{
+    savol: "IoT (Internet of Things) texnologiyasining asosiy mohiyati nimadan iborat?",
 
-    {
-        savol: "IoT arxitekturasida fizik qatlamni nimalar tashkil etadi?",
-        variantlar: [
-            "Sensor va aktuatorlar",
-            "Router va modemlar",
-            "Brauzer va serverlar",
-            "Monitor va printerlar"
-        ],
-        togri: "Sensor va aktuatorlar"
-    },
+    variantlar: [
+        "Internetga ulangan fizik obyektlarning o‘zaro axborot almashuvidan",
+        "Kompyuterlar orqali lokal ma’lumot saqlash tizimidan",
+        "Signalni analog shaklda uzatish texnologiyasidan",
+        "Elektr qurilmalarini masofadan yoqish tizimidan"
+    ],
 
-    {
-        savol: "IoT tizimida ma’lumot uzatish uchun qaysi texnologiyalar ishlatiladi?",
-        variantlar: [
-            "Wi-Fi, LTE, Bluetooth, Zigbee",
-            "HTML, CSS, JavaScript, PHP",
-            "Word, Excel, PowerPoint, Paint",
-            "SMTP, POP3, IMAP, FTP"
-        ],
-        togri: "Wi-Fi, LTE, Bluetooth, Zigbee"
-    },
+    togri: "Internetga ulangan fizik obyektlarning o‘zaro axborot almashuvidan"
+},
 
-    {
-        savol: "M2M texnologiyasi asosan nimaga asoslanadi?",
-        variantlar: [
-            "Qurilmalararo avtomatik aloqa",
-            "Foydalanuvchi bilan chat muloqoti",
-            "Faqat veb sahifa yaratish",
-            "Elektr energiyasini ishlab chiqarish"
-        ],
-        togri: "Qurilmalararo avtomatik aloqa"
-    },
+{
+    savol: "IoT tizimlarida sensorlarning asosiy vazifasi nimadan iborat?",
 
-    {
-        savol: "IoT M2M dan qanday farq qiladi?",
-        variantlar: [
-            "Kengroq va ko‘p funksiyali tizim",
-            "Faqat bitta qurilmaga bog‘liq tizim",
-            "Internetdan butunlay uzilgan tizim",
-            "Faqat analog signalga asoslangan tizim"
-        ],
-        togri: "Kengroq va ko‘p funksiyali tizim"
-    },
+    variantlar: [
+        "Atrof-muhitdan ma’lumot yig‘ishdan",
+        "Signal amplitudasini kuchaytirishdan",
+        "Tarmoqdagi IP manzillarni boshqarishdan",
+        "Ma’lumotlarni qog‘oz shaklida saqlashdan"
+    ],
 
-    {
-        savol: "Aqlli shaharda IoT nima uchun ishlatiladi?",
-        variantlar: [
-            "Transport va yoritishni boshqarish uchun",
-            "Faqat telefon qo‘ng‘iroqlarini yozish uchun",
-            "Kompyuter viruslarini ko‘paytirish uchun",
-            "Optik tolani almashtirish uchun"
-        ],
-        togri: "Transport va yoritishni boshqarish uchun"
-    },
+    togri: "Atrof-muhitdan ma’lumot yig‘ishdan"
+},
 
-    {
-        savol: "Sog‘liqni saqlashda IoT qanday vazifani bajaradi?",
-        variantlar: [
-            "Bemor holatini masofadan kuzatadi",
-            "Faqat dorilarni ishlab chiqaradi",
-            "Shifokor o‘rnini to‘liq egallaydi",
-            "Internet tezligini kamaytiradi"
-        ],
-        togri: "Bemor holatini masofadan kuzatadi"
-    },
+{
+    savol: "IoT tizimining hisoblash qatlamida qanday texnologiyalar qo‘llaniladi?",
 
-    {
-        savol: "Qishloq xo‘jaligida IoT nima uchun foydali?",
-        variantlar: [
-            "Namlik va haroratni nazorat qiladi",
-            "Faqat hosilni qo‘lda yig‘adi",
-            "Telefon signalini kuchaytiradi",
-            "Kompyuter xotirasini tozalaydi"
-        ],
-        togri: "Namlik va haroratni nazorat qiladi"
-    },
+    variantlar: [
+        "Cloud computing va edge computing texnologiyalari",
+        "Optik tolali va koaksial uzatish texnologiyalari",
+        "Analog modulyatsiya va signal filtrlash texnologiyalari",
+        "Elektr quvvatini taqsimlash texnologiyalari"
+    ],
 
-    {
-        savol: "Logistikada IoT qanday imkoniyat beradi?",
-        variantlar: [
-            "Yuk joylashuvini real vaqtda kuzatadi",
-            "Faqat hujjatlarni chop etadi",
-            "Kabel tarmoqlarini quradi",
-            "Telefon raqamlarini bloklaydi"
-        ],
-        togri: "Yuk joylashuvini real vaqtda kuzatadi"
-    },
+    togri: "Cloud computing va edge computing texnologiyalari"
+},
 
-    {
-        savol: "IoT xavfsizligidagi asosiy muammolardan biri nima?",
-        variantlar: [
-            "Qurilmalarning kam resursli bo‘lishi",
-            "Internetning faqat kabelda ishlashi",
-            "Sensorlarning faqat rang o‘lchashi",
-            "Routerlarning faqat bezak bo‘lishi"
-        ],
-        togri: "Qurilmalarning kam resursli bo‘lishi"
-    },
+{
+    savol: "IoT texnologiyalarining asosiy afzalliklaridan biri qaysi?",
 
-    {
-        savol: "IoT xavfsizligida shifrlash nima uchun kerak?",
-        variantlar: [
-            "Ma’lumotni himoyalab uzatish uchun",
-            "Qurilmani tezroq zaryadlash uchun",
-            "Sensorlarni mexanik tozalash uchun",
-            "Internet narxini kamaytirish uchun"
-        ],
-        togri: "Ma’lumotni himoyalab uzatish uchun"
-    },
+    variantlar: [
+        "Real vaqt monitoringi va avtomatlashtirish imkoniyati",
+        "Signalni faqat analog shaklda uzatish imkoniyati",
+        "Telefon liniyalariga bog‘liq ishlash imkoniyati",
+        "Ma’lumotlarni qo‘lda boshqarish imkoniyati"
+    ],
 
-    {
-        savol: "IoT tizimlarida qaysi shifrlash algoritmlari qo‘llaniladi?",
-        variantlar: [
-            "TLS va AES algoritmlari",
-            "HTML va CSS algoritmlari",
-            "USB va HDMI algoritmlari",
-            "JPEG va PNG algoritmlari"
-        ],
-        togri: "TLS va AES algoritmlari"
-    },
+    togri: "Real vaqt monitoringi va avtomatlashtirish imkoniyati"
+},
 
-    {
-        savol: "Security by design yondashuvi nimani bildiradi?",
-        variantlar: [
-            "Xavfsizlikni dizayndan boshlab kiritish",
-            "Qurilmani faqat tashqi bezash",
-            "Internetni vaqtincha uzib qo‘yish",
-            "Sensorlarni qo‘lda almashtirish"
-        ],
-        togri: "Xavfsizlikni dizayndan boshlab kiritish"
-    },
+{
+    savol: "M2M texnologiyasining asosiy xususiyati nimada?",
 
-    {
-        savol: "IoT rivojlanishida kimlar hamkorligi muhim?",
-        variantlar: [
-            "Ishlab chiquvchi, foydalanuvchi va davlat",
-            "Faqat telefon ishlab chiqaruvchilar",
-            "Faqat kompyuter do‘konlari",
-            "Faqat kabel montajchilari"
-        ],
-        togri: "Ishlab chiquvchi, foydalanuvchi va davlat"
-    }
+    variantlar: [
+        "Qurilmalar o‘rtasida avtomatik ma’lumot almashinuvida",
+        "Bulutli hisoblash orqali ma’lumot tahlil qilishida",
+        "Foydalanuvchi interfeyslari orqali boshqarilishida",
+        "Mobil ilovalar bilan integratsiyalashgan tizim bo‘lishida"
+    ],
+
+    togri: "Qurilmalar o‘rtasida avtomatik ma’lumot almashinuvida"
+},
+
+{
+    savol: "IoT texnologiyasi M2M dan qanday farq qiladi?",
+
+    variantlar: [
+        "Tahlil, avtomatik qaror qabul qilish va interfeyslarni ham o‘z ichiga olishida",
+        "Signalni analog shaklda uzatishida",
+        "Faqat SIM-karta orqali ishlashida",
+        "Qurilmalarni Internetga ulanmasdan boshqarishida"
+    ],
+
+    togri: "Tahlil, avtomatik qaror qabul qilish va interfeyslarni ham o‘z ichiga olishida"
+},
+
+{
+    savol: "Aqlli shahar tizimlarida IoT texnologiyalari qanday vazifani bajaradi?",
+
+    variantlar: [
+        "Transport va infratuzilmani avtomatik boshqarishni",
+        "Faqat mobil qo‘ng‘iroqlarni boshqarishni",
+        "Optik signallarni kuchaytirishni",
+        "Telefon tarmoqlarini analog shaklda ulashni"
+    ],
+
+    togri: "Transport va infratuzilmani avtomatik boshqarishni"
+},
+
+{
+    savol: "Sog‘liqni saqlash sohasida IoT texnologiyalari qanday imkoniyat yaratadi?",
+
+    variantlar: [
+        "Bemorlarni masofadan monitoring qilish imkoniyatini",
+        "Signalni fizik kabelsiz uzatish imkoniyatini",
+        "Ma’lumotlarni faqat lokal qurilmada saqlash imkoniyatini",
+        "Telefon tarmoqlarini avtomatik ulash imkoniyatini"
+    ],
+
+    togri: "Bemorlarni masofadan monitoring qilish imkoniyatini"
+},
+
+{
+    savol: "IoT xavfsizligidagi asosiy muammolardan biri qaysi?",
+
+    variantlar: [
+        "Qurilmalarning kam resursli va zaif himoyalangan bo‘lishi",
+        "Signal amplitudasining juda yuqori bo‘lishi",
+        "Optik tolalarning qisqa masofada ishlashi",
+        "Koaksial kabelning Internetga ulanmasligi"
+    ],
+
+    togri: "Qurilmalarning kam resursli va zaif himoyalangan bo‘lishi"
+},
+
+{
+    savol: "IoT xavfsizligida TLS va AES texnologiyalarining asosiy vazifasi nimadan iborat?",
+
+    variantlar: [
+        "Ma’lumotlarni shifrlash va himoyalashdan",
+        "Signal chastotasini o‘zgartirishdan",
+        "Qurilmalarni elektr energiyasi bilan ta’minlashdan",
+        "Tarmoqdagi foydalanuvchilar sonini boshqarishdan"
+    ],
+
+    togri: "Ma’lumotlarni shifrlash va himoyalashdan"
+}
+
 ];

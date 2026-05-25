@@ -1,133 +1,133 @@
 ﻿const SAVOLLAR = [
-    {
-        savol: "Keng polosali Internet nimaga mo‘ljallangan?",
-        variantlar: [
-            "Yuqori tezlikda ma’lumot uzatishga",
-            "Faqat telefon qo‘ng‘iroqlariga",
-            "Past tezlikdagi matn almashishga",
-            "Faqat lokal fayllarni saqlashga"
-        ],
-        togri: "Yuqori tezlikda ma’lumot uzatishga"
-    },
 
-    {
-        savol: "Dial-up ulanishning asosiy kamchiligi nima edi?",
-        variantlar: [
-            "Telefon va Internet birga ishlamasdi",
-            "Optik tola orqali ishlashi kerak edi",
-            "Faqat simsiz aloqa talab qilardi",
-            "Yuqori tezlikda video uzatardi"
-        ],
-        togri: "Telefon va Internet birga ishlamasdi"
-    },
+{
+    savol: "Keng polosali Internet texnologiyasining asosiy vazifasi nimadan iborat?",
 
-    {
-        savol: "DSL texnologiyasi qaysi liniya orqali ishlaydi?",
-        variantlar: [
-            "Oddiy telefon liniyalari orqali",
-            "Faqat optik tolalar orqali",
-            "Sun’iy yo‘ldosh signali orqali",
-            "Faqat mobil bazalar orqali"
-        ],
-        togri: "Oddiy telefon liniyalari orqali"
-    },
+    variantlar: [
+        "Yuqori tezlikda ma’lumot uzatishni ta’minlashdan",
+        "Elektr signallarini kuchaytirib uzatishdan",
+        "Telefon qo‘ng‘iroqlarini analog shaklda saqlashdan",
+        "Ma’lumotlarni qog‘oz shaklida almashishdan"
+    ],
 
-    {
-        savol: "DSL texnologiyasining qulayligi nimada?",
-        variantlar: [
-            "Telefon va Internet birga ishlaydi",
-            "Faqat kabelsiz aloqa yaratadi",
-            "Signalni sun’iy yo‘ldoshga uzatadi",
-            "Internetni faqat modemda saqlaydi"
-        ],
-        togri: "Telefon va Internet birga ishlaydi"
-    },
+    togri: "Yuqori tezlikda ma’lumot uzatishni ta’minlashdan"
+},
 
-    {
-        savol: "Kabelli Internetda ma’lumotlar qanday kabel orqali uzatiladi?",
-        variantlar: [
-            "Koaksial kabel orqali",
-            "Faqat telefon simi orqali",
-            "Faqat optik tola orqali",
-            "Elektr uzatish kabeli orqali"
-        ],
-        togri: "Koaksial kabel orqali"
-    },
+{
+    savol: "Keng polosali Internetning asosiy afzalliklaridan biri qaysi?",
 
-    {
-        savol: "Optik tolali Internetning asosiy ustunligi nima?",
-        variantlar: [
-            "Juda yuqori tezlik va past kechikish",
-            "Telefon liniyasiga to‘liq bog‘liqlik",
-            "Faqat qisqa masofada ishlashi",
-            "Ko‘p foydalanuvchida tezlik pasayishi"
-        ],
-        togri: "Juda yuqori tezlik va past kechikish"
-    },
+    variantlar: [
+        "Bir nechta qurilmalarni parallel Internetga ulash imkoniyati",
+        "Signalni faqat telefon liniyalari orqali uzatish imkoniyati",
+        "Internet va telefon aloqasini navbat bilan ishlatish imkoniyati",
+        "Ma’lumotlarni faqat matn ko‘rinishida uzatish imkoniyati"
+    ],
 
-    {
-        savol: "Wi-Fi texnologiyasi asosan qayerda qo‘llaniladi?",
-        variantlar: [
-            "Lokal hududlarda simsiz ulanishda",
-            "Faqat xalqaro magistral liniyalarda",
-            "Yer osti optik kabel tarmoqlarida",
-            "Faqat sun’iy yo‘ldosh aloqasida"
-        ],
-        togri: "Lokal hududlarda simsiz ulanishda"
-    },
+    togri: "Bir nechta qurilmalarni parallel Internetga ulash imkoniyati"
+},
 
-    {
-        savol: "Wi-Fi signaliga nima salbiy ta’sir qilishi mumkin?",
-        variantlar: [
-            "Devor va beton to‘siqlar",
-            "Optik tolaning uzunligi",
-            "Telefon raqamlarining soni",
-            "Provayder nomining uzunligi"
-        ],
-        togri: "Devor va beton to‘siqlar"
-    },
+{
+    savol: "Dial-up texnologiyasining asosiy kamchiligi nimada edi?",
 
-    {
-        savol: "LTE texnologiyasi qaysi tarmoqlar orqali Internet beradi?",
-        variantlar: [
-            "Mobil aloqa tarmoqlari orqali",
-            "Faqat telefon kabellari orqali",
-            "Faqat koaksial kabel orqali",
-            "Faqat lokal switch orqali"
-        ],
-        togri: "Mobil aloqa tarmoqlari orqali"
-    },
+    variantlar: [
+        "Internet va telefon aloqasidan bir vaqtda foydalana olmaslikda",
+        "Signalni optik tolalar orqali uzata olmaslikda",
+        "Koaksial kabel bilan ishlay olmaslikda",
+        "Mobil qurilmalarni qo‘llab-quvvatlamaslikda"
+    ],
 
-    {
-        savol: "5G texnologiyasining asosiy xususiyati qaysi?",
-        variantlar: [
-            "Yuqori tezlik va minimal kechikish",
-            "Faqat past tezlikda ulanish",
-            "Telefon liniyasiga bog‘liqlik",
-            "Faqat matnli aloqa xizmatlari"
-        ],
-        togri: "Yuqori tezlik va minimal kechikish"
-    },
+    togri: "Internet va telefon aloqasidan bir vaqtda foydalana olmaslikda"
+},
 
-    {
-        savol: "Internet sifati foydalanuvchi nuqtai nazaridan nima bilan belgilanadi?",
-        variantlar: [
-            "Ping, uzilish va paket yo‘qolishi bilan",
-            "Faqat modem rangi va shakli bilan",
-            "Faqat kabelning tashqi ko‘rinishi bilan",
-            "Kompyuter ekran o‘lchami bilan"
-        ],
-        togri: "Ping, uzilish va paket yo‘qolishi bilan"
-    },
+{
+    savol: "DSL texnologiyasi qanday aloqa liniyasidan foydalanadi?",
 
-    {
-        savol: "Tarmoq infratuzilmasiga qaysi elementlar kiradi?",
-        variantlar: [
-            "Router, switch va ma’lumot markazlari",
-            "Faqat monitor va klaviatura",
-            "Faqat printer va skaner",
-            "Telefon raqami va parollar"
-        ],
-        togri: "Router, switch va ma’lumot markazlari"
-    }
+    variantlar: [
+        "Telefon liniyalaridan",
+        "Sun’iy yo‘ldosh signallaridan",
+        "Koaksial televizion antennalardan",
+        "Mobil tayanch stansiyalaridan"
+    ],
+
+    togri: "Telefon liniyalaridan"
+},
+
+{
+    savol: "Kabelli Internetda ma’lumotlar qanday uzatiladi?",
+
+    variantlar: [
+        "Koaksial kabel orqali",
+        "Optik disk orqali",
+        "Radiochastotalar orqali",
+        "Magnit impulslar orqali"
+    ],
+
+    togri: "Koaksial kabel orqali"
+},
+
+{
+    savol: "Optik tolali Internetning asosiy afzalligi nimada?",
+
+    variantlar: [
+        "Yuqori tezlik va past kechikishni ta’minlashida",
+        "Telefon liniyalariga bog‘liq ishlashida",
+        "Signalni analog shaklda uzatishida",
+        "Qisqa masofalarda ishlashida"
+    ],
+
+    togri: "Yuqori tezlik va past kechikishni ta’minlashida"
+},
+
+{
+    savol: "Wi-Fi texnologiyasi qanday hududlarda keng qo‘llaniladi?",
+
+    variantlar: [
+        "Uy, maktab va ofis kabi lokal zonalarda",
+        "Faqat magistral optik tarmoqlarda",
+        "Sun’iy yo‘ldosh aloqa tizimlarida",
+        "Xalqaro telefon stansiyalarida"
+    ],
+
+    togri: "Uy, maktab va ofis kabi lokal zonalarda"
+},
+
+{
+    savol: "LTE texnologiyasining asosiy vazifasi nimadan iborat?",
+
+    variantlar: [
+        "Mobil tarmoqlar orqali yuqori tezlikdagi Internet ta’minlashdan",
+        "Telefon signalini analog shaklda uzatishdan",
+        "Optik tolali signallarni kuchaytirishdan",
+        "Ma’lumotlarni lokal diskka saqlashdan"
+    ],
+
+    togri: "Mobil tarmoqlar orqali yuqori tezlikdagi Internet ta’minlashdan"
+},
+
+{
+    savol: "5G texnologiyasining muhim xususiyatlaridan biri qaysi?",
+
+    variantlar: [
+        "Minimal kechikish va yuqori tezlikni ta’minlashi",
+        "Telefon liniyalari orqali ishlashi",
+        "Signalni past chastotada uzatishi",
+        "Koaksial kabelsiz ishlay olmasligi"
+    ],
+
+    togri: "Minimal kechikish va yuqori tezlikni ta’minlashi"
+},
+
+{
+    savol: "Xizmat ko‘rsatish sifatiga ta’sir qiluvchi asosiy omillardan biri qaysi?",
+
+    variantlar: [
+        "Signal barqarorligi va paket yo‘qolishi darajasi",
+        "Monitor ekranining o‘lchami va yorqinligi",
+        "Kompyuter korpusining materiali va rangi",
+        "Printer tezligi va qog‘oz hajmi"
+    ],
+
+    togri: "Signal barqarorligi va paket yo‘qolishi darajasi"
+}
+
 ];

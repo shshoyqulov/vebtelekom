@@ -1,166 +1,133 @@
 ﻿const SAVOLLAR = [
-    {
-        savol: "Sun’iy yo‘ldosh aloqa tizimlari qanday to‘lqinlar orqali ishlaydi?",
-        variantlar: [
-            "Radioelektr to‘lqinlari orqali",
-            "Faqat yorug‘lik nurlari orqali",
-            "Elektr simlari orqali",
-            "Akustik tebranishlar orqali"
-        ],
-        togri: "Radioelektr to‘lqinlari orqali"
-    },
 
-    {
-        savol: "Uplink signali nimani anglatadi?",
-        variantlar: [
-            "Yer stansiyasidan yo‘ldoshga signal",
-            "Yo‘ldoshdan yer stansiyasiga signal",
-            "Yo‘ldoshlar orasidagi ichki aloqa",
-            "Yer osti kabeli orqali signal"
-        ],
-        togri: "Yer stansiyasidan yo‘ldoshga signal"
-    },
+{
+    savol: "Sun’iy yo‘ldosh aloqa tizimlarining asosiy vazifasi nimadan iborat?",
 
-    {
-        savol: "Downlink signali qanday yo‘nalishda uzatiladi?",
-        variantlar: [
-            "Yo‘ldoshdan yer stansiyasiga",
-            "Yer stansiyasidan yo‘ldoshga",
-            "Yer osti kabelidan modemga",
-            "Routerdan kompyuter xotirasiga"
-        ],
-        togri: "Yo‘ldoshdan yer stansiyasiga"
-    },
+    variantlar: [
+        "Ma’lumotlarni yer stansiyalari o‘rtasida uzatishdan",
+        "Elektr energiyasini kosmos orqali uzatishdan",
+        "Signalni optik tolalar orqali kuchaytirishdan",
+        "Ma’lumotlarni magnit qurilmalarda saqlashdan"
+    ],
 
-    {
-        savol: "Geostatsionar yo‘ldoshlar taxminan qaysi balandlikda joylashadi?",
-        variantlar: [
-            "35 786 kilometr balandlikda",
-            "200 kilometr balandlikda",
-            "2 000 kilometr balandlikda",
-            "500 kilometr balandlikda"
-        ],
-        togri: "35 786 kilometr balandlikda"
-    },
+    togri: "Ma’lumotlarni yer stansiyalari o‘rtasida uzatishdan"
+},
 
-    {
-        savol: "GEO yo‘ldoshlarning asosiy qulayligi nimada?",
-        variantlar: [
-            "Bir hudud ustida doimiy turadi",
-            "Yerga juda yaqin joylashadi",
-            "Faqat navigatsiyada ishlatiladi",
-            "Juda past kechikish beradi"
-        ],
-        togri: "Bir hudud ustida doimiy turadi"
-    },
+{
+    savol: "Uplink atamasi nimani bildiradi?",
 
-    {
-        savol: "LEO yo‘ldoshlari qaysi balandlik oralig‘ida joylashadi?",
-        variantlar: [
-            "200–2000 kilometr oralig‘ida",
-            "5000–20000 kilometr oralig‘ida",
-            "35786 kilometr atrofida",
-            "50000 kilometrdan yuqorida"
-        ],
-        togri: "200–2000 kilometr oralig‘ida"
-    },
+    variantlar: [
+        "Yer stansiyasidan yo‘ldoshga uzatiladigan signalni",
+        "Yo‘ldoshdan yer stansiyasiga qaytariladigan signalni",
+        "Yo‘ldoshlar orasidagi signal almashinuvini",
+        "Yer stansiyalarining ichki tarmoq signalini"
+    ],
 
-    {
-        savol: "LEO yo‘ldoshlarining asosiy afzalligi nima?",
-        variantlar: [
-            "Kechikish darajasi past bo‘ladi",
-            "Har doim bitta nuqtada turadi",
-            "Faqat televizion signal beradi",
-            "Qurilishi juda qimmat bo‘ladi"
-        ],
-        togri: "Kechikish darajasi past bo‘ladi"
-    },
+    togri: "Yer stansiyasidan yo‘ldoshga uzatiladigan signalni"
+},
 
-    {
-        savol: "MEO yo‘ldoshlari ko‘proq qaysi tizimlarda qo‘llaniladi?",
-        variantlar: [
-            "Navigatsiya tizimlarida",
-            "Faqat radioeshittirishda",
-            "Uy Wi-Fi tarmoqlarida",
-            "Optik tolali liniyalarda"
-        ],
-        togri: "Navigatsiya tizimlarida"
-    },
+{
+    savol: "Downlink atamasi nimani anglatadi?",
 
-    {
-        savol: "GPS, GLONASS va Galileo qaysi xizmat turiga kiradi?",
-        variantlar: [
-            "Global joylashuv xizmatlariga",
-            "Televizion eshittirish xizmatlariga",
-            "Optik Internet xizmatlariga",
-            "Elektr energiyasi xizmatlariga"
-        ],
-        togri: "Global joylashuv xizmatlariga"
-    },
+    variantlar: [
+        "Yo‘ldoshdan yer stansiyasiga yuboriladigan signalni",
+        "Yer stansiyasidan yo‘ldoshga uzatiladigan signalni",
+        "Yer orbitasidagi ichki aloqa tizimini",
+        "Signalning kuchaytirish jarayonini"
+    ],
 
-    {
-        savol: "Qamrov zonasi nimani bildiradi?",
-        variantlar: [
-            "Yo‘ldosh signali yetadigan hududni",
-            "Yer stansiyasining kabel uzunligini",
-            "Router ichidagi portlar sonini",
-            "Sun’iy yo‘ldosh og‘irligini"
-        ],
-        togri: "Yo‘ldosh signali yetadigan hududni"
-    },
+    togri: "Yo‘ldoshdan yer stansiyasiga yuboriladigan signalni"
+},
 
-    {
-        savol: "Line-of-sight talabi nimani anglatadi?",
-        variantlar: [
-            "Yo‘ldosh va stansiya orasida to‘siq bo‘lmasligini",
-            "Faqat kabel orqali ulanish kerakligini",
-            "Signal doim past chastotada bo‘lishini",
-            "Yer stansiyasi yopiq joyda turishini"
-        ],
-        togri: "Yo‘ldosh va stansiya orasida to‘siq bo‘lmasligini"
-    },
+{
+    savol: "Sun’iy yo‘ldosh aloqa tizimlarining asosiy afzalliklaridan biri qaysi?",
 
-    {
-        savol: "Starlink tizimi asosan qaysi orbitaga asoslangan?",
-        variantlar: [
-            "LEO orbitasiga",
-            "GEO orbitasiga",
-            "MEO orbitasiga",
-            "GTO orbitasiga"
-        ],
-        togri: "LEO orbitasiga"
-    },
+    variantlar: [
+        "Geografik cheklovlarsiz aloqa o‘rnatishi",
+        "Signalni faqat optik tolalar orqali uzatishi",
+        "Ma’lumotlarni qog‘oz shaklida saqlashi",
+        "Elektr tarmoqlariga bog‘liq ishlashi"
+    ],
 
-    {
-        savol: "Sun’iy yo‘ldosh aloqasi chekka hududlarda nima uchun muhim?",
-        variantlar: [
-            "Yer usti infratuzilmasisiz aloqa beradi",
-            "Faqat kabel Internetni tezlashtiradi",
-            "Mobil telefon batareyasini tejaydi",
-            "Optik tolani almashtirmaydi"
-        ],
-        togri: "Yer usti infratuzilmasisiz aloqa beradi"
-    },
+    togri: "Geografik cheklovlarsiz aloqa o‘rnatishi"
+},
 
-    {
-        savol: "Harbiy sohada sun’iy yo‘ldosh aloqasi nima uchun ishlatiladi?",
-        variantlar: [
-            "Strategik axborot almashish uchun",
-            "Faqat televizion signal uchun",
-            "Uy Internetini ulash uchun",
-            "Elektr energiyasini uzatish uchun"
-        ],
-        togri: "Strategik axborot almashish uchun"
-    },
+{
+    savol: "Geostatsionar yo‘ldoshlarning asosiy xususiyati nimada?",
 
-    {
-        savol: "Orbital ifloslanish nimani anglatadi?",
-        variantlar: [
-            "Orbitadagi kosmik chiqindilar muammosini",
-            "Yer stansiyasidagi chang muammosini",
-            "Signal chastotasining kamayishini",
-            "Antenna yo‘nalishining buzilishini"
-        ],
-        togri: "Orbitadagi kosmik chiqindilar muammosini"
-    }
+    variantlar: [
+        "Yerning bir nuqtasi ustida doimiy harakatlanishida",
+        "Yer atrofida juda tez aylanishida",
+        "Past balandlikda harakatlanishida",
+        "Faqat navigatsiya xizmatlarida ishlatilishida"
+    ],
+
+    togri: "Yerning bir nuqtasi ustida doimiy harakatlanishida"
+},
+
+{
+    savol: "GEO orbitasining asosiy kamchiligi nimadan iborat?",
+
+    variantlar: [
+        "Signal uzatilishidagi kechikishning yuqoriligidan",
+        "Qamrov hududining kichikligidan",
+        "Yo‘ldoshlarning tez harakatlanishidan",
+        "Faqat qisqa masofada ishlashidan"
+    ],
+
+    togri: "Signal uzatilishidagi kechikishning yuqoriligidan"
+},
+
+{
+    savol: "LEO orbitasidagi yo‘ldoshlar qaysi balandlik oralig‘ida joylashadi?",
+
+    variantlar: [
+        "200 dan 2000 kilometrgacha",
+        "5000 dan 20000 kilometrgacha",
+        "35786 kilometrdan yuqorida",
+        "100 kilometrdan past balandlikda"
+    ],
+
+    togri: "200 dan 2000 kilometrgacha"
+},
+
+{
+    savol: "LEO yo‘ldoshlarining asosiy afzalligi nimada?",
+
+    variantlar: [
+        "Signal kechikishining past bo‘lishida",
+        "Bir nuqta ustida doimiy turishida",
+        "Faqat televizion signal uzatishida",
+        "Yuqori energiya sarfi bilan ishlashida"
+    ],
+
+    togri: "Signal kechikishining past bo‘lishida"
+},
+
+{
+    savol: "MEO orbitasidagi yo‘ldoshlar asosan qaysi tizimlarda qo‘llaniladi?",
+
+    variantlar: [
+        "Navigatsiya va joylashuv tizimlarida",
+        "Faqat radioeshittirish tizimlarida",
+        "Optik aloqa liniyalarida",
+        "Kabelli Internet tarmoqlarida"
+    ],
+
+    togri: "Navigatsiya va joylashuv tizimlarida"
+},
+
+{
+    savol: "Qamrov zonasi nimani bildiradi?",
+
+    variantlar: [
+        "Yo‘ldosh signali samarali yetib boradigan hududni",
+        "Yo‘ldoshning elektr energiyasi sarfini",
+        "Signalni kuchaytirish uchun ishlatiladigan qurilmani",
+        "Yer stansiyalarining texnik quvvatini"
+    ],
+
+    togri: "Yo‘ldosh signali samarali yetib boradigan hududni"
+}
+
 ];

@@ -1,166 +1,133 @@
 ﻿const SAVOLLAR = [
-    {
-        savol: "Optik tolali aloqa texnologiyasida axborot qanday uzatiladi?",
-        variantlar: [
-            "Yorug‘lik nurlari orqali",
-            "Elektr toki orqali",
-            "Magnit impulslar orqali",
-            "Radio to‘lqinlar orqali"
-        ],
-        togri: "Yorug‘lik nurlari orqali"
-    },
 
-    {
-        savol: "Optik tolalarning asosiy afzalligi nima?",
-        variantlar: [
-            "Yuqori tezlik va kam yo‘qotish",
-            "Faqat arzon qurilmalarda ishlashi",
-            "Signalni analog uzatishi",
-            "Kabelsiz aloqa yaratishi"
-        ],
-        togri: "Yuqori tezlik va kam yo‘qotish"
-    },
+{
+    savol: "Optik tolali aloqa texnologiyasining asosiy mohiyati nimadan iborat?",
 
-    {
-        savol: "Optik tola asosan qanday materialdan tayyorlanadi?",
-        variantlar: [
-            "Kvarts yoki shisha materialidan",
-            "Mis va alyuminiydan",
-            "Plastmassa va rezinadan",
-            "Temir va po‘latdan"
-        ],
-        togri: "Kvarts yoki shisha materialidan"
-    },
+    variantlar: [
+        "Axborotni yorug‘lik nurlari orqali uzatishdan",
+        "Axborotni elektr toki orqali uzatishdan",
+        "Signalni radio to‘lqinlar orqali uzatishdan",
+        "Ma’lumotni magnit impulslar orqali uzatishdan"
+    ],
 
-    {
-        savol: "Optik tolada yorug‘likning yadro ichida qolish hodisasi nima deyiladi?",
-        variantlar: [
-            "Ichki to‘liq refleksiya",
-            "Signal dispersiyasi",
-            "Elektromagnit induksiya",
-            "Spektral modulyatsiya"
-        ],
-        togri: "Ichki to‘liq refleksiya"
-    },
+    togri: "Axborotni yorug‘lik nurlari orqali uzatishdan"
+},
 
-    {
-        savol: "Optik tolalarda signal tashuvchi sifatida nima ishlatiladi?",
-        variantlar: [
-            "Yorug‘lik impulslari",
-            "Elektr impulslari",
-            "Magnit maydonlar",
-            "Akustik to‘lqinlar"
-        ],
-        togri: "Yorug‘lik impulslari"
-    },
+{
+    savol: "Optik tolalarning asosiy afzalliklaridan biri qaysi?",
 
-    {
-        savol: "Optik aloqa tizimlarida uzoq masofalar uchun ko‘proq nima ishlatiladi?",
-        variantlar: [
-            "Lazer nurlari",
-            "LED lampalar",
-            "Radio antennalar",
-            "Elektr generatorlari"
-        ],
-        togri: "Lazer nurlari"
-    },
+    variantlar: [
+        "Yuqori tezlikda va uzoq masofaga ma’lumot uzatishi",
+        "Signalni past chastotada uzatishi",
+        "Elektr energiyasini birga uzatishi",
+        "Ma’lumotlarni analog shaklda saqlashi"
+    ],
 
-    {
-        savol: "LED nurlari qaysi tizimlar uchun qulay hisoblanadi?",
-        variantlar: [
-            "Qisqa masofali tizimlar uchun",
-            "Faqat xalqaro tarmoqlar uchun",
-            "Sun’iy yo‘ldosh tizimlari uchun",
-            "Harbiy radarlar uchun"
-        ],
-        togri: "Qisqa masofali tizimlar uchun"
-    },
+    togri: "Yuqori tezlikda va uzoq masofaga ma’lumot uzatishi"
+},
 
-    {
-        savol: "Optik tolalarda signal kuchsizlanishiga nima sabab bo‘ladi?",
-        variantlar: [
-            "Yutish va sochilish hodisalari",
-            "Faqat kabel uzunligi",
-            "Routerlarning ishlashi",
-            "IP manzillar soni"
-        ],
-        togri: "Yutish va sochilish hodisalari"
-    },
+{
+    savol: "Optik tolaning ichki qismi qanday materialdan tayyorlanadi?",
 
-    {
-        savol: "Optik aloqa tizimlarida signalni tiklash uchun nima qo‘llaniladi?",
-        variantlar: [
-            "Kuchaytirgich va regeneratorlar",
-            "Faqat modem qurilmalari",
-            "Wi-Fi routerlari",
-            "Signal filtrlagichlari"
-        ],
-        togri: "Kuchaytirgich va regeneratorlar"
-    },
+    variantlar: [
+        "Kvarts yoki shisha materialidan",
+        "Mis va alyuminiy qotishmasidan",
+        "Temir va po‘lat qoplamasidan",
+        "Plastmassa va rezina aralashmasidan"
+    ],
 
-    {
-        savol: "EDFA kuchaytirgichi qaysi element asosida ishlaydi?",
-        variantlar: [
-            "Erbiy elementi asosida",
-            "Mis elementi asosida",
-            "Temir elementi asosida",
-            "Kremniy elementi asosida"
-        ],
-        togri: "Erbiy elementi asosida"
-    },
+    togri: "Kvarts yoki shisha materialidan"
+},
 
-    {
-        savol: "Optik aloqa tizimlarida modulyatsiya nima vazifani bajaradi?",
-        variantlar: [
-            "Ma’lumotni signalga yuklaydi",
-            "Signalni sovutib uzatadi",
-            "Kabel uzunligini oshiradi",
-            "Tok kuchini kamaytiradi"
-        ],
-        togri: "Ma’lumotni signalga yuklaydi"
-    },
+{
+    savol: "Optik tolada yorug‘likning yadro ichida qolish hodisasi nima deb ataladi?",
 
-    {
-        savol: "Dispersiya qanday muammoga olib keladi?",
-        variantlar: [
-            "Signal impulsining kengayishiga",
-            "Signal tezligining oshishiga",
-            "Elektr toki kuchayishiga",
-            "Kabelning qizib ketishiga"
-        ],
-        togri: "Signal impulsining kengayishiga"
-    },
+    variantlar: [
+        "Ichki to‘liq refleksiya",
+        "Signal dispersiyasi",
+        "Chastotali modulyatsiya",
+        "Optik rezonans"
+    ],
 
-    {
-        savol: "PON texnologiyasi nimani anglatadi?",
-        variantlar: [
-            "Passiv optik tarmoqni",
-            "Paketli optik uzatishni",
-            "Parallel optik tizimni",
-            "Programmalashtirilgan optik signalni"
-        ],
-        togri: "Passiv optik tarmoqni"
-    },
+    togri: "Ichki to‘liq refleksiya"
+},
 
-    {
-        savol: "FTTH arxitekturasi nimani bildiradi?",
-        variantlar: [
-            "Optik tolani foydalanuvchi uyigacha olib borishni",
-            "Signalni sun’iy yo‘ldosh orqali uzatishni",
-            "Mobil tarmoq orqali Internet berishni",
-            "Faqat korporativ tarmoq yaratishni"
-        ],
-        togri: "Optik tolani foydalanuvchi uyigacha olib borishni"
-    },
+{
+    savol: "Optik aloqa tizimlarida uzoq masofaga yuqori aniqlikda signal uzatish uchun qaysi manba ishlatiladi?",
 
-    {
-        savol: "DWDM texnologiyasining asosiy afzalligi nima?",
-        variantlar: [
-            "Bitta tolada ko‘plab kanallar uzatishi",
-            "Signalni analog shaklga aylantirishi",
-            "Internet tezligini cheklashi",
-            "Faqat qisqa masofada ishlashi"
-        ],
-        togri: "Bitta tolada ko‘plab kanallar uzatishi"
-    }
+    variantlar: [
+        "Lazer nurlari",
+        "LED lampalar",
+        "Radio antennalar",
+        "Magnit impulslar"
+    ],
+
+    togri: "Lazer nurlari"
+},
+
+{
+    savol: "LED nurlari qaysi tizimlar uchun ko‘proq mos hisoblanadi?",
+
+    variantlar: [
+        "Qisqa masofali va arzon tizimlar uchun",
+        "Xalqaro magistral liniyalar uchun",
+        "Sun’iy yo‘ldosh aloqa tizimlari uchun",
+        "Gigabit tezlikdagi uzoq masofali tarmoqlar uchun"
+    ],
+
+    togri: "Qisqa masofali va arzon tizimlar uchun"
+},
+
+{
+    savol: "Optik tolada signal kuchsizlanishining asosiy sabablaridan biri qaysi?",
+
+    variantlar: [
+        "Yutish va sochilish hodisalari",
+        "Signal amplitudasining ortishi",
+        "Radio to‘lqinlarning kuchayishi",
+        "Elektr toki qarshiligining kamayishi"
+    ],
+
+    togri: "Yutish va sochilish hodisalari"
+},
+
+{
+    savol: "EDFA kuchaytirgichi qaysi signal uchun samarali hisoblanadi?",
+
+    variantlar: [
+        "1550 nm to‘lqin uzunligidagi signal uchun",
+        "850 nm to‘lqin uzunligidagi signal uchun",
+        "2G radiosignallari uchun",
+        "Past chastotali analog signallar uchun"
+    ],
+
+    togri: "1550 nm to‘lqin uzunligidagi signal uchun"
+},
+
+{
+    savol: "Dispersiya hodisasi nimaga olib keladi?",
+
+    variantlar: [
+        "Yorug‘lik impulsining vaqt davomida kengayishiga",
+        "Signal amplitudasining ortib ketishiga",
+        "Optik tolaning qizib ketishiga",
+        "Chastota diapazonining kamayishiga"
+    ],
+
+    togri: "Yorug‘lik impulsining vaqt davomida kengayishiga"
+},
+
+{
+    savol: "PON texnologiyasining asosiy vazifasi nimadan iborat?",
+
+    variantlar: [
+        "Bitta optik liniyani ko‘plab abonentlarga ulashdan",
+        "Signalni radio to‘lqinlarga aylantirishdan",
+        "Optik tolani elektr kabel bilan almashtirishdan",
+        "Ma’lumotlarni magnit diskda saqlashdan"
+    ],
+
+    togri: "Bitta optik liniyani ko‘plab abonentlarga ulashdan"
+}
+
 ];

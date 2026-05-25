@@ -1,166 +1,133 @@
 ﻿const SAVOLLAR = [
-    {
-        savol: "Bulutli hisoblash nimani anglatadi?",
-        variantlar: [
-            "Internet orqali resurs taqdim etishni",
-            "Faqat kompyuter yig‘ish jarayonini",
-            "Elektr signalini kuchaytirishni",
-            "Telefon liniyasini almashtirishni"
-        ],
-        togri: "Internet orqali resurs taqdim etishni"
-    },
 
-    {
-        savol: "Cloud computing asosiy prinsipi qaysi?",
-        variantlar: [
-            "Talab asosida xizmat ko‘rsatish",
-            "Faqat lokal serverda ishlash",
-            "Internetdan butunlay uzilish",
-            "Resurslarni qo‘lda almashtirish"
-        ],
-        togri: "Talab asosida xizmat ko‘rsatish"
-    },
+{
+    savol: "Bulutli hisoblash (cloud computing) texnologiyasining asosiy mohiyati nimadan iborat?",
 
-    {
-        savol: "Bulutli hisoblashda resurslar qayerda joylashadi?",
-        variantlar: [
-            "Data centerlarda",
-            "Foydalanuvchi klaviaturasida",
-            "Telefon SIM-kartasida",
-            "Faqat lokal printerda"
-        ],
-        togri: "Data centerlarda"
-    },
+    variantlar: [
+        "Internet orqali hisoblash resurslarini masofadan taqdim etishdan",
+        "Ma’lumotlarni faqat lokal qurilmalarda saqlashdan",
+        "Signalni analog shaklda uzatish texnologiyasidan",
+        "Kompyuterlarni fizik kabel orqali boshqarishdan"
+    ],
 
-    {
-        savol: "Bulutli xizmatlarda elastiklik nimani bildiradi?",
-        variantlar: [
-            "Resurs hajmini moslab o‘zgartirishni",
-            "Kabelni fizik cho‘zib uzaytirishni",
-            "Serverni butunlay o‘chirib qo‘yishni",
-            "Dasturlarni faqat diskda saqlashni"
-        ],
-        togri: "Resurs hajmini moslab o‘zgartirishni"
-    },
+    togri: "Internet orqali hisoblash resurslarini masofadan taqdim etishdan"
+},
 
-    {
-        savol: "IaaS modeli foydalanuvchiga nimani beradi?",
-        variantlar: [
-            "Virtual server va infratuzilmani",
-            "Faqat tayyor ofis dasturini",
-            "Faqat elektron pochta xizmatini",
-            "Veb-brauzer dizaynini"
-        ],
-        togri: "Virtual server va infratuzilmani"
-    },
+{
+    savol: "Bulutli hisoblashning asosiy prinsiplaridan biri qaysi?",
 
-    {
-        savol: "PaaS modeli asosan kimlar uchun qulay?",
-        variantlar: [
-            "Dasturchilar uchun",
-            "Faqat oddiy tomoshabinlar uchun",
-            "Faqat printer ustalari uchun",
-            "Telefon operatorlari uchun"
-        ],
-        togri: "Dasturchilar uchun"
-    },
+    variantlar: [
+        "Resurslarni talab asosida taqdim etish",
+        "Ma’lumotlarni faqat qog‘oz shaklida saqlash",
+        "Signal amplitudasini doimiy boshqarish",
+        "Kompyuterlarni alohida lokal tarmoqqa ulash"
+    ],
 
-    {
-        savol: "SaaS modeli nimani ifodalaydi?",
-        variantlar: [
-            "Tayyor dasturdan foydalanishni",
-            "Serverni qo‘lda yig‘ishni",
-            "Kabel tarmog‘ini qurishni",
-            "Operatsion tizim yozishni"
-        ],
-        togri: "Tayyor dasturdan foydalanishni"
-    },
+    togri: "Resurslarni talab asosida taqdim etish"
+},
 
-    {
-        savol: "Google Workspace va Microsoft 365 qaysi modelga kiradi?",
-        variantlar: [
-            "SaaS modeliga",
-            "IaaS modeliga",
-            "PaaS modeliga",
-            "NFV modeliga"
-        ],
-        togri: "SaaS modeliga"
-    },
+{
+    savol: "Bulut texnologiyasining asosiy afzalliklaridan biri nimada?",
 
-    {
-        savol: "Telekommunikatsiya sohasida bulutli texnologiya nima beradi?",
-        variantlar: [
-            "Xizmatlarni tez joriy etish imkonini",
-            "Faqat kabel uzunligini oshirishni",
-            "Telefon batareyasini almashtirishni",
-            "Signalni analog shaklga qaytarishni"
-        ],
-        togri: "Xizmatlarni tez joriy etish imkonini"
-    },
+    variantlar: [
+        "Dasturlarni o‘rnatmasdan veb-brauzer orqali ishlatish imkoniyatida",
+        "Signalni faqat optik tolalar orqali uzatish imkoniyatida",
+        "Kompyuter protsessorini fizik almashtirish imkoniyatida",
+        "Ma’lumotlarni faqat server ichida saqlash imkoniyatida"
+    ],
 
-    {
-        savol: "IP-PBX va VoIP tizimlari bulutda qanday boshqariladi?",
-        variantlar: [
-            "Virtual platforma orqali",
-            "Faqat mexanik qurilma orqali",
-            "Telefon simini almashtirish orqali",
-            "Monitor ekranini kattalashtirish orqali"
-        ],
-        togri: "Virtual platforma orqali"
-    },
+    togri: "Dasturlarni o‘rnatmasdan veb-brauzer orqali ishlatish imkoniyatida"
+},
 
-    {
-        savol: "SDN texnologiyasi nimani anglatadi?",
-        variantlar: [
-            "Tarmoqni dasturiy boshqarishni",
-            "Signalni faqat optik uzatishni",
-            "Serverni mexanik sovutishni",
-            "Fayllarni qog‘ozda saqlashni"
-        ],
-        togri: "Tarmoqni dasturiy boshqarishni"
-    },
+{
+    savol: "Bulutli hisoblashdagi elastiklik tushunchasi nimani anglatadi?",
 
-    {
-        savol: "NFV texnologiyasi nima uchun xizmat qiladi?",
-        variantlar: [
-            "Tarmoq funksiyalarini virtuallashtirishga",
-            "Telefon raqamlarini qisqartirishga",
-            "Internet narxini qo‘lda hisoblashga",
-            "Monitor tasvirini yaxshilashga"
-        ],
-        togri: "Tarmoq funksiyalarini virtuallashtirishga"
-    },
+    variantlar: [
+        "Xizmat hajmini ehtiyojga qarab oshirish yoki kamaytirishni",
+        "Signal chastotasini avtomatik boshqarishni",
+        "Ma’lumotlarni analog shaklga aylantirishni",
+        "Qurilmalarni faqat bitta tarmoqqa ulashni"
+    ],
 
-    {
-        savol: "Bulutli infratuzilmada xavfsizlik nima uchun muhim?",
-        variantlar: [
-            "Shaxsiy va tijorat ma’lumotlari saqlangani uchun",
-            "Faqat kompyuter rangi o‘zgargani uchun",
-            "Internet doim o‘chib turgani uchun",
-            "Printerlar ko‘p ishlagani uchun"
-        ],
-        togri: "Shaxsiy va tijorat ma’lumotlari saqlangani uchun"
-    },
+    togri: "Xizmat hajmini ehtiyojga qarab oshirish yoki kamaytirishni"
+},
 
-    {
-        savol: "Bulut xavfsizligida qaysi chora qo‘llaniladi?",
-        variantlar: [
-            "Shifrlash va autentifikatsiya",
-            "Faqat ekran yorqinligini oshirish",
-            "Klaviaturani almashtirish",
-            "Kabelni qisqartirish"
-        ],
-        togri: "Shifrlash va autentifikatsiya"
-    },
+{
+    savol: "IaaS modelining asosiy vazifasi nimadan iborat?",
 
-    {
-        savol: "Bulut va Telekommunikatsiya integratsiyasi nimani kuchaytiradi?",
-        variantlar: [
-            "Markazlashtirilgan boshqaruvni",
-            "Faqat lokal fayl almashinuvini",
-            "Telefon qopqog‘i dizaynini",
-            "Elektr rozetkalar sonini"
-        ],
-        togri: "Markazlashtirilgan boshqaruvni"
-    }
+    variantlar: [
+        "Virtual server va tarmoq infratuzilmasini taqdim etishdan",
+        "Tayyor dasturiy mahsulotlarni ishlatishdan",
+        "Faqat dastur kodlarini sinovdan o‘tkazishdan",
+        "Elektron pochta xizmatlarini boshqarishdan"
+    ],
+
+    togri: "Virtual server va tarmoq infratuzilmasini taqdim etishdan"
+},
+
+{
+    savol: "PaaS modeli asosan kimlar uchun mo‘ljallangan?",
+
+    variantlar: [
+        "Dasturchilar va ilova yaratuvchilar uchun",
+        "Faqat oddiy Internet foydalanuvchilari uchun",
+        "Mobil operator abonentlari uchun",
+        "Signal monitoring tizimlari uchun"
+    ],
+
+    togri: "Dasturchilar va ilova yaratuvchilar uchun"
+},
+
+{
+    savol: "SaaS modelining asosiy xususiyati nimada?",
+
+    variantlar: [
+        "Tayyor dasturiy xizmatlarni Internet orqali taqdim etishida",
+        "Virtual serverlarni boshqarish imkoniyatida",
+        "Tarmoq qurilmalarini fizik sozlash imkoniyatida",
+        "Signal kuchaytirgichlarini masofadan boshqarishida"
+    ],
+
+    togri: "Tayyor dasturiy xizmatlarni Internet orqali taqdim etishida"
+},
+
+{
+    savol: "Quyidagilardan qaysi biri SaaS xizmatiga misol bo‘la oladi?",
+
+    variantlar: [
+        "Google Workspace",
+        "Google Compute Engine",
+        "Virtual router platformasi",
+        "Signal monitoring serveri"
+    ],
+
+    togri: "Google Workspace"
+},
+
+{
+    savol: "Telekommunikatsiyada bulutli texnologiyalar qanday imkoniyat yaratadi?",
+
+    variantlar: [
+        "Xizmatlarni tez joriy etish va resurslarni optimallashtirish imkoniyatini",
+        "Signalni analog shaklda uzatish imkoniyatini",
+        "Faqat lokal tarmoq orqali ishlash imkoniyatini",
+        "Kompyuterlarni fizik kabelsiz boshqarish imkoniyatini"
+    ],
+
+    togri: "Xizmatlarni tez joriy etish va resurslarni optimallashtirish imkoniyatini"
+},
+
+{
+    savol: "SDN va NFV texnologiyalarining asosiy vazifasi nimadan iborat?",
+
+    variantlar: [
+        "Tarmoqni dasturiy boshqarish va virtualizatsiya qilishdan",
+        "Signal amplitudasini oshirishdan",
+        "Ma’lumotlarni analog shaklda uzatishdan",
+        "Qurilmalarni elektr energiyasi bilan ta’minlashdan"
+    ],
+
+    togri: "Tarmoqni dasturiy boshqarish va virtualizatsiya qilishdan"
+}
+
 ];

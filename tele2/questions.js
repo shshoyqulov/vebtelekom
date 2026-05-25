@@ -1,55 +1,55 @@
 ﻿const SAVOLLAR = [
 
 {
+    savol: "Tabiatdagi ko‘pgina signal turlari qanday signal hisoblanadi?",
+
+    variantlar: [
+        "Uzluksiz o‘zgaruvchi analog signallar",
+        "Faqat ikkilik qiymatli raqamli signallar",
+        "Kodlangan elektromagnit signallar",
+        "Diskret vaqt oralig‘idagi impulsli signallar"
+    ],
+
+    togri: "Uzluksiz o‘zgaruvchi analog signallar"
+},
+
+{
     savol: "Analog signalning asosiy xususiyati nimadan iborat?",
 
     variantlar: [
-        "Vaqt bo‘yicha uzluksiz o‘zgaruvchi qiymatlarni qabul qilishi",
-        "Vaqt bo‘yicha uzlukli va cheklangan qiymatlarni qabul qilishi",
-        "Vaqt bo‘yicha uzluksiz, lekin faqat ikkita qiymatni qabul qilishi",
-        "Vaqt bo‘yicha diskret, ammo cheksiz qiymatlarni qabul qilishi"
+        "Vaqt davomida uzluksiz o‘zgarib borishi",
+        "Faqat 0 va 1 qiymatlarini qabul qilishi",
+        "Ma’lumotlarni kodlangan impulslar orqali uzatishi",
+        "Signal amplitudasining doimiy bo‘lishi"
     ],
 
-    togri: "Vaqt bo‘yicha uzluksiz o‘zgaruvchi qiymatlarni qabul qilishi"
+    togri: "Vaqt davomida uzluksiz o‘zgarib borishi"
 },
 
 {
-    savol: "Raqamli signal qanday signal hisoblanadi?",
+    savol: "Analog signalga qaysi qurilma misol bo‘la oladi?",
 
     variantlar: [
-        "Cheklangan qiymatlar qabul qiladigan signal",
-        "Cheksiz qiymatlar qabul qiladigan signal",
-        "Uzluksiz amplitudaga ega bo‘lgan signal",
-        "Faqat sinusoidal ko‘rinishda uzatiladigan signal"
+        "Shkalali termometr",
+        "Raqamli kalkulyator",
+        "Elektron klaviatura",
+        "Wi-Fi router"
     ],
 
-    togri: "Cheklangan qiymatlar qabul qiladigan signal"
+    togri: "Shkalali termometr"
 },
 
 {
-    savol: "Analog signal amplitudasi qanday qiymatlar oralig‘ida bo‘ladi?",
+    savol: "Raqamli signal qanday qiymatlar asosida ishlaydi?",
 
     variantlar: [
-        "Maksimal va minimal oralig‘ida cheksiz qiymatlar soniga ega bo‘ladi",
-        "Maksimal va minimal oralig‘ida faqat ikkita qiymatga ega bo‘ladi",
-        "Maksimal va minimal oralig‘ida faqat diskret qiymatlarga ega bo‘ladi",
-        "Maksimal va minimal oralig‘ida faqat kodlangan qiymatlarga ega bo‘ladi"
+        "Cheklangan 0 va 1 qiymatlar asosida",
+        "Cheksiz amplituda qiymatlari asosida",
+        "Faqat sinusoidal tebranishlar asosida",
+        "Uzluksiz chastota o‘zgarishlari asosida"
     ],
 
-    togri: "Maksimal va minimal oralig‘ida cheksiz qiymatlar soniga ega bo‘ladi"
-},
-
-{
-    savol: "Raqamli signal odatda qanday qiymatlar orqali ifodalanadi?",
-
-    variantlar: [
-        "0 va 1 qiymatlari orqali",
-        "−1 va +1 qiymatlari orqali",
-        "0 va cheksiz qiymatlar orqali",
-        "Musbat va manfiy sinusoidalar orqali"
-    ],
-
-    togri: "0 va 1 qiymatlari orqali"
+    togri: "Cheklangan 0 va 1 qiymatlar asosida"
 },
 
 {
@@ -59,7 +59,7 @@
         "Diskretlash",
         "Kodlash",
         "Modulyatsiya",
-        "Kvantlash"
+        "Shifrlash"
     ],
 
     togri: "Diskretlash"
@@ -69,13 +69,13 @@
     savol: "Diskretlash jarayonining asosiy vazifasi nimadan iborat?",
 
     variantlar: [
-        "Uzluksiz signalni ma’lum vaqt oralig‘ida namunalash",
-        "Signal amplitudasini ikkilik kodga aylantirish",
-        "Signal amplitudasini teng darajalarga bo‘lish",
-        "Signal chastotasini analog shaklga qaytarish"
+        "Uzluksiz signalni vaqt oralig‘ida namunalash",
+        "Signalni ikkilik kodga aylantirish",
+        "Signal amplitudasini siqish",
+        "Signal chastotasini kamaytirish"
     ],
 
-    togri: "Uzluksiz signalni ma’lum vaqt oralig‘ida namunalash"
+    togri: "Uzluksiz signalni vaqt oralig‘ida namunalash"
 },
 
 {
@@ -83,9 +83,9 @@
 
     variantlar: [
         "Signal chastotasidan kamida ikki baravar yuqori chastotada",
-        "Signal chastotasidan kamida bir baravar yuqori chastotada",
-        "Signal amplitudasidan ikki baravar yuqori darajada",
-        "Signal amplitudasiga teng chastotada"
+        "Signal amplitudasiga teng chastotada",
+        "Faqat minimal chastotada",
+        "Tasodifiy chastota oralig‘ida"
     ],
 
     togri: "Signal chastotasidan kamida ikki baravar yuqori chastotada"
@@ -95,39 +95,39 @@
     savol: "Aliasing hodisasi qachon yuzaga keladi?",
 
     variantlar: [
-        "Namunalash chastotasi yetarlicha yuqori bo‘lmaganda",
-        "Namunalash chastotasi juda yuqori bo‘lganda",
-        "Kvantlash darajalari ortib ketganda",
-        "Kodlash jarayoni juda tez bajarilganda"
+        "Namunalash chastotasi yetarli bo‘lmaganda",
+        "Signal amplitudasi juda yuqori bo‘lganda",
+        "Kodlash darajalari ortib ketganda",
+        "Diskretlash qadami juda katta bo‘lganda"
     ],
 
-    togri: "Namunalash chastotasi yetarlicha yuqori bo‘lmaganda"
+    togri: "Namunalash chastotasi yetarli bo‘lmaganda"
 },
 
 {
-    savol: "Kvantlash jarayonining asosiy vazifasi nimadan iborat?",
+    savol: "Kvantlash jarayonining asosiy mohiyati nimadan iborat?",
 
     variantlar: [
-        "Signal namunalarini ma’lum diskret darajalarga yaqinlashtirish",
-        "Signal namunalarini uzluksiz shaklga qaytarish",
-        "Signal amplitudasini vaqt bo‘yicha bo‘lish",
-        "Signal chastotasini ikki baravar oshirish"
+        "Signal amplitudasini ma’lum diskret darajalarga ajratish",
+        "Signalni vaqt bo‘yicha namunalash",
+        "Signalni analog shaklga qaytarish",
+        "Signalni elektromagnit to‘lqinga aylantirish"
     ],
 
-    togri: "Signal namunalarini ma’lum diskret darajalarga yaqinlashtirish"
+    togri: "Signal amplitudasini ma’lum diskret darajalarga ajratish"
 },
 
 {
-    savol: "Kodlash jarayoni nimani amalga oshiradi?",
+    savol: "Kodlash bosqichida qanday jarayon amalga oshiriladi?",
 
     variantlar: [
-        "Diskretlangan va kvantlangan signalni ikkilik kodga o‘tkazadi",
-        "Diskretlangan signalni analog shaklga qaytaradi",
-        "Signal amplitudasini uzluksiz ko‘rinishga o‘tkazadi",
-        "Signal chastotasini fizik kattalikka aylantiradi"
+        "Signalni ikkilik kod ko‘rinishiga o‘tkazish",
+        "Signal amplitudasini uzluksiz o‘zgartirish",
+        "Signalni analog shaklda tiklash",
+        "Signal chastotasini filtrlash"
     ],
 
-    togri: "Diskretlangan va kvantlangan signalni ikkilik kodga o‘tkazadi"
+    togri: "Signalni ikkilik kod ko‘rinishiga o‘tkazish"
 }
 
 ];

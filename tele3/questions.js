@@ -4,130 +4,130 @@
     savol: "Modulyatsiya jarayonining asosiy vazifasi nimadan iborat?",
 
     variantlar: [
-        "Tashuvchi signal parametrlarini axborot signaliga mos ravishda o‘zgartirish",
-        "Axborot signal parametrlarini tashuvchi signal amplitudasiga tenglashtirish",
-        "Tashuvchi signal parametrlarini faqat chastota bo‘yicha o‘zgartirish",
-        "Axborot signal parametrlarini tashuvchi signal fazasiga bog‘lash"
+        "Axborot signalini yuqori chastotali tashuvchi signal yordamida uzatish",
+        "Signal amplitudasini o‘zgartirmasdan uzoq masofaga uzatish",
+        "Raqamli signallarni elektr energiyasiga aylantirish",
+        "Past chastotali signallarni xotirada saqlash"
     ],
 
-    togri: "Tashuvchi signal parametrlarini axborot signaliga mos ravishda o‘zgartirish"
+    togri: "Axborot signalini yuqori chastotali tashuvchi signal yordamida uzatish"
 },
 
 {
-    savol: "Modulyatsiya jarayonida odatda qaysi parametrlar o‘zgaradi?",
+    savol: "Modulyatsiya jarayonida signalning qaysi parametrlari o‘zgarishi mumkin?",
 
     variantlar: [
-        "Amplituda, chastota va faza parametrlaridan biri",
-        "Amplituda, quvvat va signal uzunligi parametrlaridan biri",
-        "Chastota, qarshilik va tok kuchi parametrlaridan biri",
-        "Faza, harorat va signal tezligi parametrlaridan biri"
+        "Amplituda, chastota va fazasi",
+        "Amplituda, qarshilik va quvvati",
+        "Chastota, to‘lqin uzunligi va sig‘imi",
+        "Tok kuchi, qarshilik va induktivligi"
     ],
 
-    togri: "Amplituda, chastota va faza parametrlaridan biri"
+    togri: "Amplituda, chastota va fazasi"
 },
 
 {
-    savol: "AM modulyatsiyada tashuvchi signalning qaysi parametri o‘zgaradi?",
+    savol: "Amplitudali modulyatsiyaning (AM) asosiy xususiyati nimadan iborat?",
 
     variantlar: [
-        "Amplitudasi",
-        "Chastotasi",
-        "Fazasi",
-        "To‘lqin uzunligi"
+        "Tashuvchi signal amplitudasining o‘zgarishi",
+        "Tashuvchi signal chastotasining o‘zgarishi",
+        "Tashuvchi signal fazasining siljishi",
+        "Tashuvchi signal uzunligining kamayishi"
     ],
 
-    togri: "Amplitudasi"
+    togri: "Tashuvchi signal amplitudasining o‘zgarishi"
 },
 
 {
-    savol: "FM modulyatsiyada tashuvchi signalning qaysi parametri o‘zgaradi?",
+    savol: "Chastotali modulyatsiyada (FM) qanday jarayon yuz beradi?",
 
     variantlar: [
-        "Chastotasi",
-        "Amplitudasi",
-        "Fazasi",
-        "Impuls kengligi"
+        "Tashuvchi signal chastotasining o‘zgarishi",
+        "Tashuvchi signal amplitudasining kamayishi",
+        "Signalning elektr qarshiligining ortishi",
+        "Signal impulslarining uzayishi"
     ],
 
-    togri: "Chastotasi"
+    togri: "Tashuvchi signal chastotasining o‘zgarishi"
 },
 
 {
-    savol: "PM modulyatsiyada tashuvchi signalning qaysi parametri o‘zgaradi?",
+    savol: "Fazali modulyatsiyada (PM yoki PSK) qanday parametr o‘zgaradi?",
 
     variantlar: [
-        "Fazasi",
-        "Amplitudasi",
-        "Chastotasi",
-        "Impuls oralig‘i"
+        "Signal fazasi",
+        "Signal amplitudasi",
+        "Signal quvvati",
+        "Signal sig‘imi"
     ],
 
-    togri: "Fazasi"
+    togri: "Signal fazasi"
 },
 
 {
     savol: "Raqamli modulyatsiyaning asosiy vazifasi nimadan iborat?",
 
     variantlar: [
-        "0 va 1 ko‘rinishidagi ma’lumotlarni analog signalga aylantirish",
-        "Analog signalni faqat amplituda bo‘yicha kuchaytirish",
-        "Raqamli signalni uzluksiz signalga aylantirish",
-        "0 va 1 ko‘rinishidagi ma’lumotlarni optik signalga aylantirish"
+        "0 va 1 ko‘rinishidagi ma’lumotlarni signal orqali uzatish",
+        "Analog signal amplitudasini uzluksiz o‘zgartirish",
+        "Elektromagnit to‘lqinlarni optik signalga aylantirish",
+        "Signalning quvvat darajasini doimiy saqlash"
     ],
 
-    togri: "0 va 1 ko‘rinishidagi ma’lumotlarni analog signalga aylantirish"
+    togri: "0 va 1 ko‘rinishidagi ma’lumotlarni signal orqali uzatish"
 },
 
 {
     savol: "ASK modulyatsiyasida ma’lumot qanday uzatiladi?",
 
     variantlar: [
-        "0 va 1 uchun turli amplitudalar yordamida",
-        "0 va 1 uchun turli chastotalar yordamida",
-        "0 va 1 uchun turli fazalar yordamida",
-        "0 va 1 uchun turli impuls kengliklari yordamida"
+        "Turli amplitudali signallar yordamida",
+        "Turli fazali signallar yordamida",
+        "Turli impuls uzunliklari yordamida",
+        "Turli kodlash jadvallari yordamida"
     ],
 
-    togri: "0 va 1 uchun turli amplitudalar yordamida"
+    togri: "Turli amplitudali signallar yordamida"
 },
 
 {
-    savol: "FSK modulyatsiyasida ma’lumot qanday uzatiladi?",
+    savol: "FSK modulyatsiyasining asosiy belgisi qaysi?",
 
     variantlar: [
-        "0 va 1 uchun turli chastotalar yordamida",
-        "0 va 1 uchun turli amplitudalar yordamida",
-        "0 va 1 uchun turli fazalar yordamida",
-        "0 va 1 uchun turli impuls uzunliklari yordamida"
+        "Turli chastotalardan foydalanilishi",
+        "Turli amplitudalardan foydalanilishi",
+        "Signal fazasining doimiy saqlanishi",
+        "Impuls davomiyligining kamayishi"
     ],
 
-    togri: "0 va 1 uchun turli chastotalar yordamida"
+    togri: "Turli chastotalardan foydalanilishi"
 },
 
 {
-    savol: "PSK modulyatsiyasining asosiy xususiyati nimada?",
+    savol: "QAM modulyatsiyasi qanday imkoniyat yaratadi?",
 
     variantlar: [
-        "Ma’lumotlarni uzatishda faza siljishidan foydalaniladi",
-        "Ma’lumotlarni uzatishda amplituda siljishidan foydalaniladi",
-        "Ma’lumotlarni uzatishda chastota kamayishidan foydalaniladi",
-        "Ma’lumotlarni uzatishda impuls uzunligidan foydalaniladi"
+        "Amplituda va fazani birgalikda o‘zgartirib ko‘proq bit uzatish",
+        "Signal amplitudasini uzluksiz kamaytirish",
+        "Signalni analog shaklda uzoq vaqt saqlash",
+        "Past chastotali signallarni filtrlash"
     ],
 
-    togri: "Ma’lumotlarni uzatishda faza siljishidan foydalaniladi"
+    togri: "Amplituda va fazani birgalikda o‘zgartirib ko‘proq bit uzatish"
 },
 
 {
-    savol: "QAM modulyatsiyasining asosiy afzalligi nimada?",
+    savol: "Modulyatsiyaning signal uzatishdagi afzalligi nimada?",
 
     variantlar: [
-        "Amplituda va fazani birlashtirib ko‘proq bit uzatish imkonini beradi",
-        "Amplituda va chastotani birlashtirib signal quvvatini oshiradi",
-        "Faza va impuls kengligini birlashtirib uzatish masofasini oshiradi",
-        "Chastota va impuls oralig‘ini birlashtirib signalni soddalashtiradi"
+        "Radiosignallarning o‘zaro xalaqitini kamaytirish",
+        "Signal amplitudasini o‘zgarmas holatda ushlash",
+        "Barcha signallarni bir xil chastotada uzatish",
+        "Signalni qisqa masofalarda cheklash"
     ],
 
-    togri: "Amplituda va fazani birlashtirib ko‘proq bit uzatish imkonini beradi"
+    togri: "Radiosignallarning o‘zaro xalaqitini kamaytirish"
 }
 
 ];

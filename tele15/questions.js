@@ -1,166 +1,133 @@
 ﻿const SAVOLLAR = [
-    {
-        savol: "Telekommunikatsiya xavfsizligi nimani ta’minlashga qaratilgan?",
-        variantlar: [
-            "Maxfiylik, yaxlitlik va mavjudlikni",
-            "Faqat Internet tezligini oshirishni",
-            "Telefon narxlarini kamaytirishni",
-            "Kabel uzunligini qisqartirishni"
-        ],
-        togri: "Maxfiylik, yaxlitlik va mavjudlikni"
-    },
 
-    {
-        savol: "Man-in-the-middle hujumi nimani anglatadi?",
-        variantlar: [
-            "Aloqa orasiga yashirin kirishni",
-            "Serverni elektrdan uzib qo‘yishni",
-            "Kompyuter xotirasini tozalashni",
-            "Router tezligini oshirishni"
-        ],
-        togri: "Aloqa orasiga yashirin kirishni"
-    },
+{
+    savol: "Telekommunikatsiya xavfsizligining asosiy vazifasi nimadan iborat?",
 
-    {
-        savol: "DoS hujumining asosiy maqsadi nima?",
-        variantlar: [
-            "Xizmatdan foydalanishni to‘sish",
-            "Ma’lumotni tezroq uzatish",
-            "Parolni xavfsiz saqlash",
-            "Tarmoqni kengaytirish"
-        ],
-        togri: "Xizmatdan foydalanishni to‘sish"
-    },
+    variantlar: [
+        "Ma’lumotlarning maxfiyligi, yaxlitligi va mavjudligini ta’minlashdan",
+        "Signal maxfiyligi, yaxlitligini  doimiy boshqarishdan",
+        "Kompyuterlarni lokal tarmoqda maxfiyligi, yaxlitligini ta'minlashdan",
+        "Mobil qurilmalar ulangan lokal tarmoqda maxfiyligi, yaxlitligini ta'minlashdan"
+    ],
 
-    {
-        savol: "Shifrlash texnologiyasining asosiy vazifasi nima?",
-        variantlar: [
-            "Ma’lumotni o‘qib bo‘lmas shaklga keltirish",
-            "Signalni fizik kabelga aylantirish",
-            "Internet tezligini avtomatik oshirish",
-            "Foydalanuvchi ekranini himoyalash"
-        ],
-        togri: "Ma’lumotni o‘qib bo‘lmas shaklga keltirish"
-    },
+    togri: "Ma’lumotlarning maxfiyligi, yaxlitligi va mavjudligini ta’minlashdan"
+},
 
-    {
-        savol: "AES algoritmi qaysi shifrlash turiga kiradi?",
-        variantlar: [
-            "Simmetrik shifrlash turiga",
-            "Assimetrik shifrlash turiga",
-            "Biometrik tekshiruv turiga",
-            "Tarmoq monitoring turiga"
-        ],
-        togri: "Simmetrik shifrlash turiga"
-    },
+{
+    savol: "Telekommunikatsiya tizimlarida uchraydigan asosiy xavflardan biri qaysi?",
 
-    {
-        savol: "RSA algoritmi nechta kalitdan foydalanadi?",
-        variantlar: [
-            "Ochiq va yopiq kalitdan",
-            "Faqat bitta umumiy kalitdan",
-            "Uchta parol kalitidan",
-            "Faqat PIN-koddan"
-        ],
-        togri: "Ochiq va yopiq kalitdan"
-    },
+    variantlar: [
+        "Ma’lumotlarga ruxsatsiz kirish va ularni o‘zgartirish",
+        "Signal chastotasining avtomatik kamayishi",
+        "Tarmoq qurilmalarining elektr sarfini oshishi",
+        "Monitor ekranining yorqinligi pasayishi"
+    ],
 
-    {
-        savol: "AES va RSA amaliyotda qanday qo‘llaniladi?",
-        variantlar: [
-            "RSA kalit almashadi, AES ma’lumot shifrlaydi",
-            "AES parol yaratadi, RSA kabel almashtiradi",
-            "RSA signal kuchaytiradi, AES IP beradi",
-            "AES modem sozlaydi, RSA Wi-Fi tarqatadi"
-        ],
-        togri: "RSA kalit almashadi, AES ma’lumot shifrlaydi"
-    },
+    togri: "Ma’lumotlarga ruxsatsiz kirish va ularni o‘zgartirish"
+},
 
-    {
-        savol: "Identifikatsiya jarayoni nimani bildiradi?",
-        variantlar: [
-            "Foydalanuvchi shaxsini aniqlashni",
-            "Ma’lumotni shifrlashni",
-            "Signalni kuchaytirishni",
-            "VPN tunnel yaratishni"
-        ],
-        togri: "Foydalanuvchi shaxsini aniqlashni"
-    },
+{
+    savol: "\"Man-in-the-middle\" hujumi qanday amalga oshiriladi?",
 
-    {
-        savol: "Autentifikatsiya nimani anglatadi?",
-        variantlar: [
-            "Shaxs haqiqiyligini tasdiqlashni",
-            "Tarmoq kabelini almashtirishni",
-            "Serverni sovutish jarayonini",
-            "Internet trafikini ko‘paytirishni"
-        ],
-        togri: "Shaxs haqiqiyligini tasdiqlashni"
-    },
+    variantlar: [
+        "Hujumchi ikki tomon orasidagi ma’lumot oqimiga aralashishi orqali",
+        "Signalni optik tolalar orqali kuchaytirish orqali",
+        "IP manzillarni avtomatik almashtirish orqali",
+        "Serverlarni elektr tarmog‘idan uzish orqali"
+    ],
 
-    {
-        savol: "HTTPS protokoli nimani ta’minlaydi?",
-        variantlar: [
-            "Brauzer va server orasida himoyalangan aloqani",
-            "Faqat fayllarni siqib saqlashni",
-            "Kompyuter xotirasini kengaytirishni",
-            "Telefon signalini analog qilishni"
-        ],
-        togri: "Brauzer va server orasida himoyalangan aloqani"
-    },
+    togri: "Hujumchi ikki tomon orasidagi ma’lumot oqimiga aralashishi orqali"
+},
 
-    {
-        savol: "VPN texnologiyasi nima yaratadi?",
-        variantlar: [
-            "Ochiq tarmoqda xavfsiz kanal",
-            "Faqat lokal printer ulanishi",
-            "Telefon kabeli orqali ovoz",
-            "Kompyuter ichki xotirasi"
-        ],
-        togri: "Ochiq tarmoqda xavfsiz kanal"
-    },
+{
+    savol: "AES algoritmining asosiy xususiyati nimadan iborat?",
 
-    {
-        savol: "VPN orqali uzatiladigan ma’lumot qanday himoyalanadi?",
-        variantlar: [
-            "Shifrlangan tunnel orqali",
-            "Faqat ochiq matn orqali",
-            "Oddiy telefon simi orqali",
-            "Printer porti orqali"
-        ],
-        togri: "Shifrlangan tunnel orqali"
-    },
+    variantlar: [
+        "Bir xil kalit bilan ma’lumotni shifrlash va ochishidan",
+        "Ikki xil kalit yordamida ishlashidan",
+        "Signal amplitudasini avtomatik boshqarishidan",
+        "IP manzillarni yashirish imkoniyatidan"
+    ],
 
-    {
-        savol: "Remote Access VPN asosan kimlar uchun qulay?",
-        variantlar: [
-            "Masofadan ishlovchi foydalanuvchilar uchun",
-            "Faqat lokal printerlar uchun",
-            "Faqat modem ishlab chiqaruvchilar uchun",
-            "Faqat kabel montajchilari uchun"
-        ],
-        togri: "Masofadan ishlovchi foydalanuvchilar uchun"
-    },
+    togri: "Bir xil kalit bilan ma’lumotni shifrlash va ochishidan"
+},
 
-    {
-        savol: "Site-to-Site VPN nima uchun ishlatiladi?",
-        variantlar: [
-            "Filiallarni xavfsiz tarmoqqa birlashtirish uchun",
-            "Faqat bitta kompyuterni o‘chirish uchun",
-            "Telefon ekranini yozib olish uchun",
-            "Wi-Fi parolini avtomatik almashtirish uchun"
-        ],
-        togri: "Filiallarni xavfsiz tarmoqqa birlashtirish uchun"
-    },
+{
+    savol: "RSA algoritmida qanday kalitlardan foydalaniladi?",
 
-    {
-        savol: "Ko‘p bosqichli autentifikatsiya nimani kuchaytiradi?",
-        variantlar: [
-            "Kirish xavfsizligini",
-            "Signal amplitudasini",
-            "Kabel uzunligini",
-            "Internet narxini"
-        ],
-        togri: "Kirish xavfsizligini"
-    }
+    variantlar: [
+        "Ochiq va yopiq kalitlardan",
+        "Faqat bitta maxfiy kalitdan",
+        "Signal va amplituda kalitlaridan",
+        "Analog va raqamli kalitlardan"
+    ],
+
+    togri: "Ochiq va yopiq kalitlardan"
+},
+
+{
+    savol: "AES va RSA algoritmlarining birgalikda ishlatilishidagi asosiy maqsad nimadan iborat?",
+
+    variantlar: [
+        "Tezlik va xavfsizlikni birgalikda ta’minlashdan",
+        "Signal chastotasini kamaytirishdan",
+        "Tarmoq qurilmalarini markazlashtirishdan",
+        "Ma’lumotlarni qog‘oz shaklida saqlashdan"
+    ],
+
+    togri: "Tezlik va xavfsizlikni birgalikda ta’minlashdan"
+},
+
+{
+    savol: "Autentifikatsiya jarayoni nimani anglatadi?",
+
+    variantlar: [
+        "Foydalanuvchining haqiqiyligini tasdiqlashni",
+        "Tarmoq signalini kuchaytirishni",
+        "Ma’lumotlarni siqilgan holda uzatishni",
+        "IP manzilni o‘zgartirishni"
+    ],
+
+    togri: "Foydalanuvchining haqiqiyligini tasdiqlashni"
+},
+
+{
+    savol: "Ko‘p bosqichli autentifikatsiyaning asosiy afzalligi nimada?",
+
+    variantlar: [
+        "Foydalanuvchini ishonchliroq aniqlash imkoniyatida",
+        "Signal amplitudasini oshirish imkoniyatida",
+        "Internet tezligini avtomatik oshirish imkoniyatida",
+        "Ma’lumotlarni lokal diskda saqlash imkoniyatida"
+    ],
+
+    togri: "Foydalanuvchini ishonchliroq aniqlash imkoniyatida"
+},
+
+{
+    savol: "HTTPS protokolining asosiy vazifasi nimadan iborat?",
+
+    variantlar: [
+        "Brauzer va server o‘rtasidagi aloqani shifrlashdan",
+        "IP manzillarni avtomatik taqsimlashdan",
+        "Signalni analog shaklda uzatishdan",
+        "Tarmoq qurilmalarini fizik boshqarishdan"
+    ],
+
+    togri: "Brauzer va server o‘rtasidagi aloqani shifrlashdan"
+},
+
+{
+    savol: "VPN texnologiyasining asosiy vazifasi nimadan iborat?",
+
+    variantlar: [
+        "Ochiq tarmoq orqali xavfsiz aloqa kanalini yaratishdan",
+        "Signal amplitudasini oshirishdan",
+        "Telefon qo‘ng‘iroqlarini analog shaklda uzatishdan",
+        "Qurilmalarni lokal tarmoqdan uzishdan"
+    ],
+
+    togri: "Ochiq tarmoq orqali xavfsiz aloqa kanalini yaratishdan"
+}
+
 ];

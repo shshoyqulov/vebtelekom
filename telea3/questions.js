@@ -1,78 +1,133 @@
 ﻿const SAVOLLAR = [
-    {
-        savol: "AM modulyatsiyada modulyatsiya koeffitsienti nimani bildiradi?",
-        variantlar: [
-            "Modullovchi signalning tashuvchi signalga nisbatini",
-            "Signalning kabel orqali uzatish masofasini",
-            "Tarmoqdagi foydalanuvchilar sonini",
-            "Signalning elektr quvvatini"
-        ],
-        togri: "Modullovchi signalning tashuvchi signalga nisbatini"
-    },
 
-    {
-        savol: "AM signalda modulyatsiya koeffitsienti 0.5 bo‘lsa bu nimani anglatadi?",
-        variantlar: [
-            "Signal normal modulyatsiyalanganini",
-            "Signal butunlay buzilganini",
-            "Signal uzatilmay qolganini",
-            "Signal faqat raqamli ekanligini"
-        ],
-        togri: "Signal normal modulyatsiyalanganini"
-    },
+{
+    savol: "AM modulyatsiyasining asosiy xususiyati nimadan iborat?",
 
-    {
-        savol: "FM modulyatsiyada modulyatsiya indeksi qanday aniqlanadi?",
-        variantlar: [
-            "Chastota og‘ishining modullovchi chastotaga nisbati orqali",
-            "Tashuvchi amplitudaning vaqtga nisbati orqali",
-            "Signal quvvatining kabel uzunligiga nisbati orqali",
-            "Foydalanuvchilar sonining signalga nisbati orqali"
-        ],
-        togri: "Chastota og‘ishining modullovchi chastotaga nisbati orqali"
-    },
+    variantlar: [
+        "Tashuvchi signal amplitudasining o‘zgarishidan",
+        "Tashuvchi signal chastotasining o‘zgarishidan",
+        "Signal fazasining doimiy almashinishidan",
+        "Impuls uzunligining o‘zgarishidan"
+    ],
 
-    {
-        savol: "Keng polosali FM qanday holatda hosil bo‘ladi?",
-        variantlar: [
-            "Modulyatsiya indeksi katta bo‘lganda",
-            "Signal amplitudasi nol bo‘lganda",
-            "Faqat analog signal ishlatilganda",
-            "Tashuvchi chastota kamayganda"
-        ],
-        togri: "Modulyatsiya indeksi katta bo‘lganda"
-    },
+    togri: "Tashuvchi signal amplitudasining o‘zgarishidan"
+},
 
-    {
-        savol: "AM modulyatsiyada modulyatsiya koeffitsienti 1 dan katta bo‘lsa nima yuz beradi?",
-        variantlar: [
-            "Signalda buzilish hosil bo‘ladi",
-            "Signal ideal shaklga keladi",
-            "Signal chastotasi yo‘qoladi",
-            "Signal raqamli ko‘rinishga o‘tadi"
-        ],
-        togri: "Signalda buzilish hosil bo‘ladi"
-    },
+{
+    savol: "FM modulyatsiyasining asosiy xususiyati nimada?",
 
-    {
-        savol: "AM signalda yon chastotalar qanday hosil bo‘ladi?",
-        variantlar: [
-            "Tashuvchi va modullovchi chastotalar asosida",
-            "Faqat kabel qarshiligi orqali",
-            "Signal amplitudasi kamayishi orqali",
-            "Faqat elektr toki oshishi orqali"
-        ],
-        togri: "Tashuvchi va modullovchi chastotalar asosida"
-    },
+    variantlar: [
+        "Tashuvchi signal chastotasining o‘zgarishida",
+        "Tashuvchi signal amplitudasining kamayishida",
+        "Signal quvvatining doimiy o‘zgarishida",
+        "Signalning analog shaklga aylanishida"
+    ],
 
-    {
-        savol: "FM modulyatsiyaning asosiy afzalligi nima?",
-        variantlar: [
-            "Shovqinga bardoshliligi yuqori bo‘lishi",
-            "Faqat qisqa masofada ishlashi",
-            "Signal amplitudasini kamaytirishi",
-            "Faqat oddiy telefonlarda ishlashi"
-        ],
-        togri: "Shovqinga bardoshliligi yuqori bo‘lishi"
-    }
+    togri: "Tashuvchi signal chastotasining o‘zgarishida"
+},
+
+{
+    savol: "AM signalda modulyatsiya koeffitsienti qanday belgilanadi?",
+
+    variantlar: [
+        "μ belgisi bilan",
+        "β belgisi bilan",
+        "Δf belgisi bilan",
+        "φ belgisi bilan"
+    ],
+
+    togri: "μ belgisi bilan"
+},
+
+{
+    savol: "Modulyatsiya koeffitsienti μ=0.5 bo‘lsa, bu qanday holatni bildiradi?",
+
+    variantlar: [
+        "Normal va buzilmagan modulyatsiyani",
+        "Signalning ortiqcha modulyatsiyalanganini",
+        "Signalning to‘liq yo‘qolganini",
+        "Signalning raqamli shaklga o‘tganini"
+    ],
+
+    togri: "Normal va buzilmagan modulyatsiyani"
+},
+
+{
+    savol: "AM signalda modulyatsiya koeffitsienti 1 dan katta bo‘lsa qanday holat yuz beradi?",
+
+    variantlar: [
+        "Signal buzilishi yuz beradi",
+        "Signal amplitudasi nolga tenglashadi",
+        "Signal analog shakldan chiqadi",
+        "Signal chastotasi doimiy bo‘lib qoladi"
+    ],
+
+    togri: "Signal buzilishi yuz beradi"
+},
+
+{
+    savol: "FM modulyatsiyasida modulyatsiya indeksi qanday aniqlanadi?",
+
+    variantlar: [
+        "Chastota og‘ishining modullovchi chastotaga nisbatidan",
+        "Signal amplitudasining quvvatga nisbatidan",
+        "Tashuvchi signalning amplitudaga nisbatidan",
+        "Signal quvvatining chastotaga nisbatidan"
+    ],
+
+    togri: "Chastota og‘ishining modullovchi chastotaga nisbatidan"
+},
+
+{
+    savol: "FM signalda Δf belgisi nimani anglatadi?",
+
+    variantlar: [
+        "Chastota og‘ishini",
+        "Signal amplitudasini",
+        "Signal quvvatini",
+        "Signal fazasini"
+    ],
+
+    togri: "Chastota og‘ishini"
+},
+
+{
+    savol: "Keng polosali FM (WBFM) qanday holatda hosil bo‘ladi?",
+
+    variantlar: [
+        "Modulyatsiya indeksi katta bo‘lganda",
+        "Signal amplitudasi nolga teng bo‘lganda",
+        "Signal faqat analog shaklda uzatilganda",
+        "Chastota og‘ishi bo‘lmaganda"
+    ],
+
+    togri: "Modulyatsiya indeksi katta bo‘lganda"
+},
+
+{
+    savol: "AM signalda yon chastotalar qanday hosil bo‘ladi?",
+
+    variantlar: [
+        "Tashuvchi va modullovchi chastotalar yig‘indisi hamda ayirmasi orqali",
+        "Tashuvchi va modullovchi amplituda va chastotalar yig‘indisi hamda ayirmasi orqali",
+        "Signal fazasining o‘zgarishi orqali",
+        "Raqamli impulslarning yig‘ilishi orqali"
+    ],
+
+    togri: "Tashuvchi va modullovchi chastotalar yig‘indisi hamda ayirmasi orqali"
+},
+
+{
+    savol: "AM/FM modulyatsiya simulyatsiyasining asosiy maqsadi nimadan iborat?",
+
+    variantlar: [
+        "Signal parametrlarining o‘zgarishini tahlil qilishdan",
+        "Signal amplitudasini doimiy saqlashdan",
+        "Signal parametrlarining maksimalligini  tahlil qilishdan",
+        "Signal parametrlarining doimiyligini tahlil qilishdan"
+    ],
+
+    togri: "Signal parametrlarining o‘zgarishini tahlil qilishdan"
+}
+
 ];
