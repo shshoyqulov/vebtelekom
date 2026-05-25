@@ -108,6 +108,7 @@
                     <th>To'g'ri</th>
                     <th>Jami</th>
                     <th>Foiz</th>
+		    <th>Sana</th>
           
                 </tr>
             </thead>
@@ -158,16 +159,28 @@ async function natijalarniOqish(){
         csvData.push(data);
 
         let rang = data.foiz >= 60 ? "green" : "red";
+let vaqt = data.sana.toDate();
 
-     tbody.innerHTML += `
-    <tr>
-        <td>${i}</td>
-        <td>${data.ism}</td>
-        <td>${data.mavzu}</td>
-        <td>${data.togri}</td>
-        <td>${data.jami}</td>
-        <td class="${rang}">${data.foiz}%</td>
-    </tr>
+let sana =
+String(vaqt.getDate()).padStart(2,"0") + "." +
+String(vaqt.getMonth()+1).padStart(2,"0") + "." +
+vaqt.getFullYear() + " " +
+
+String(vaqt.getHours()).padStart(2,"0") + ":" +
+String(vaqt.getMinutes()).padStart(2,"0") + ":" +
+String(vaqt.getSeconds()).padStart(2,"0");
+
+
+     <tbody.innerHTML += `
+<tr>
+    <td>${i}</td>
+    <td>${data.ism}</td>
+    <td>${data.mavzu}</td>
+    <td>${data.togri}</td>
+    <td>${data.jami}</td>
+    <td class="${rang}">${data.foiz}%</td>
+    <td>${sana}</td>
+</tr>
 `;
         i++;
 
