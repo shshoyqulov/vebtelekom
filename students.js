@@ -1,6 +1,6 @@
 const STUDENTS = [
 
-{ ism: "Tester", guruh: "tester01" , parol: "111"},
+{ ism: "Tester", guruh: "tester01" , parol: "111", imtiyoz: true},
       // 023-41
    
     { ism: "Bekzod", guruh: "023-41", parol: "02341" },
