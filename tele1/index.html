@@ -271,23 +271,7 @@ if(talabaObj.parol !== parol){
     alert("Parol noto'g'ri");
     return;
 }
-    let parol = document.getElementById("parolInput").value;
-
-let talabaObj = STUDENTS.find(s =>
-    s.ism === talabaSelect.value &&
-    s.guruh === guruhSelect.value
-);
-
-if(!talabaObj){
-    alert("Talaba topilmadi");
-    return;
-}
-
-if(talabaObj.parol !== parol){
-    alert("Parol noto'g'ri");
-    return;
-}
-    guruh = guruhSelect.value;
+       guruh = guruhSelect.value;
     talaba = talabaSelect.value;
 
     document.getElementById("studentName").innerHTML =
