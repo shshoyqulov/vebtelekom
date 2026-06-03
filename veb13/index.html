@@ -422,8 +422,10 @@ let baho = "";
             <button>Uy sahifasiga</button>
         </a>
     `;
+await saveFirebase(foiz, baho);
+
 if(CONFIG.txtSaqlash){
-   await saveTxt(foiz, baho);
+   saveTxt(foiz, baho);
 }
 
 document.getElementById("result").style.display = "block";
@@ -486,6 +488,28 @@ document.body.removeChild(link);
  alert("natijaniSaqlash topilmadi");
     console.log("natijaniSaqlash topilmadi");
 }
+}
+async function saveFirebase(foiz, baho){
+
+    if(typeof window.natijaniSaqlash === "function"){
+
+        let saqlandi = await window.natijaniSaqlash({
+            ism: talaba,
+            guruh: guruh,
+            mavzu: CONFIG.testNomi,
+            togri: ball,
+            jami: savollar.length,
+            foiz: foiz,
+            baho: baho
+        });
+
+        if(!saqlandi){
+            console.log("Firebase saqlanmadi");
+        }
+
+    }else{
+        console.log("natijaniSaqlash topilmadi");
+    }
 }
 let vaqt = CONFIG.testVaqti;
 
