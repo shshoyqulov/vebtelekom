@@ -163,17 +163,14 @@ input{
 
         <select id="guruhSelect">
             <option value="">Guruhni tanlang</option>
-        </select>
-
-        <select id="talabaSelect">
+        </select>        <select id="talabaSelect">
             <option value="">Avval guruhni tanlang</option>
         </select>
-
+<input type="password" id="parolInput" placeholder="Parolni kiriting">
         <button onclick="startTest()">
             OK
         </button>
-
-    </div>
+</div>
 
 </div>
 <div id="testBox">
@@ -255,6 +252,22 @@ window.startTest = function(){
         return;
     }
 
+    let parol = document.getElementById("parolInput").value;
+
+let talabaObj = STUDENTS.find(s =>
+    s.ism === talabaSelect.value &&
+    s.guruh === guruhSelect.value
+);
+
+if(!talabaObj){
+    alert("Talaba topilmadi");
+    return;
+}
+
+if(talabaObj.parol !== parol){
+    alert("Parol noto'g'ri");
+    return;
+}
     guruh = guruhSelect.value;
     talaba = talabaSelect.value;
 
