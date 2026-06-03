@@ -427,8 +427,10 @@ let baho = "";
             <button>Uy sahifasiga</button>
         </a>
     `;
+await saveFirebase(foiz, baho);
+
 if(CONFIG.txtSaqlash){
-   await saveTxt(foiz, baho);
+   saveTxt(foiz, baho);
 }
 
 document.getElementById("result").style.display = "block";
@@ -463,29 +465,31 @@ link.click();
 document.body.removeChild(link);
 
 
-// 2. Firebase’ga keyin saqlash
-if (typeof window.natijaniSaqlash === "function") {
 
-    window.natijaniSaqlash({
-        ism: talaba,
-        guruh: guruh,
-        mavzu: CONFIG.testNomi,
-        togri: ball,
-        jami: savollar.length,
-        foiz: foiz,
-        baho: baho
-    }).then(function(saqlandi){
+
+}
+async function saveFirebase(foiz, baho){
+
+    if(typeof window.natijaniSaqlash === "function"){
+
+        let saqlandi = await window.natijaniSaqlash({
+            ism: talaba,
+            guruh: guruh,
+            mavzu: CONFIG.testNomi,
+            togri: ball,
+            jami: savollar.length,
+            foiz: foiz,
+            baho: baho
+        });
+
         if(!saqlandi){
             console.log("Firebase saqlanmadi");
         }
-    });
 
-} else {
-    console.log("natijaniSaqlash topilmadi");
+    }else{
+        console.log("natijaniSaqlash topilmadi");
+    }
 }
-
-}
-
 let vaqt = CONFIG.testVaqti;
 
 function updateTimer(){
