@@ -2,7 +2,7 @@ const CONFIG = {
     testNomi: "Telekommunikatsiya fanidan ON test topshiriqlari",
     testSavollarSoni: 30,
     javoblarSoni: 4,
-    testVaqti: 1500,
+    testVaqti: 1800,
 
     savollarRandom: true,
     javoblarRandom: true,
