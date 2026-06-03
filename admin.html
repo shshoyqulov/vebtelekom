@@ -108,7 +108,7 @@
                     <th>To'g'ri</th>
                     <th>Jami</th>
                     <th>Foiz</th>
-        	    <th>Sana</th>
+        	        <th>Sana</th>
                 </tr>
             </thead>
             <tbody id="natijalar">       </tbody>
@@ -189,11 +189,36 @@ natijalarniOqish();
 
 window.csvYuklash = function(){
 
-    let csv = "Talaba;Mavzu;Togri;Jami;Foiz\n";
+   window.csvYuklash = function(){
+
+    let csv = "Talaba;Mavzu;Togri;Jami;Foiz;Sana\n";
 
     csvData.forEach(item => {
-        csv += `${item.ism};${item.mavzu};${item.togri};${item.jami};${item.foiz}%\n`;
+
+        let vaqt = item.sana.toDate();
+
+        let sana =
+        String(vaqt.getDate()).padStart(2,"0") + "." +
+        String(vaqt.getMonth()+1).padStart(2,"0") + "." +
+        vaqt.getFullYear() + " " +
+        String(vaqt.getHours()).padStart(2,"0") + ":" +
+        String(vaqt.getMinutes()).padStart(2,"0") + ":" +
+        String(vaqt.getSeconds()).padStart(2,"0");
+
+        csv += `${item.ism};${item.mavzu};${item.togri};${item.jami};${item.foiz}%;${sana}\n`;
     });
+
+    const blob = new Blob([csv], {type:"text/csv;charset=utf-8"});
+
+    const link = document.createElement("a");
+
+    link.href = URL.createObjectURL(blob);
+
+    link.download = "test_natijalari.csv";
+
+    link.click();
+
+}
 
     const blob = new Blob([csv], {type:"text/csv;charset=utf-8"});
 
