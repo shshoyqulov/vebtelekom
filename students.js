@@ -20,8 +20,8 @@ const STUDENTS = [
       imtiyoz: true
     },
     { ism: "Setora", guruh: "023-41", parol: "02341" },
-    { ism: "Surayyo", guruh: "023-41, parol: "02341" },
-    { ism: "Fazliddin", guruh: "023-41, parol: "02341" },
+    { ism: "Surayyo", guruh: "023-41", parol: "02341" },
+    { ism: "Fazliddin", guruh: "023-41", parol: "02341" },
 
     // 023-42
    { 
