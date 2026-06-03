@@ -281,6 +281,7 @@ if(talabaObj.parol !== parol){
 document.getElementById("startModal").style.display = "none";
 
 testBoshlangan = true;
+startTimer();
 };
 
 
@@ -384,7 +385,18 @@ let imtiyozliTalaba = STUDENTS.find(s =>
 
 // Agar imtiyozli bo‘lsa va 60% dan past olsa
 
-if(imtiyozliTalaba && foiz < 60){
+let sarflanganVaqt = CONFIG.testVaqti - vaqt;
+
+// Talaba barcha savollarga javob berganmi?
+let hammasigaJavobBerdi =
+    javoblar.length === savollar.length;
+
+if(
+    imtiyozliTalaba &&
+    foiz < 60 &&
+    sarflanganVaqt >= 180 &&
+    hammasigaJavobBerdi
+){
     foiz = 60;
     ball = Math.round((savollar.length * 60) / 100);
 }
@@ -478,27 +490,20 @@ let vaqt = CONFIG.testVaqti;
 
 
 
-function updateTimer(){
-    let min = Math.floor(vaqt / 60);
-    let sec = vaqt % 60;
-
-    document.getElementById("timer").innerHTML =
-        String(min).padStart(2,"0") + ":" + String(sec).padStart(2,"0");
-}
-
 updateTimer();
-
-timerInterval = setInterval(() => {
-    if(vaqt <= 0){
-        finishTest();
-        return;
-    }
-
-    vaqt--;
-    updateTimer();
-}, 1000);
-
 showQuestion();
+
+function startTimer(){
+    timerInterval = setInterval(() => {
+        if(vaqt <= 0){
+            finishTest();
+            return;
+        }
+
+        vaqt--;
+        updateTimer();
+    }, 1000);
+}
 // ===============================
 // TEST OYNASIDAN CHIQISH NAZORATI
 // ===============================
@@ -559,7 +564,7 @@ function nazorat(sabab){
     }
 
     
-if(chiqishSoni >= 3){
+if(chiqishSoni >= 2){
 
         warningShow(
             "Test oynasidan ikkinchi marta chiqildi. Test yakunlanadi."
