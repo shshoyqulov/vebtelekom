@@ -488,7 +488,14 @@ if (typeof window.natijaniSaqlash === "function") {
 
 let vaqt = CONFIG.testVaqti;
 
+function updateTimer(){
+    let min = Math.floor(vaqt / 60);
+    let sec = vaqt % 60;
 
+    document.getElementById("timer").innerHTML =
+        String(min).padStart(2,"0") + ":" +
+        String(sec).padStart(2,"0");
+}
 
 updateTimer();
 showQuestion();
