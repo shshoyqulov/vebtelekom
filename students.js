@@ -1,70 +1,55 @@
 const STUDENTS = [
+  { ism: "Tester", guruh: "tester01", parol: "111" },
 
-{ ism: "Tester", guruh: "tester01" , parol: "111", imtiyoz: true},
-      // 023-41
-   
-    { ism: "Bekzod", guruh: "023-41", parol: "02341" },
-    { ism: "Islomjon", guruh: "023-41", parol: "02341" },
-    { ism: "Feroza", guruh: "023-41", parol: "02341" },
-    { ism: "Jamshid", guruh: "023-41", parol: "02341" },
-    { ism: "Ilxomjon", guruh: "023-41", parol: "02341" },
-     { ism: "Xurshid", guruh: "023-41", parol: "02341" },
-    { ism: "Temur", guruh: "023-41" , parol: "02341"},
-    { ism: "Iroda", guruh: "023-41" , parol: "02341"},
-    { ism: "Xusan", guruh: "023-41" , parol: "02341"},
-    { ism: "Hilola", guruh: "023-41", parol: "02341" },
-{ 
-      ism: "Ezoza", 
-      guruh: "023-41",
-     parol: "02341",
-      imtiyoz: true
-    },
-    { ism: "Setora", guruh: "023-41", parol: "02341" },
-    { ism: "Surayyo", guruh: "023-41", parol: "02341" },
-    { ism: "Fazliddin", guruh: "023-41", parol: "02341" },
+    // 022-45
 
-    // 023-42
-   { 
-      ism: "Zilola", 
-      guruh: "023-42",
-     parol: "02342",
-      imtiyoz: true
-    },
-    { ism: "Barfiza", guruh: "023-42" },
-    { 
-      ism: "Fotima", 
-       guruh: "023-42",
-     parol: "02342",
-      imtiyoz: true
-    },
-     { ism: "Hikmatulla", guruh: "023-42", parol: "02342" },
-     { ism: "Yulduz", guruh: "023-42", parol: "02342" },
-     { 
-      ism: "Feruza", 
-        guruh: "023-42",
-     parol: "02342",
-      imtiyoz: true
-    },
-    { ism: "Nazokat", guruh: "023-42", parol: "02342" },
-    { ism: "Durdona", guruh: "023-42", parol: "02342" },
-{ 
-      ism: "Dilafroz", 
-       guruh: "023-42",
-     parol: "02342",
-      imtiyoz: true
-    },
-{ 
-      ism: "Asila", 
-        guruh: "023-42",
-     parol: "02342",
-      imtiyoz: true
-    },
-    { ism: "IrodaU", guruh: "023-42", parol: "02342" },
-   { 
-      ism: "Shoxjaxon", 
-        guruh: "023-42",
-     parol: "02342",
-      imtiyoz: true
-    },
-    { ism: "Jasmina", guruh: "023-42", parol: "02342" }
- ];
+   { ism: "Begali", guruh: "023-45", parol: "11111", imtiyoz: true },
+    { ism: "Asilbek", guruh: "023-45", parol: "11111" },
+    { ism: "Aslbek Avl", guruh: "023-45", parol: "11111" },
+    { ism: "Feruz", guruh: "023-45", parol: "11111" },
+    { ism: "Nurzod", guruh: "023-45", parol: "11111", imtiyoz: true },
+    { ism: "Nurmuhammad", guruh: "023-45", parol: "11111" },
+    { ism: "Sevinch", guruh: "023-45", parol: "11111", imtiyoz: true },
+    { ism: "Maqsud", guruh: "023-45", parol: "11111" },
+    { ism: "Dilnura", guruh: "023-45", parol: "11111" },
+    { ism: "OgabekS", guruh: "023-45", parol: "11111" },
+    { ism: "Oldost", guruh: "023-45", parol: "11111" },
+    { ism: "Ruslan", guruh: "023-45", parol: "11111", imtiyoz: true },
+    { ism: "Umid", guruh: "023-45", parol: "11111" },
+   { ism: "Asilbek X", guruh: "023-45", parol: "11111", imtiyoz: true },
+    { ism: "Nafisa", guruh: "023-45", parol: "1111" },
+    { ism: "Abdulahadxon", guruh: "023-45", parol: "1111" },
+    { ism: "Zuloyha", guruh: "023-45", parol: "1111" },
+    { ism: "Shukurullo", guruh: "023-45", parol: "1111" },
+    { ism: "Yulduz", guruh: "023-45", parol: "1111" },
+    { ism: "Zumrad", guruh: "023-45", parol: "1111" },
+    { ism: "Nasiba", guruh: "023-45", parol: "1111" },
+
+    // 022-46
+
+   { ism: "Mohira", guruh: "023-46", parol: "22222", imtiyoz: true },
+   { ism: "Gulasal", guruh: "023-46", parol: "22222", imtiyoz: true },
+   { ism: "Anvar", guruh: "023-46", parol: "22222", imtiyoz: true },
+   { ism: "Muxlisa Bek.", guruh: "023-46", parol: "22222" },
+   { ism: "Dilshod", guruh: "023-46", parol: "22222", imtiyoz: true },
+   { ism: "Davlatjon", guruh: "023-46", parol: "22222", imtiyoz: true },
+   { ism: "Davlatmurod", guruh: "023-46", parol: "22222", imtiyoz: true },
+   { ism: "Javohir", guruh: "023-46", parol: "22222" },
+   { ism: "Voxid", guruh: "023-46", parol: "22222", imtiyoz: true },
+   { ism: "Fayyoza", guruh: "023-46", parol: "22222", imtiyoz: true },
+   { ism: "Sherali", guruh: "023-46", parol: "22222", imtiyoz: true },
+   { ism: "Maftuna", guruh: "023-46", parol: "22222", imtiyoz: true },
+   { ism: "Ezoza", guruh: "023-46", parol: "22222" },
+   { ism: "Rushana", guruh: "023-46", parol: "22222" },
+   { ism: "Soxibjon", guruh: "023-46", parol: "22222" },
+   { ism: "Oyziyod", guruh: "023-46", parol: "22222" },
+   { ism: "Sevara", guruh: "023-46", parol: "22222" },
+   { ism: "Abdurahmon", guruh: "023-46", parol: "22222" },
+   { ism: "OgabekA", guruh: "023-46", parol: "2222" },
+   { ism: "Muxlisa Ber.", guruh: "023-46", parol: "2222" },
+   { ism: "Feruza", guruh: "023-46", parol: "2222" },
+   { ism: "Gavhar", guruh: "023-46", parol: "2222" },
+   { ism: "Shabona", guruh: "023-46", parol: "2222" },
+   { ism: "Saidnazarbek", guruh: "023-46", parol: "2222" }
+
+];
