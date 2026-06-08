@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<title>Qog'oz test variantlari</title>
+
+<style>
+body{
+    font-family:Arial,sans-serif;
+    margin:20px;
+}
+
+.variant{
+    page-break-after:always;
+    margin-bottom:40px;
+}
+
+h2{
+    text-align:center;
+}
+
+.savol{
+    margin:12px 0;
+}
+
+.variantlar{
+    margin-left:20px;
+}
+
+.printBtn{
+    position:fixed;
+    top:10px;
+    right:10px;
+    padding:10px 20px;
+}
+
+
+.variant{
+    page-break-after:always;
+}
+
+.savollarBlok{
+    display:flex !important;
+    gap:20px;
+    margin-top:10px;
+    align-items:flex-start;
+}
+
+.ustun{
+    width:50% !important;
+    box-sizing:border-box;
+}
+
+
+
+.ustun{
+    width:50%;
+}
+
+.chapUstun{
+    border-right:1px solid #000;
+    padding-right:15px;
+}
+
+.ongUstun{
+    padding-left:15px;
+}
+
+.savol{
+    font-size:11px;
+    margin-bottom:5px;
+}
+
+.javobJadval{
+    width:220px;
+    border-collapse:collapse;
+    text-align:center;
+    margin-top:5px;
+    font-size:10px;
+    page-break-inside:avoid;
+    break-inside:avoid;
+}
+
+.javobJadval th,
+.javobJadval td{
+    border:1px solid #000;
+    width:22px;
+    height:16px;
+}
+
+@media print{
+    @page{
+        size:A4;
+        margin:12mm;
+    }
+
+@media print{
+    .javobQismi{
+        page-break-before:auto;
+        page-break-inside:avoid;
+    }
+
+
+@media print{
+    .savollarBlok{
+        display:flex !important;
+        column-count:unset !important;
+        column-gap:unset !important;
+        column-rule:none !important;
+    }
+}
+
+    .javobJadval{
+        page-break-inside:avoid;
+    }
+}
+
+
+    .printBtn{
+        display:none;
+    }
+}
+
+.javobQismi{
+    width:100%;
+    margin-top:5px;
+    break-inside:avoid;
+    page-break-inside:avoid;
+    display:block;
+}
+
+.javobQismi{
+    break-inside: avoid;
+    page-break-inside: avoid;
+    display: inline-block;
+    width: 100%;
+}
+
+</style>
+
+<script src="papervar/paper_config.js"></script>
+<script src="papervar/questions.js"></script>
+
+
+</head>
+<body>
+
+<button class="printBtn" onclick="window.print()">
+PDF / Chop etish
+</button>
+
+<div id="natija"></div>
+
+<script>
+
+function shuffle(arr){
+    let a=[...arr];
+
+    for(let i=a.length-1;i>0;i--){
+        let j=Math.floor(Math.random()*(i+1));
+        [a[i],a[j]]=[a[j],a[i]];
+    }
+
+    return a;
+}
+
+const VARIANTLAR_SONI = PAPER_CONFIG.variantlarSoni;
+const SAVOLLAR_SONI = PAPER_CONFIG.harBirVariantSavolSoni;
+
+let html = "";
+
+let umumiySavollar = shuffle([...SAVOLLAR]);
+
+if(
+    VARIANTLAR_SONI * SAVOLLAR_SONI >
+    umumiySavollar.length
+){
+    alert("Savollar soni yetarli emas!");
+}
+
+let kalitlarHTML = "";
+for(let v=1; v<=VARIANTLAR_SONI; v++){
+let variantKaliti = [];
+let boshlanish =
+    (v - 1) * SAVOLLAR_SONI;
+
+let tugash =
+    boshlanish + SAVOLLAR_SONI;
+
+let savollar =
+    umumiySavollar.slice(
+        boshlanish,
+        tugash
+    );
+
+html += `
+<div class="variant">
+
+    <h2>
+    ${PAPER_CONFIG.sarlavha}
+    <br>
+    ${v}-VARIANT
+    </h2>
+
+    <p>F.I.Sh ______________________</p>
+<p>Guruh ______________________</p>
+`;
+
+let yarim = Math.ceil(savollar.length / 2);
+let chapSavollar = savollar.slice(0, yarim);
+let ongSavollar = savollar.slice(yarim);
+
+  html += `
+<div class="savollarBlok">
+    <div class="ustun chapUstun">
+`;
+
+chapSavollar.forEach((s,index)=>{
+
+    let javoblar = shuffle([...s.variantlar]);
+
+    let togriIndex = javoblar.indexOf(s.togri);
+
+    let togriHarf = String.fromCharCode(65 + togriIndex);
+
+    variantKaliti[index] = (index + 1) + "-" + togriHarf;
+
+    html += `
+    <div class="savol">
+        <b>${index+1}. ${s.savol}</b>
+
+        <div class="variantlar">
+    `;
+
+    javoblar.forEach((j,i)=>{
+        html += `
+        <div>
+        ${String.fromCharCode(65+i)}) ${j}
+        </div>
+        `;
+    });
+
+    html += `
+        </div>
+    </div>
+    `;
+
+
+
+
+
+});
+
+html += `
+    </div>
+
+    <div class="ustun ongUstun">
+`;
+
+ongSavollar.forEach((s,index)=>{
+
+    let haqiqiyIndex = yarim + index;
+
+    let javoblar = shuffle([...s.variantlar]);
+
+    let togriIndex = javoblar.indexOf(s.togri);
+
+    let togriHarf = String.fromCharCode(65 + togriIndex);
+
+    variantKaliti[haqiqiyIndex] = (haqiqiyIndex + 1) + "-" + togriHarf;
+
+    html += `
+    <div class="savol">
+        <b>${haqiqiyIndex+1}. ${s.savol}</b>
+
+        <div class="variantlar">
+    `;
+
+    javoblar.forEach((j,i)=>{
+        html += `
+        <div>
+        ${String.fromCharCode(65+i)}) ${j}
+        </div>
+        `;
+    });
+
+    html += `
+        </div>
+    </div>
+    `;
+
+});
+
+html += `
+    </div>
+</div>
+`;
+
+
+html += `
+<div class="javobQismi">
+<h3>Javoblar jadvali</h3>
+
+<table class="javobJadval">
+`;
+
+for(let start=1; start<=savollar.length; start+=10){
+
+    html += "<tr>";
+
+    for(let k=start;
+            k<=Math.min(start+9, savollar.length);
+            k++){
+
+        html += `<th>${k}</th>`;
+    }
+
+    html += "</tr><tr>";
+
+    for(let k=start;
+            k<=Math.min(start+9, savollar.length);
+            k++){
+
+        html += `<td>&nbsp;</td>`;
+    }
+
+    html += "</tr>";
+}
+
+html += `
+</table>
+</div>
+`;
+
+
+
+kalitlarHTML += `
+<h3>${v}-VARIANT JAVOBLAR KALITI</h3>
+<p>${variantKaliti.join(" | ")}</p>
+`;
+
+    html += `
+    </div>
+    `;
+}
+
+document.getElementById("natija").innerHTML =
+    html +
+    "<hr><h2>JAVOBLAR KALITI</h2>" +
+    kalitlarHTML;
+
+</script>
+
+</body>
+</html>

@@ -139,6 +139,11 @@ input{
 .finishBtn:hover{
     background:#8e0000;
 }
+#adminPanel{
+    display:none;
+    border-left:5px solid #1f5fa8;
+}
+
 </style>
 </head>
 
@@ -194,6 +199,22 @@ input{
 <div class="result" id="result"></div>
 
 </div>
+<div class="result" id="adminPanel">
+    <h2>Admin menyu</h2>
+
+    <a href="..//paper.html">
+        <button>Qog‘oz variant yaratish</button>
+    </a>
+
+    <a href="../admin.html">
+        <button>Natijalarni ko‘rish</button>
+    </a>
+
+    <button onclick="location.reload()">
+        Test sahifasiga qaytish
+    </button>
+</div>
+
 
 <script src="config.js"></script>
 <script src="questions.js"></script>
@@ -268,7 +289,17 @@ if(talabaObj.parol !== parol){
     alert("Parol noto'g'ri");
     return;
 }
-    guruh = guruhSelect.value;
+    if(
+    talabaObj.ism === "Admin" &&
+    talabaObj.guruh === "administrator"
+){
+    document.getElementById("startModal").style.display = "none";
+    document.getElementById("testBox").style.display = "none";
+    document.getElementById("adminPanel").style.display = "block";
+    return;
+}
+
+guruh = guruhSelect.value;
     talaba = talabaSelect.value;
 
     document.getElementById("studentName").innerHTML =
