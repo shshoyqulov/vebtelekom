@@ -15,22 +15,22 @@ const STUDENTS = [
 { ism: "Nasiba", guruh: "022-45", parol: "5422", imtiyoz: true, imtiyozFoiz: 60 },
 { ism: "Ruslan", guruh: "022-45", parol: "5422", imtiyoz: true, imtiyozFoiz: 60 },
 { ism: "Asilbek X", guruh: "022-45", parol: "5422", imtiyoz: true, imtiyozFoiz: 72 },
-{ ism: "Nurzod", guruh: "022-45", parol: "5422"},
+{ ism: "Nurzod", guruh: "022-45", parol: "54221"},
 { ism: "Dilnura", guruh: "022-45", parol: "5422" },
 { ism: "Ogabek", guruh: "022-45", parol: "5422" },
 { ism: "Oldost", guruh: "022-45", parol: "5422" },
-{ ism: "Maqsud", guruh: "022-45", parol: "5422" },
-{ ism: "Umid", guruh: "022-45", parol: "5422" },
-{ ism: "Asilbek", guruh: "022-45", parol: "5422" },
-{ ism: "Aslbek Avl", guruh: "022-45", parol: "5422" },
-{ ism: "Feruz", guruh: "022-45", parol: "5422" },
-{ ism: "Nurmuhammad", guruh: "022-45", parol: "5422" },
+{ ism: "Maqsud", guruh: "022-45", parol: "54221" },
+{ ism: "Umid", guruh: "022-45", parol: "54221" },
+{ ism: "Asilbek", guruh: "022-45", parol: "54221" },
+{ ism: "Aslbek Avl", guruh: "022-45", parol: "54221" },
+{ ism: "Feruz", guruh: "022-45", parol: "54221" },
+{ ism: "Nurmuhammad", guruh: "022-45", parol: "54221" },
   
     // 022-46
 
 { ism: "Ogabek", guruh: "022-46", parol: "6422", imtiyoz: true, imtiyozFoiz: 60 },
 { ism: "Mohira", guruh: "022-46", parol: "6422", imtiyoz: true, imtiyozFoiz: 60 },
-{ ism: "Gulasal", guruh: "022-46", parol: "6422", imtiyoz: true, imtiyozFoiz: 63 },
+{ ism: "Gulasal", guruh: "022-46", parol: "6422", imtiyoz: true, imtiyozFoiz: 72 },
 { ism: "Anvar", guruh: "022-46", parol: "6422", imtiyoz: true, imtiyozFoiz: 60 },
 { ism: "Dilshod", guruh: "022-46", parol: "6422", imtiyoz: true, imtiyozFoiz: 100 },
 { ism: "Davlatjon", guruh: "022-46", parol: "6422", imtiyoz: true, imtiyozFoiz: 100 },
@@ -50,6 +50,6 @@ const STUDENTS = [
  { ism: "Rushana", guruh: "022-46", parol: "6422" },
  { ism: "Muxlisa Bek.", guruh: "022-46", parol: "6422" },
  { ism: "Oyziyod", guruh: "022-46", parol: "6422" },
- { ism: "Sevara", guruh: "022-46", parol: "6422" },
+ { ism: "Sevara", guruh: "022-46", parol: "64221" },
  { ism: "Abdurahmon", guruh: "022-46", parol: "6422" }
 ];
