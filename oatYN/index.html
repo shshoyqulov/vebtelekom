@@ -1,0 +1,767 @@
+﻿<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ON test</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    background:#f3f5f7;
+    padding:20px;
+}
+
+
+.container{
+    max-width:850px;
+    margin:auto;
+    background:white;
+    padding:25px;
+    border-radius:12px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+}
+
+h1{
+    text-align:center;
+    color:#1f4f82;
+}
+
+.top{
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:10px;
+    background:#eef4fb;
+    padding:12px;
+    border-radius:8px;
+    margin-bottom:20px;
+}
+
+.question{
+    font-size:22px;
+    font-weight:bold;
+    margin-bottom:15px;
+}
+
+.option{
+    display:block;
+    padding:12px;
+    margin:10px 0;
+    border:1px solid #ccc;
+    border-radius:8px;
+    background:#fafafa;
+    cursor:pointer;
+}
+
+.option:hover{
+    background:#e8f0ff;
+}
+
+button{
+    padding:10px 20px;
+    background:#1f5fa8;
+    color:white;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    margin-top:15px;
+    margin-right:10px;
+}
+
+button:hover{
+    background:#17497d;
+}
+
+.result{
+    margin-top:20px;
+    padding:15px;
+    background:#eefaf0;
+    border-left:5px solid green;
+    display:none;
+}
+
+input{
+    padding:8px;
+    border-radius:6px;
+    border:1px solid #ccc;
+}
+
+#startModal{
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.65);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+#startCard{
+    background: white;
+    width: 360px;
+    padding: 30px;
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+#startCard h2{
+    margin-bottom: 20px;
+    color: #1f4f82;
+}
+
+#startCard select{
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 15px;
+}
+
+#startCard button{
+    width: 100%;
+    padding: 12px;
+    margin-top: 5px;
+}
+.btnBox{
+    display:flex;
+    align-items:center;
+    margin-top:20px;
+}
+
+.finishBtn{
+    margin-left:auto;
+    background:#c62828;
+}
+
+.finishBtn:hover{
+    background:#8e0000;
+}
+#adminPanel{
+    display:none;
+    border-left:5px solid #1f5fa8;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1 id="testTitle">Avtomatik test tizimi</h1>
+
+<div class="top">
+    <div><b>Talaba:</b> <span id="studentName">Kiritilmagan</span></div>
+    <div><b>Savol:</b> <span id="qnum">1</span>/<span id="total"></span></div>
+    
+    <div><b>Qolgan vaqt:</b> <span id="timer"></span></div>
+</div>
+
+<div id="startModal">
+
+    <div id="startCard">
+
+        <h2>Testni boshlash</h2>
+
+        <select id="guruhSelect">
+            <option value="">Guruhni tanlang</option>
+        </select>        <select id="talabaSelect">
+            <option value="">Avval guruhni tanlang</option>
+        </select>
+<input type="password" id="parolInput" placeholder="Parolni kiriting">
+        <button onclick="startTest()">
+            OK
+        </button>
+</div>
+
+</div>
+<div id="testBox">
+    <div class="question" id="question"></div>
+    <div id="options"></div>
+<div class="btnBox">
+
+    <button onclick="nextQuestion()">
+        Keyingi
+    </button>
+
+    <button class="finishBtn"
+            onclick="finishTest()">
+        Testni tugatish
+    </button>
+
+</div>
+
+</div>
+
+<div class="result" id="result"></div>
+
+</div>
+<div class="result" id="adminPanel">
+    <h2>Admin menyu</h2>
+
+    <a href="..//paper.html">
+        <button>Qog‘oz variant yaratish</button>
+    </a>
+
+    <a href="../admin.html">
+        <button>Natijalarni ko‘rish</button>
+    </a>
+
+    <button onclick="location.reload()">
+        Test sahifasiga qaytish
+    </button>
+</div>
+
+
+<script src="config.js"></script>
+<script src="questions.js"></script>
+<script src="../students.js"></script>
+<script type="module" src="../firebase.js"></script>
+
+
+<script>
+let talaba = "Talaba";
+let testTugadi = false;
+let index = 0;
+let ball = 0;
+let tanlangan = null;
+let javoblar = [];
+let timerInterval;
+let chiqishSoni = 0;
+let testBoshlangan = false;
+
+document.getElementById("testTitle").innerHTML = CONFIG.testNomi;
+
+
+// SHU YERGA 👇
+
+let guruh = "";
+
+const guruhSelect = document.getElementById("guruhSelect");
+const talabaSelect = document.getElementById("talabaSelect");
+
+const guruhlar = [...new Set(STUDENTS.map(s => s.guruh))];
+
+guruhlar.forEach(g => {
+    guruhSelect.innerHTML += `<option value="${g}">${g}</option>`;
+});
+
+guruhSelect.addEventListener("change", function(){
+
+    talabaSelect.innerHTML = `<option value="">Talabani tanlang</option>`;
+
+    STUDENTS
+        .filter(s => s.guruh === guruhSelect.value)
+        .forEach(s => {
+            talabaSelect.innerHTML += `<option value="${s.ism}">${s.ism}</option>`;
+        });
+
+});
+
+window.startTest = function(){
+
+    if(guruhSelect.value === ""){
+        alert("Guruhni tanlang");
+        return;
+    }
+
+    if(talabaSelect.value === ""){
+        alert("Talabani tanlang");
+        return;
+    }
+
+    let parol = document.getElementById("parolInput").value;
+
+let talabaObj = STUDENTS.find(s =>
+    s.ism === talabaSelect.value &&
+    s.guruh === guruhSelect.value
+);
+
+if(!talabaObj){
+    alert("Talaba topilmadi");
+    return;
+}
+
+if(talabaObj.parol !== parol){
+    alert("Parol noto'g'ri");
+    return;
+}
+    if(
+    talabaObj.ism === "Admin" &&
+    talabaObj.guruh === "administrator"
+){
+    document.getElementById("startModal").style.display = "none";
+    document.getElementById("testBox").style.display = "none";
+    document.getElementById("adminPanel").style.display = "block";
+    return;
+}
+
+guruh = guruhSelect.value;
+    talaba = talabaSelect.value;
+
+    document.getElementById("studentName").innerHTML =
+        talaba + " (" + guruh + ")";
+
+    
+document.getElementById("startModal").style.display = "none";
+
+testBoshlangan = true;
+startTimer();
+
+};
+
+
+
+function shuffle(array){
+    for(let i = array.length - 1; i > 0; i--){
+        let j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+}
+
+let savollar = [...SAVOLLAR];
+
+if(CONFIG.savollarRandom){
+    shuffle(savollar);
+}
+
+savollar = savollar.slice(0, CONFIG.testSavollarSoni);
+
+savollar.forEach(s => {
+    if(CONFIG.javoblarRandom){
+        shuffle(s.variantlar);
+    }
+
+    s.variantlar = s.variantlar.slice(0, CONFIG.javoblarSoni);
+});
+
+document.getElementById("total").innerHTML = savollar.length;
+
+function showQuestion(){
+    tanlangan = null;
+
+    let q = savollar[index];
+
+    document.getElementById("qnum").innerHTML = index + 1;
+    document.getElementById("question").innerHTML = (index + 1) + ".) " + q.savol;
+
+    let html = "";
+
+    q.variantlar.forEach((v, i) => {
+    html += `
+    <label class="option">
+        <input type="radio"
+               name="variant"
+               onclick="tanla(${i})">
+        ${String.fromCharCode(65 + i)}. ${v}
+    </label>
+    `;
+});
+
+    document.getElementById("options").innerHTML = html;
+}
+
+function tanla(i){
+    tanlangan = savollar[index].variantlar[i];
+}
+
+function nextQuestion(){
+    if(tanlangan === null){
+        alert("Javobni tanlang!");
+        return;
+    }
+
+    let q = savollar[index];
+
+    let natija = tanlangan === q.togri;
+
+    if(natija){
+        ball++;
+    }
+
+    javoblar.push({
+        savol: q.savol,
+        tanlangan: tanlangan,
+        togri: q.togri,
+        natija: natija
+    });
+if(index < savollar.length - 1){
+        index++;
+        showQuestion();
+    }else{
+        finishTest();
+    }
+}
+
+async function finishTest(){
+    if(testTugadi) return;
+
+    testTugadi = true;
+    clearInterval(timerInterval);
+
+    document.getElementById("testBox").style.display = "none";
+let foiz = Math.round((ball / savollar.length) * 100);
+
+// Imtiyozli talabani tekshirish
+let imtiyozliTalaba = STUDENTS.find(s =>
+    s.ism === talaba &&
+    s.guruh === guruh &&
+    s.imtiyoz === true
+);
+
+// Agar imtiyozli bo‘lsa va 60% dan past olsa
+
+
+let aslFoiz = foiz;
+let aslBall = ball;
+let imtiyozQollandi = false;
+
+let sarflanganVaqt = CONFIG.testVaqti - vaqt;
+
+let hammasigaJavobBerdi =
+    javoblar.length === savollar.length;
+
+if(
+    imtiyozliTalaba &&
+    imtiyozliTalaba.imtiyozFoiz &&
+    foiz < imtiyozliTalaba.imtiyozFoiz &&
+    sarflanganVaqt >= 600 &&
+    hammasigaJavobBerdi
+){
+    foiz = imtiyozliTalaba.imtiyozFoiz;
+    ball = Math.round((savollar.length * foiz) / 100);
+    imtiyozQollandi = true;
+}
+let baho = "";
+
+
+    if(foiz >= CONFIG.aloFoiz){
+        baho = "A'lo";
+    }else if(foiz >= CONFIG.yaxshiFoiz){
+        baho = "Yaxshi";
+    }else if(foiz >= CONFIG.qoniqarliFoiz){
+        baho = "Qoniqarli";
+    }else{
+        baho = "Qoniqarsiz";
+    }
+
+    document.getElementById("result").innerHTML = `
+        <h2>Test yakunlandi</h2>
+
+        <p><b>Talaba:</b> ${talaba}</p>
+        <p><b>Ball:</b> ${ball}/${savollar.length}</p>
+        <p><b>Foiz:</b> ${foiz}%</p>
+        <p><b>Baho:</b> ${baho}</p>
+
+        <a href="${CONFIG.uySahifa}">
+            <button>Uy sahifasiga</button>
+        </a>
+    `;
+
+
+await saveFirebase(
+    foiz,
+    baho,
+    aslFoiz,
+    aslBall,
+    imtiyozQollandi,
+    imtiyozliTalaba
+);
+
+
+
+
+if(CONFIG.txtSaqlash){
+   saveTxt(foiz, baho, aslFoiz, aslBall, imtiyozQollandi);
+}
+
+
+document.getElementById("result").style.display = "block";
+}
+
+
+async function saveTxt(foiz, baho, aslFoiz, aslBall, imtiyozQollandi){
+
+
+let txt = "TEST NATIJASI\n\n";
+
+txt += "Test nomi: " + CONFIG.testNomi + "\n";
+txt += "Talaba: " + talaba + "\n";
+
+txt += "Ball: " +
+ball + "/" +
+savollar.length + "\n";
+
+txt += "Foiz: " + foiz + "%\n";
+txt += "Baho: " + baho + "\n\n";
+
+
+
+
+
+
+console.log("firebase ishladi");
+if (typeof window.natijaniSaqlash === "function") {let saqlandi =
+
+await window.natijaniSaqlash({
+    ism: talaba,
+    guruh: guruh,
+    mavzu: CONFIG.testNomi,
+
+    togri: ball,
+    jami: savollar.length,
+    foiz: foiz,
+    baho: baho,
+
+    aslBall: aslBall,
+    aslFoiz: aslFoiz,
+    imtiyozQollandi: imtiyozQollandi
+});
+
+
+
+if(!saqlandi){
+    location.reload();
+    return;
+}
+
+// TXT DOWNLOAD FAQAT SHUNDAN KEYIN
+let blob = new Blob(
+    [txt],
+    {type:"text/plain;charset=utf-8"}
+);
+
+let link = document.createElement("a");
+link.href = URL.createObjectURL(blob);
+
+link.download =
+talaba + "_" +
+CONFIG.testNomi + ".txt";
+
+document.body.appendChild(link);
+link.click();
+document.body.removeChild(link);
+
+} else {
+ alert("natijaniSaqlash topilmadi");
+    console.log("natijaniSaqlash topilmadi");
+}
+}
+
+
+async function saveFirebase(
+    foiz,
+    baho,
+    aslFoiz,
+    aslBall,
+    imtiyozQollandi,
+    imtiyozliTalaba
+){
+
+    if(typeof window.natijaniSaqlash === "function"){
+
+        let saqlandi = 
+await window.natijaniSaqlash({
+    ism: talaba,
+    guruh: guruh,
+    mavzu: CONFIG.testNomi,
+
+    togri: ball,
+    jami: savollar.length,
+    foiz: foiz,
+    baho: baho,
+
+    aslBall: aslBall,
+    aslFoiz: aslFoiz,
+    imtiyozQollandi: imtiyozQollandi
+});
+
+
+
+        if(!saqlandi){
+            console.log("Firebase saqlanmadi");
+        }
+
+    }else{
+        console.log("natijaniSaqlash topilmadi");
+    }
+}
+let vaqt = CONFIG.testVaqti;
+
+function updateTimer(){
+    let min = Math.floor(vaqt / 60);
+    let sec = vaqt % 60;
+
+    document.getElementById("timer").innerHTML =
+        String(min).padStart(2,"0") + ":" +
+        String(sec).padStart(2,"0");
+}
+
+updateTimer();
+showQuestion();
+
+function startTimer(){
+    timerInterval = setInterval(() => {
+        if(vaqt <= 0){
+            finishTest();
+            return;
+        }
+
+        vaqt--;
+        updateTimer();
+    }, 1000);
+}
+// ===============================
+// TEST OYNASIDAN CHIQISH NAZORATI
+// ===============================
+
+let nazoratAktiv = true;
+let oxirgiOgohlantirishVaqti = 0;
+
+function warningShow(matn){
+    let box = document.getElementById("warningBox");
+
+    if(!box){
+        box = document.createElement("div");
+        box.id = "warningBox";
+        document.body.appendChild(box);
+    }
+
+    box.innerHTML = matn;
+    box.style.cssText = `
+        position:fixed;
+        top:20px;
+        left:50%;
+        transform:translateX(-50%);
+        background:#b91c1c;
+        color:white;
+        padding:18px 28px;
+        border-radius:12px;
+        font-size:18px;
+        font-weight:bold;
+        z-index:999999;
+        box-shadow:0 8px 25px rgba(0,0,0,0.35);
+        text-align:center;
+    `;
+
+    setTimeout(() => {
+        if(box) box.remove();
+    }, 3000);
+}
+
+function nazorat(sabab){
+    if(testTugadi) return;
+    if(!testBoshlangan) return;
+    if(!nazoratAktiv) return;
+
+    let hozir = Date.now();
+
+    // Bir hodisa ikki marta sanalib ketmasligi uchun
+    if(hozir - oxirgiOgohlantirishVaqti < 1200){
+        return;
+    }
+
+    oxirgiOgohlantirishVaqti = hozir;
+    chiqishSoni++;
+
+    if(chiqishSoni === 1){
+        warningShow(
+            "Diqqat! Test oynasidan chiqish taqiqlanadi. Yana takrorlansa test yakunlanadi."
+        );
+    }
+
+    
+if(chiqishSoni >= 3){
+
+        warningShow(
+            "Test oynasidan uchinchi marta chiqildi. Test yakunlanadi."
+        );
+setTimeout(() => {
+            finishTest();
+        }, 1200);
+    }
+}
+
+// Tab almashtirish, minimize qilish, boshqa oynaga o‘tish
+document.addEventListener("visibilitychange", function(){
+    if(document.hidden){
+        nazorat("Sahifa yashirildi");
+    }
+});
+
+// Alt+Tab, boshqa dasturga bosish, brauzerdan fokus ketishi
+window.addEventListener("blur", function(){
+    setTimeout(() => {
+        if(testBoshlangan && !testTugadi){
+            nazorat("Oyna fokusi yoqoldi");
+        }
+    }, 300);
+});
+
+// Brauzer oynasidan chiqishga urinish
+window.addEventListener("beforeunload", function(e){
+    if(testBoshlangan && !testTugadi){
+        e.preventDefault();
+        e.returnValue = "";
+    }
+});
+
+
+
+// F12, Ctrl+U, Ctrl+Shift+I/J/C bloklash
+document.addEventListener("keydown", function(e){ 
+if(e.key === "F12"){
+        e.preventDefault();
+        warningShow("Bu amal bloklangan");
+        return false;
+    }
+if(e.ctrlKey && ["c", "v", "x", "a", "s", "p"].includes(e.key.toLowerCase())){
+    e.preventDefault();
+    warningShow("Copy/Paste va boshqa amallar test vaqtida bloklangan");
+    return false;
+}
+
+    if(e.ctrlKey && e.key.toLowerCase() === "u"){
+        e.preventDefault();
+        warningShow("Sahifa kodini korish bloklangan");
+        return false;
+    }
+
+    
+if(e.ctrlKey && e.shiftKey && 
+       ["i", "j", "c"].includes(e.key.toLowerCase())){
+        e.preventDefault();
+        warningShow("Developer tools bloklangan");
+        return false;
+    }
+
+    
+});
+document.addEventListener("copy", function(e){
+    e.preventDefault();
+    warningShow("Copy qilish bloklangan");
+});
+
+document.addEventListener("paste", function(e){
+    e.preventDefault();
+    warningShow("Paste qilish bloklangan");
+});
+
+document.addEventListener("cut", function(e){
+    e.preventDefault();
+    warningShow("Cut qilish bloklangan");
+});
+
+
+// O‘ng tugma bloklash
+document.addEventListener("contextmenu", function(e){
+    e.preventDefault();
+    warningShow("Ong tugma bloklangan");
+});
+</script>
+
+</body>
+</html>

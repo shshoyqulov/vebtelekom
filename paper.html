@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="uz">
 <head>
 <meta charset="UTF-8">
@@ -31,7 +31,26 @@ h2{
     position:fixed;
     top:10px;
     right:10px;
-    padding:10px 20px;
+    background:white;
+    border:1px solid #999;
+    padding:10px;
+    font-size:13px;
+    z-index:999;
+}
+
+.printBtn button,
+.printBtn select,
+.printBtn input{
+    margin-top:4px;
+    padding:4px;
+}
+
+.togriJavob{
+    font-weight:bold;
+}
+
+.togriJavob{
+    font-weight:bold;
 }
 
 
@@ -140,9 +159,37 @@ h2{
 </head>
 <body>
 
-<button class="printBtn" onclick="window.print()">
-PDF / Chop etish
-</button>
+<div class="printBtn">
+
+    <select id="javobRejimi">
+        <option value="korinsin">To‘g‘ri javob ko‘rinsin</option>
+        <option value="belgilanmasin">To‘g‘ri javob belgilanmasin</option>
+        <option value="olibTashlansin">To‘g‘ri javob olib tashlansin</option>
+    </select>
+
+    <br><br>
+
+    <label>
+        Boshlanish:
+        <input type="number" id="startSavol" value="1" min="1" style="width:60px;">
+    </label>
+
+    <label>
+        Tugash:
+        <input type="number" id="endSavol" min="1" style="width:60px;">
+    </label>
+
+    <br><br>
+
+    <button onclick="barchaSavollarniChiqar()">
+        Savollarni chiqarish
+    </button>
+
+    <button onclick="window.print()">
+        PDF / Chop etish
+    </button>
+
+</div>
 
 <div id="natija"></div>
 
@@ -161,32 +208,53 @@ function shuffle(arr){
 
 const VARIANTLAR_SONI = PAPER_CONFIG.variantlarSoni;
 const SAVOLLAR_SONI = PAPER_CONFIG.harBirVariantSavolSoni;
+window.onload = function(){
+    document.getElementById("endSavol").value = SAVOLLAR.length;
+    document.getElementById("endSavol").max = SAVOLLAR.length;
+};
 
 let html = "";
 
-let umumiySavollar = shuffle([...SAVOLLAR]);
+if(SAVOLLAR_SONI > SAVOLLAR.length){
+    alert(
+        "Xatolik! Har bir variantdagi savollar soni umumiy savollar sonidan katta bo'lishi mumkin emas."
+    );
+    throw new Error("Bitta variant uchun savollar yetarli emas");
+}
 
-if(
-    VARIANTLAR_SONI * SAVOLLAR_SONI >
-    umumiySavollar.length
-){
-    alert("Savollar soni yetarli emas!");
+let savolBank = shuffle([...SAVOLLAR]);
+let bankIndex = 0;
+
+function variantUchunSavollarOl(soni){
+    let tanlangan = [];
+
+    while(tanlangan.length < soni){
+
+        if(bankIndex >= savolBank.length){
+            savolBank = shuffle([...SAVOLLAR]);
+            bankIndex = 0;
+        }
+
+        let savol = savolBank[bankIndex];
+        bankIndex++;
+
+        let takrorBor = tanlangan.some(
+            s => s.savol === savol.savol
+        );
+
+        if(!takrorBor){
+            tanlangan.push(savol);
+        }
+    }
+
+    return tanlangan;
 }
 
 let kalitlarHTML = "";
 for(let v=1; v<=VARIANTLAR_SONI; v++){
 let variantKaliti = [];
-let boshlanish =
-    (v - 1) * SAVOLLAR_SONI;
 
-let tugash =
-    boshlanish + SAVOLLAR_SONI;
-
-let savollar =
-    umumiySavollar.slice(
-        boshlanish,
-        tugash
-    );
+let savollar = variantUchunSavollarOl(SAVOLLAR_SONI);
 
 html += `
 <div class="variant">
@@ -349,6 +417,82 @@ document.getElementById("natija").innerHTML =
     html +
     "<hr><h2>JAVOBLAR KALITI</h2>" +
     kalitlarHTML;
+
+
+function barchaSavollarniChiqar(){
+
+    let rejim = document.getElementById("javobRejimi").value;
+
+    let start =
+        parseInt(document.getElementById("startSavol").value);
+
+    let end =
+        parseInt(document.getElementById("endSavol").value);
+
+    if(isNaN(start) || start < 1){
+        start = 1;
+    }
+
+    if(isNaN(end) || end > SAVOLLAR.length){
+        end = SAVOLLAR.length;
+    }
+
+    if(start > end){
+        alert("Boshlanish raqami tugash raqamidan katta bo‘lmasin!");
+        return;
+    }
+
+    let tanlanganSavollar =
+        SAVOLLAR.slice(start - 1, end);
+
+    let html = `
+        <h2>${PAPER_CONFIG.sarlavha}</h2>
+        <h2>TEST TOPSHIRIQLARI</h2>
+    `;
+
+    tanlanganSavollar.forEach((s, index) => {
+
+        html += `
+            <div class="savol">
+                <b>${start + index}. ${s.savol}</b>
+
+                <div class="variantlar">
+        `;
+
+        let variantlar = [...s.variantlar];
+
+        if(rejim === "olibTashlansin"){
+            variantlar = variantlar.filter(j => j !== s.togri);
+        }
+
+        variantlar.forEach((j, i) => {
+
+            let harf = String.fromCharCode(65 + i);
+
+            if(rejim === "korinsin" && j === s.togri){
+                html += `
+                    <div class="togriJavob">
+                        ${harf}) ${j}
+                    </div>
+                `;
+            } else {
+                html += `
+                    <div>
+                        ${harf}) ${j}
+                    </div>
+                `;
+            }
+
+        });
+
+        html += `
+                </div>
+            </div>
+        `;
+    });
+
+    document.getElementById("natija").innerHTML = html;
+}
 
 </script>
 
