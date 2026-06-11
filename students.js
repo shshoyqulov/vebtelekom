@@ -1,5 +1,7 @@
 const STUDENTS = [
 { ism: "Admin", guruh: "administrator", parol: "admin2026",imtiyoz: true, imtiyozFoiz: 100 },
+{ ism: "Mehmon", guruh: "Tester", parol: "0101", imtiyoz: true, imtiyozFoiz: 95 },
+{ ism: "Mehmon2", guruh: "Tester", parol: "0101" },
 
     // 022-45
 { ism: "Begali", guruh: "022-45", parol: "5422", imtiyoz: true, imtiyozFoiz: 72 },
