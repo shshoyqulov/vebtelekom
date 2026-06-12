@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Telekommunikatsiya fanidan qayta topshirish</title>
+  <style>
+    :root{
+      --bg:#f4f7fb;
+      --card:#ffffff;
+      --blue:#0f62fe;
+      --blue2:#0043ce;
+      --text:#172033;
+      --muted:#5f6b7a;
+      --line:#d9e2ef;
+      --green:#10a37f;
+      --orange:#ff8a00;
+      --shadow:0 18px 45px rgba(15,35,70,.12);
+      --radius:22px;
+    }
+
+    *{box-sizing:border-box}
+
+    body{
+      margin:0;
+      font-family:Arial, Helvetica, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(15,98,254,.14), transparent 32%),
+        linear-gradient(180deg,#f8fbff 0%, var(--bg) 100%);
+      color:var(--text);
+    }
+
+    .page{
+      max-width:1180px;
+      margin:auto;
+      padding:28px 18px 50px;
+    }
+
+    .hero{
+      background:linear-gradient(135deg, #0f62fe, #003a9b);
+      color:white;
+      border-radius:30px;
+      padding:34px;
+      box-shadow:var(--shadow);
+      position:relative;
+      overflow:hidden;
+    }
+	
+	 .hero:after{
+      content:"";
+      position:absolute;
+      width:260px;
+      height:260px;
+      border-radius:50%;
+      background:rgba(255,255,255,.12);
+      right:-80px;
+      top:-80px;
+    }
+
+  	
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:8px 13px;
+      border:1px solid rgba(255,255,255,.35);
+      background:rgba(255,255,255,.14);
+      border-radius:999px;
+      font-size:14px;
+      margin-bottom:16px;
+    }
+
+    h1{
+      margin:0;
+      font-size:36px;
+      line-height:1.18;
+      max-width:760px;
+    }
+
+    .hero p{
+      max-width:760px;
+      margin:16px 0 0;
+      font-size:18px;
+      line-height:1.6;
+      color:#e7efff;
+    }
+	
+	.hero1{
+    background:linear-gradient(135deg, #e10f4a, #9b0012);
+    color:white;
+    border-radius:5px;
+    padding:0 12px;
+    box-shadow:var(--shadow);
+    position:relative;
+    overflow:hidden;
+}
+
+.hero1:after{
+    display:none;
+}
+
+.hero1 p{
+    margin:0;
+    padding:0;
+    font-size:14px;
+    line-height:1;
+    color:#e7efff;
+}
+	
+	
+    .grid{
+      display:grid;
+      grid-template-columns:1.05fr .95fr;
+      gap:22px;
+      margin-top:24px;
+    }
+
+    .card{
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      padding:22px;
+      box-shadow:0 10px 25px rgba(17,34,68,.07);
+    }
+
+    .card h2{
+      margin:0 0 14px;
+      font-size:24px;
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
+
+    .icon{
+      width:34px;
+      height:34px;
+      border-radius:12px;
+      display:inline-grid;
+      place-items:center;
+      background:#eaf2ff;
+      color:var(--blue);
+      font-weight:700;
+      flex:0 0 auto;
+    }
+
+    .visual{
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      background:linear-gradient(180deg,#f7faff,#edf4ff);
+      border:1px dashed #b8cff7;
+      border-radius:18px;
+      padding:16px;
+      min-height:440px;
+    }
+
+    .visual img{
+      width:400px;
+      height:400px;
+      object-fit:contain;
+      border-radius:16px;
+      background:white;
+      box-shadow:0 12px 28px rgba(15,35,70,.12);
+    }
+
+    .task-box{
+      border-left:5px solid var(--blue);
+      background:#f5f9ff;
+      padding:16px 18px;
+      border-radius:16px;
+      line-height:1.7;
+      color:#24324a;
+    }
+
+    .steps{
+      counter-reset:item;
+      display:grid;
+      gap:12px;
+      margin-top:16px;
+    }
+
+    .step{
+      counter-increment:item;
+      display:grid;
+      grid-template-columns:42px 1fr;
+      gap:12px;
+      align-items:start;
+      padding:14px;
+      border:1px solid var(--line);
+      border-radius:16px;
+      background:#fff;
+    }
+
+    .step:before{
+      content:counter(item);
+      width:34px;
+      height:34px;
+      border-radius:11px;
+      display:grid;
+      place-items:center;
+      background:var(--blue);
+      color:white;
+      font-weight:700;
+    }
+
+    .step b{
+      display:block;
+      margin-bottom:3px;
+    }
+
+    .muted{
+      color:var(--muted);
+      line-height:1.6;
+    }
+
+    .two-col{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:18px;
+      margin-top:22px;
+    }
+
+    ul, ol{
+      margin:10px 0 0 20px;
+      padding:0;
+      line-height:1.75;
+    }
+
+    li{margin-bottom:6px}
+
+    .question{
+      padding:13px 14px;
+      border:1px solid var(--line);
+      border-radius:14px;
+      margin-bottom:10px;
+      background:#fff;
+    }
+
+    .label{
+      display:inline-block;
+      padding:5px 10px;
+      background:#ecfdf5;
+      color:#067647;
+      border-radius:999px;
+      font-size:13px;
+      font-weight:700;
+      margin-bottom:8px;
+    }
+
+    .placeholder{
+      border:2px dashed #a8bfdc;
+      background:#f8fbff;
+      border-radius:18px;
+      padding:20px;
+      margin-top:14px;
+    }
+
+    .placeholder code{
+      display:block;
+      background:#14213d;
+      color:#eaf2ff;
+      padding:12px;
+      border-radius:12px;
+      overflow:auto;
+      margin-top:10px;
+      font-size:14px;
+    }
+
+    .rubric{
+      width:100%;
+      border-collapse:separate;
+      border-spacing:0;
+      overflow:hidden;
+      border-radius:16px;
+      border:1px solid var(--line);
+      margin-top:12px;
+    }
+
+    .rubric th, .rubric td{
+      padding:13px;
+      border-bottom:1px solid var(--line);
+      text-align:left;
+      vertical-align:top;
+    }
+
+    .rubric th{
+      background:#eef5ff;
+      color:#153e75;
+    }
+
+    .rubric tr:last-child td{border-bottom:0}
+
+    .footer{
+      text-align:center;
+      color:var(--muted);
+      margin-top:28px;
+      font-size:14px;
+    }
+
+    .top-actions{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top:18px;
+    }
+
+    .btn{
+      display:inline-block;
+      padding:10px 14px;
+      border-radius:12px;
+      background:white;
+      color:var(--blue2);
+      text-decoration:none;
+      font-weight:700;
+      border:1px solid rgba(255,255,255,.5);
+    }
+
+    .btn.secondary{
+      background:rgba(255,255,255,.12);
+      color:white;
+    }
+
+    @media(max-width:900px){
+      .grid,.two-col{grid-template-columns:1fr}
+      h1{font-size:30px}
+      .hero{padding:26px}
+    }
+
+    @media(max-width:480px){
+      .visual img{width:100%;height:auto}
+      .visual{min-height:auto}
+      .page{padding:14px}
+      h1{font-size:26px}
+    }
+
+    @media print{
+      body{background:white}
+      .hero,.card{box-shadow:none}
+      .btn{display:none}
+      .page{max-width:100%;padding:0}
+    }
+	
+	body {
+    user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+img {
+    pointer-events: none;
+    user-drag: none;
+    -webkit-user-drag: none;
+}
+
+  </style>
+</head>
+<body>
+  <main class="page">
+    <section class="hero">
+      <div class="badge">Telekommunikatsiya</div>
+      <h1>Qayta topshirish uchun topshiriqlar</h1>
+      <p>
+        Topshiriqlardan birini tanlang va amaliy bajaring.
+      </p>
+    </section>
+	<br><br><br><hr>
+	<section class="hero1">
+      <h4>Qoniqali baho olish uchun topshiriqlar</h4>
+    </section>
+
+    <section class="grid">
+      <div class="card">
+        <div class="visual">
+          <img src="telekom/star_topology_400x400.gif" alt="Yulduz topologiyasi 400x400 GIF animatsiya">
+        </div>
+      </div>
+
+      <div class="card" id="task">
+        <h2>1-amaliy topshiriq</h2>
+
+          <b>Topshiriq matni:</b> Cisco Packet Tracer dasturida 3 ta kompyuter va 1 ta switch orqali
+          yulduz topologiyasi asosida tarmoq yaratilsin hamda kompyuterlar o‘rtasida 
+		  xabar almashinishni namoyish etilsin.
+		  <hr>
+        <br>1. Ish maydoniga 3 ta PC va 1 ta Switch joylashtirilsin
+        <br>2. Switch markazda, kompyuterlar uning atrofida joylashtirilsin
+        <br>3. PC1, PC2 va PC3 bir xil tarmoq segmentiga moslab sozlansin
+        <br>3. PC1, PC2 va PC3 bir xil tarmoq segmentiga moslab sozlansin
+        <br>4. Xabar almashishni namoyish etilsin. Simulation rejimida PC lar o‘rtasidagi <br>
+xabar harakati ko‘rsatilsin.
+      </div>
+    </section>
+  
+    <section class="grid">
+      <div class="card">
+        <div class="visual">
+          <img src="telekom/bus_topology_400x400.gif" alt="Shina topologiyasi 400x400 GIF animatsiya">
+        </div>
+      </div>
+
+      <div class="card" id="task">
+        <h2>2-amaliy topshiriq</h2>
+
+          <b>Topshiriq matni:</b> Cisco Packet Tracer dasturida 3 ta kompyuter va 1 ta switch orqali
+          shina topologiyasi asosida tarmoq yaratilsin hamda kompyuterlar o‘rtasida 
+		  xabar almashinishni namoyish etilsin.
+		  <hr>
+        <br>1. Ish maydoniga 3 ta PC va 1 ta Switch joylashtirilsin
+        <br>2. Switch markazda, kompyuterlar uning atrofida joylashadi joylashtirilsin
+        <br>3. PC1, PC2 va PC3 bir xil tarmoq segmentiga moslab sozlansin
+        <br>3. PC1, PC2 va PC3 bir xil tarmoq segmentiga moslab sozlansin
+        <br>4. Xabar almashishni namoyish etilsin. Simulation rejimida PC lar o‘rtasidagi <br>
+xabar harakati ko‘rsatiladi.
+      </div>
+    </section>
+   	
+	 <section class="grid">
+      <div class="card">
+        <div class="visual">
+          <img src="telekom/ring_topology_400x400.gif" alt="Xalqa topologiyasi 400x400 GIF animatsiya">
+        </div>
+      </div>
+
+      <div class="card" id="task">
+        <h2>3-amaliy topshiriq</h2>
+
+          <b>Topshiriq matni:</b> Cisco Packet Tracer dasturida 3 ta kompyuter va 1 ta switch orqali
+          xalqa topologiyasi asosida tarmoq yaratilsin hamda kompyuterlar o‘rtasida 
+		  xabar almashinishni namoyish etilsin.
+		  <hr>
+        <br>1. Ish maydoniga 3 ta PC va 1 ta Switch joylashtirilsin
+        <br>2. Switch markazda, kompyuterlar uning atrofida joylashadi joylashtirilsin
+        <br>3. PC1, PC2 va PC3 bir xil tarmoq segmentiga moslab sozlansin
+        <br>3. PC1, PC2 va PC3 bir xil tarmoq segmentiga moslab sozlansin
+        <br>4. Xabar almashishni namoyish etilsin. Simulation rejimida PC lar o‘rtasidagi <br>
+xabar harakati ko‘rsatiladi.
+      </div>
+    </section>
+    <section class="grid" >
+	 <div class="card">
+        <h2>Savollar</h2>
+        <div >1. Yulduz, Shina, Xalqa topologiyasining asosiy afzalliklari nimalardan iborat?
+</div ><div >2. Yulduz, Shina, Xalqa topologiyasining asosiy kamchiliklari nimalardan iborat?
+</div ><div >3. Tarmoqdagi qurilmalar soni ortganda shina topologiyasining ishlashiga qanday ta'sir qiladi?
+</div ><div >4. Shina topologiyasi va yulduz topologiyasi o‘rtasidagi asosiy farq nimada?
+</div ><div >5. Agar bitta kompyuter ishlamay qolsa, boshqa kompyuterlarga qanday ta'sir qiladi?
+</div ><div >6. PC1 dan PC2 ga xabar yuborib natijani ko‘rsating.
+</div ><div >7. PC2 dan PC3 ga xabar yuborib natijani ko‘rsating.
+</div ><div >8. PC3 dan PC1 ga xabar yuborib natijani ko‘rsating.
+</div ><div >9. Bitta PC IP manzilini noto‘g‘ri sozlab, qanday xatolik yuz berishini izohlang.
+</div ><div >10. 20 ta kompyuterdan iborat tarmoqli kichik ofis uchun qaysi topologiyadan foydalanish ma'qul?
+</div ><div >11. Switch qanday vazifani bajaradi?
+</div ><div >12. Switch ishlamay qolsa, tarmoqda qanday holat yuz beradi?
+</div ><div >13. IP manzil nima uchun kerak?
+</div ><div >14. Kompyuterlar o‘zaro xabar almashishi uchun qanday shartlar bajarilishi kerak?
+</div ><div >15. Simulation rejimida paket harakatini tushuntirib bering. </div >
+
+      </div>
+    </section>
+   <br><br><br><hr>
+	<section class="hero1">
+      <h4>Yaxshi baho olish uchun topshiriqlar</h4>
+    </section>
+	
+	 <section class="grid">
+      <div class="card">
+        <div class="visual">
+          <img src="telekom/ya1.gif" alt="Yaxshi bahoga1">
+        </div>
+      </div>
+
+      <div class="card" id="task">
+        <h2>4-amaliy topshiriq</h2>
+
+          <b>Topshiriq matni:</b> Cisco Packet Tracer dasturida har biri  2 ta tarmoq qurilmasi va 
+		  1 ta switchni olgan 2 ta segmentni  bir-biriga ulab qurilmalar o‘rtasida 
+		  xabar almashinishni namoyish etilsin.
+		  <hr>
+        <br>1. 1-segment: PC1, PC2 va SW1
+        <br>2. 2-segment: PC3, PC4 va SW2
+        <br>3. Segmentlar o‘zaro bog‘lansin
+        <br>3. PC1, PC2 va PC3 bir xil tarmoq segmentiga moslab sozlansin
+        <br>4. PC1 → PC3 va PC4 → PC2 xabar almashinuvi ko‘rsatilsin.
+        <br>5. Segmentlar o‘rtasidagi aloqa muvaffaqiyatli ekanligi namoyish etilsin.
+      </div>
+    </section>
+  <section class="grid">
+      <div class="card">
+        <div class="visual">
+          <img src="telekom/router_network_animation.gif" alt="Yaxshi bahoga2">
+        </div>
+      </div>
+
+      <div class="card" id="task">
+        <h2>5-amaliy topshiriq</h2>
+
+          <b>Topshiriq matni:</b> Cisco Packet dasturining CLI rejimi orqali dinamik marshrutlashni amalga oshirilsin.
+		  <hr>
+        <br>1. 2 ta lokal tarmoq qurilsin
+        <br>2. 2 ta switch ulansin
+        <br>3. 3 ta router orqali bog‘lansin 
+        <br>3. PC1, PC2 va PC3 bir xil tarmoq segmentiga moslab sozlansin
+        <br>4. PC1 → PC4 va PC3 → PC2 o‘rtasida xabar almashinuvi ko‘rsatilsin.
+      </div>
+    </section>
+     <section class="grid" >
+	       <div class="card">
+        <h2>Savollar</h2>
+        <div >1. Ikki segmentni o‘zaro bog‘lashning maqsadi nima?</div>
+        <div >2. Bir segmentdagi qurilma ikkinchi segmentdagi qurilmaga qanday tartibda xabar yuboradi?</div>
+        <div >3. Agar qurilmalardan biriga noto‘g‘ri IP manzil berilsa, qanday muammo yuzaga keladi?</div>
+        <div >4. Ikki segmentli tarmoqning bitta segmentli tarmoqqa nisbatan qanday afzalliklari mavjud?</div>
+        <div >5. Ushbu tarmoq sxemasini 6 ta kompyutergacha kengaytirish uchun qanday o‘zgartirishlar kiritish kerak?</div>
+      </div>
+    </section>
+	
+	 <br><br><br><hr>
+	<section class="hero1">
+      <h4>A'lo baho olish uchun topshiriqlar</h4>
+    </section>
+	
+	
+	 <section class="grid">
+      <div class="card">
+        <div class="visual">
+          <img src="telekom/router_network_animation1.gif" alt="alo bahoga1">
+        </div>
+      </div>
+
+      <div class="card" id="task">
+        <h2>6-amaliy topshiriq</h2>
+
+          <b>Topshiriq matni:</b> Cisco Packet Tracer dasturida har biri  2 ta tarmoq segmentini bir-biri bilan 
+		  simsiz (Wi-fi orqali) ulab qurilmalar o‘rtasida 
+		  xabar almashinishni namoyish etilsin.
+		  <hr>
+        <br>1. 1-segment va 2-segment alohida ko‘rsatilsin
+        <br>2. Segmentlar Wi-Fi orqali bog‘lansin
+        <br>3. PC1 → PC3 va PC4 → PC2 o‘rtasida xabar almashinuvi namoyish etilsin
+      </div>
+    </section>
+   	
+<section class="grid">
+      <div class="card">
+        <div class="visual">
+          <img src="telekom/router_network_animation2.gif" alt="alo bahoga2">
+        </div>
+      </div>
+
+      <div class="card" id="task">
+        <h2>7-amaliy topshiriq</h2>
+
+          <b>Topshiriq matni:</b> Cisco Packet Tracer dasturida har biri  3 ta tarmoq segmentini bir-biri bilan 
+		  simsiz (Wi-fi orqali) ulab qurilmalar o‘rtasida 
+		  xabar almashinishni namoyish etilsin.
+		  <hr>
+        <br>1. 1-segment,2-segment va 3-segment alohida ko‘rsatilsin
+        <br>2. Segmentlar Wi-Fi orqali bog‘lansin
+        <br>3. PC1 → PC3 va PC4 → PC2 o‘rtasida xabar almashinuvi namoyish etilsin
+        <br>4. PC1 → PC5 va PC6 → PC2 o‘rtasida xabar almashinuvi namoyish etilsin
+        <br>5. PC3 → PC5 va PC6 → PC4 o‘rtasida xabar almashinuvi namoyish etilsin
+      </div>
+    </section>
+    <section class="grid" >
+	       <div class="card">
+        <h2>Savollar</h2>
+        <div >1. Simsiz tarmoqning simli tarmoqqa nisbatan qanday afzalliklari mavjud?</div>
+        <div >2. Access Point (AP) qurilmasi tarmoqda qanday vazifani bajaradi?</div>
+        <div >3. Wi-Fi tarmog‘ida SSID nima?</div>
+        <div >4. Simsiz tarmoq xavfsizligini ta'minlash uchun qanday usullardan foydalaniladi?</div>
+        <div >5. Simsiz tarmoqda ma'lumot uzatish tezligiga qanday omillar ta'sir qiladi?</div>
+      </div>
+    </section>
+
+
+
+
+
+    <div class="footer">
+      Telekommunikatsiya topshiriqlari
+    </div>
+  </main>
+
+
+<script>
+  // Matn tanlashni bloklash
+  document.addEventListener("selectstart", function(e) {
+    e.preventDefault();
+  });
+
+  // Sichqonchaning o'ng tugmasini bloklash
+  document.addEventListener("contextmenu", function(e) {
+    e.preventDefault();
+    alert("Bu sahifadan nusxa olish taqiqlangan!");
+  });
+
+  // Copy, cut, drag bloklash
+  document.addEventListener("copy", function(e) {
+    e.preventDefault();
+    alert("Nusxa olish taqiqlangan!");
+  });
+
+  document.addEventListener("cut", function(e) {
+    e.preventDefault();
+  });
+
+  document.addEventListener("dragstart", function(e) {
+    e.preventDefault();
+  });
+
+  // Klaviatura orqali kod ko'rish va nusxa olishni bloklash
+  document.addEventListener("keydown", function(e) {
+    if (
+      e.key === "F12" ||
+      (e.ctrlKey && e.key.toLowerCase() === "u") ||
+      (e.ctrlKey && e.key.toLowerCase() === "s") ||
+      (e.ctrlKey && e.key.toLowerCase() === "c") ||
+      (e.ctrlKey && e.key.toLowerCase() === "p") ||
+      (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === "i") ||
+      (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === "j") ||
+      (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === "c")
+    ) {
+      e.preventDefault();
+
+      return false;
+    }
+  });
+</script>
+
+</body>
+</html>
