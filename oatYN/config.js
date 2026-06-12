@@ -1,5 +1,5 @@
 const CONFIG = {
-    testNomi: "Optik aloqa tizimlari fanidan YN test topshiriqlari",
+    testNomi: "AKT savodxonligi  fanidan YAKUNIY NAZORAT test topshiriqlari",
     testSavollarSoni: 30,
     javoblarSoni: 4,
     testVaqti: 1800,

@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ON test</title>
+<title>Test tizimi</title>
 
 <style>
 body{
@@ -157,7 +157,7 @@ input{
     <div><b>Talaba:</b> <span id="studentName">Kiritilmagan</span></div>
     <div><b>Savol:</b> <span id="qnum">1</span>/<span id="total"></span></div>
     
-    <div><b>Qolgan vaqt:</b> <span id="timer"></span></div>
+    <div><b>Vaqt:</b> <span id="timer"></span></div>
 </div>
 
 <div id="startModal">
@@ -306,15 +306,12 @@ guruh = guruhSelect.value;
         talaba + " (" + guruh + ")";
 
     
+
 document.getElementById("startModal").style.display = "none";
 
 testBoshlangan = true;
 startTimer();
-
 };
-
-
-
 function shuffle(array){
     for(let i = array.length - 1; i > 0; i--){
         let j = Math.floor(Math.random() * (i + 1));
@@ -452,7 +449,7 @@ let baho = "";
         <h2>Test yakunlandi</h2>
 
         <p><b>Talaba:</b> ${talaba}</p>
-        <p><b>Ball:</b> ${ball}/${savollar.length}</p>
+        <p><b>To'g'ri javoblar soni Ball:</b> ${ball}/${savollar.length}</p>
         <p><b>Foiz:</b> ${foiz}%</p>
         <p><b>Baho:</b> ${baho}</p>
 
