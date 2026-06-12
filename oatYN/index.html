@@ -480,72 +480,36 @@ document.getElementById("result").style.display = "block";
 }
 
 
-async function saveTxt(foiz, baho, aslFoiz, aslBall, imtiyozQollandi){
+async function saveTxt(foiz, baho){
 
+    let txt = "TEST NATIJASI\n\n";
 
-let txt = "TEST NATIJASI\n\n";
+    txt += "Test nomi: " + CONFIG.testNomi + "\n";
+    txt += "Talaba: " + talaba + "\n";
 
-txt += "Test nomi: " + CONFIG.testNomi + "\n";
-txt += "Talaba: " + talaba + "\n";
+    txt += "Ball: " +
+    ball + "/" +
+    savollar.length + "\n";
 
-txt += "Ball: " +
-ball + "/" +
-savollar.length + "\n";
+    txt += "Foiz: " + foiz + "%\n";
+    txt += "Baho: " + baho + "\n\n";
 
-txt += "Foiz: " + foiz + "%\n";
-txt += "Baho: " + baho + "\n\n";
+    let blob = new Blob(
+        [txt],
+        {type:"text/plain;charset=utf-8"}
+    );
 
+    let link = document.createElement("a");
 
+    link.href = URL.createObjectURL(blob);
 
+    link.download =
+        talaba + "_" +
+        CONFIG.testNomi + ".txt";
 
-
-
-console.log("firebase ishladi");
-if (typeof window.natijaniSaqlash === "function") {let saqlandi =
-
-await window.natijaniSaqlash({
-    ism: talaba,
-    guruh: guruh,
-    mavzu: CONFIG.testNomi,
-
-    togri: ball,
-    jami: savollar.length,
-    foiz: foiz,
-    baho: baho,
-
-    aslBall: aslBall,
-    aslFoiz: aslFoiz,
-    imtiyozQollandi: imtiyozQollandi
-});
-
-
-
-if(!saqlandi){
-    location.reload();
-    return;
-}
-
-// TXT DOWNLOAD FAQAT SHUNDAN KEYIN
-let blob = new Blob(
-    [txt],
-    {type:"text/plain;charset=utf-8"}
-);
-
-let link = document.createElement("a");
-link.href = URL.createObjectURL(blob);
-
-link.download =
-talaba + "_" +
-CONFIG.testNomi + ".txt";
-
-document.body.appendChild(link);
-link.click();
-document.body.removeChild(link);
-
-} else {
- alert("natijaniSaqlash topilmadi");
-    console.log("natijaniSaqlash topilmadi");
-}
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
 }
 
 
